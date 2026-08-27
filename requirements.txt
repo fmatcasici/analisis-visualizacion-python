@@ -1,0 +1,8 @@
+jupyter-book
+pandas
+matplotlib
+seaborn
+plotly
+dash
+bokeh
+folium

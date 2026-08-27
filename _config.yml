@@ -1,0 +1,24 @@
+title: "Análisis y Visualización Interactiva en Python"
+author: "Nombre del profesor / equipo docente"
+logo: ""
+
+# Forzar que NO se ejecuten los notebooks al construir el libro
+# (los asistentes los ejecutan ellos mismos en Colab)
+execute:
+  execute_notebooks: "off"
+
+repository:
+  url: https://github.com/fmatcasici/taller-visualizacion-python 
+  branch: main
+  path_to_book: ""
+
+html:
+  use_repository_button: true
+  use_issues_button: true
+  extra_footer: "Taller: Análisis y Visualización Interactiva en Python"
+
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
+  notebook_interface: "jupyterlab"
+
+only_build_toc_files: true
