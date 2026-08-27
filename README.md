@@ -53,3 +53,4 @@ taller-visualizacion-python/
 
 - Los notebooks están en blanco (plantilla) con la celda de badge de Colab ya lista — solo falta que cada ponente complete teoría y práctica de su tema.
 - Si algún tema requiere datasets grandes, considera Git LFS o cargarlos desde una URL pública dentro del propio notebook.
+# taller-visualizacion-python-concei3
