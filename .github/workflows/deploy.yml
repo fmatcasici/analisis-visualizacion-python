@@ -28,6 +28,11 @@ jobs:
         run: |
           jupyter-book build .
 
+      - name: Configurar identidad de git
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "github-actions[bot]"
+          
       - name: Publicar en la rama gh-pages
         run: |
           ghp-import -n -p -f _build/html
