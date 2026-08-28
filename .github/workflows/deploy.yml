@@ -22,17 +22,23 @@ jobs:
 
       - name: Instalar dependencias
         run: |
-          pip install -U jupyter-book ghp-import
+          pip install "jupyter-book<2"
 
       - name: Construir el libro
         run: |
-          jupyter-book build .
+          jupyter-book build . --keep-going -W
 
-      - name: Configurar identidad de git
+      - name: Verificar que se generó _build/html
         run: |
-          git config --global user.email "fmat.ca.sici@gmail.com"
-          git config --global user.name "ca-sici"
-          
+          echo "Contenido de _build (si existe):"
+          ls -la _build || echo "La carpeta _build no existe."
+          if [ ! -d "_build/html" ]; then
+            echo "::error::jupyter-book no generó _build/html. Revisa el log del paso 'Construir el libro' arriba."
+            exit 1
+          fi
+
       - name: Publicar en la rama gh-pages
-        run: |
-          ghp-import -n -p -f _build/html
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_build/html
