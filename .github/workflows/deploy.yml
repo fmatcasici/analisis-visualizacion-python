@@ -30,8 +30,8 @@ jobs:
 
       - name: Configurar identidad de git
         run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "github-actions[bot]"
+          git config --global user.email "fmat.ca.sici@gmail.com"
+          git config --global user.name "ca-sici"
           
       - name: Publicar en la rama gh-pages
         run: |
