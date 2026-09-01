@@ -2,7 +2,7 @@
 
 Material del taller. Cada tema tiene su propio notebook, ejecutable directamente en **Google Colab**.
 
-📖 **Libro navegable (con índice):** `https://https://fmatcasici.github.io/analisis-visualizacion-python/` 
+📖 **Libro navegable (con índice):** `https://fmatcasici.github.io/analisis-visualizacion-python/` 
 
 ## Temario y notebooks
 
