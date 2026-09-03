@@ -2,16 +2,16 @@ format: jb-book
 root: intro
 chapters:
   - file: 01-intro-colab-pandas/notebook
-    title: "Tema 01 · Introducción a Colab y Pandas (30 min)"
+    title: "Tema 01 · Introducción a Colab y Pandas"
   - file: 02-matplotlib/notebook
-    title: "Tema 02 · Matplotlib (60 min) — Carlitos"
+    title: "Tema 02 · Matplotlib"
   - file: 03-seaborn/notebook
-    title: "Tema 03 · Seaborn (60 min) — Carlitos"
+    title: "Tema 03 · Seaborn"
   - file: 04-plotly/notebook
-    title: "Tema 04 · Plotly (60 min) — Luis"
+    title: "Tema 04 · Plotly"
   - file: 05-dash/notebook
-    title: "Tema 05 · Dash (60 min) — Luis"
+    title: "Tema 05 · Dash"
   - file: 06-bokeh/notebook
-    title: "Tema 06 · Bokeh (45 min) — Curi"
+    title: "Tema 06 · Bokeh"
   - file: 07-folium/notebook
-    title: "Tema 07 · Folium (45 min) — Curi"
+    title: "Tema 07 · Folium"

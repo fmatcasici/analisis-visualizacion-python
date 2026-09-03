@@ -1,5 +1,5 @@
 title: "Análisis y Visualización Interactiva en Python"
-author: "Nombre del profesor / equipo docente"
+author: "Jorge Carlos Reyes / Luis Basto Díaz / Fernando Curi Quintal"
 logo: ""
 
 # Forzar que NO se ejecuten los notebooks al construir el libro
@@ -8,7 +8,7 @@ execute:
   execute_notebooks: "off"
 
 repository:
-  url: https://github.com/fmatcasici/taller-visualizacion-python 
+  url: https://github.com/fmatcasici/analisis-visualizacion-python
   branch: main
   path_to_book: ""
 
