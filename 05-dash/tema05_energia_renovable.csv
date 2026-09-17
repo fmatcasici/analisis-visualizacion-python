@@ -1,0 +1,401 @@
+pais,fuente_energia,anio,capacidad_instalada_mw,produccion_gwh
+México,Solar,2015,23.8,44.0
+México,Solar,2016,25.0,47.1
+México,Solar,2017,27.9,48.8
+México,Solar,2018,29.2,61.9
+México,Solar,2019,33.8,61.7
+México,Solar,2020,37.8,79.8
+México,Solar,2021,45.4,93.6
+México,Solar,2022,50.5,97.1
+México,Solar,2023,58.6,103.1
+México,Solar,2024,66.8,122.9
+México,Eólica,2015,28.9,84.0
+México,Eólica,2016,34.6,91.7
+México,Eólica,2017,41.6,125.2
+México,Eólica,2018,43.4,126.6
+México,Eólica,2019,45.1,126.6
+México,Eólica,2020,50.5,133.1
+México,Eólica,2021,55.4,164.9
+México,Eólica,2022,60.8,158.5
+México,Eólica,2023,70.9,196.7
+México,Eólica,2024,83.9,222.8
+México,Hidroeléctrica,2015,28.4,112.1
+México,Hidroeléctrica,2016,29.2,109.2
+México,Hidroeléctrica,2017,29.3,125.4
+México,Hidroeléctrica,2018,29.4,124.0
+México,Hidroeléctrica,2019,30.1,129.3
+México,Hidroeléctrica,2020,30.8,132.0
+México,Hidroeléctrica,2021,31.8,118.9
+México,Hidroeléctrica,2022,33.2,135.6
+México,Hidroeléctrica,2023,34.6,135.4
+México,Hidroeléctrica,2024,35.1,142.1
+México,Geotérmica,2015,3.0,20.3
+México,Geotérmica,2016,3.1,21.5
+México,Geotérmica,2017,3.1,20.0
+México,Geotérmica,2018,3.3,21.0
+México,Geotérmica,2019,3.4,22.9
+México,Geotérmica,2020,3.6,26.0
+México,Geotérmica,2021,3.8,26.2
+México,Geotérmica,2022,3.8,26.0
+México,Geotérmica,2023,4.0,25.6
+México,Geotérmica,2024,4.1,26.9
+México,Biomasa,2015,8.8,45.4
+México,Biomasa,2016,8.8,45.6
+México,Biomasa,2017,9.2,52.3
+México,Biomasa,2018,9.7,49.0
+México,Biomasa,2019,10.2,50.4
+México,Biomasa,2020,10.7,52.6
+México,Biomasa,2021,11.0,52.9
+México,Biomasa,2022,11.6,64.8
+México,Biomasa,2023,11.7,61.6
+México,Biomasa,2024,11.8,62.1
+Estados Unidos,Solar,2015,10.5,19.4
+Estados Unidos,Solar,2016,11.8,20.7
+Estados Unidos,Solar,2017,12.3,22.2
+Estados Unidos,Solar,2018,13.5,28.3
+Estados Unidos,Solar,2019,16.2,31.1
+Estados Unidos,Solar,2020,18.2,36.2
+Estados Unidos,Solar,2021,21.7,40.5
+Estados Unidos,Solar,2022,25.7,48.6
+Estados Unidos,Solar,2023,29.5,59.5
+Estados Unidos,Solar,2024,33.3,66.7
+Estados Unidos,Eólica,2015,19.4,49.3
+Estados Unidos,Eólica,2016,20.7,54.6
+Estados Unidos,Eólica,2017,22.2,56.7
+Estados Unidos,Eólica,2018,24.0,68.6
+Estados Unidos,Eólica,2019,28.8,78.3
+Estados Unidos,Eólica,2020,31.8,87.8
+Estados Unidos,Eólica,2021,37.0,109.7
+Estados Unidos,Eólica,2022,44.8,122.3
+Estados Unidos,Eólica,2023,52.2,141.8
+Estados Unidos,Eólica,2024,62.1,164.6
+Estados Unidos,Hidroeléctrica,2015,32.2,132.6
+Estados Unidos,Hidroeléctrica,2016,33.2,126.2
+Estados Unidos,Hidroeléctrica,2017,34.2,122.7
+Estados Unidos,Hidroeléctrica,2018,34.3,136.0
+Estados Unidos,Hidroeléctrica,2019,35.3,148.4
+Estados Unidos,Hidroeléctrica,2020,35.3,140.8
+Estados Unidos,Hidroeléctrica,2021,36.4,146.2
+Estados Unidos,Hidroeléctrica,2022,38.0,150.4
+Estados Unidos,Hidroeléctrica,2023,39.2,154.4
+Estados Unidos,Hidroeléctrica,2024,40.7,152.3
+Estados Unidos,Geotérmica,2015,3.5,21.5
+Estados Unidos,Geotérmica,2016,3.7,25.4
+Estados Unidos,Geotérmica,2017,3.9,24.6
+Estados Unidos,Geotérmica,2018,4.0,25.1
+Estados Unidos,Geotérmica,2019,4.0,23.8
+Estados Unidos,Geotérmica,2020,4.1,28.7
+Estados Unidos,Geotérmica,2021,4.1,28.1
+Estados Unidos,Geotérmica,2022,4.2,25.1
+Estados Unidos,Geotérmica,2023,4.2,28.8
+Estados Unidos,Geotérmica,2024,4.4,28.9
+Estados Unidos,Biomasa,2015,4.7,24.7
+Estados Unidos,Biomasa,2016,5.0,24.6
+Estados Unidos,Biomasa,2017,5.2,25.9
+Estados Unidos,Biomasa,2018,5.3,26.6
+Estados Unidos,Biomasa,2019,5.3,30.2
+Estados Unidos,Biomasa,2020,5.4,26.5
+Estados Unidos,Biomasa,2021,5.4,25.9
+Estados Unidos,Biomasa,2022,5.5,28.3
+Estados Unidos,Biomasa,2023,5.7,32.7
+Estados Unidos,Biomasa,2024,6.0,29.8
+Brasil,Solar,2015,19.5,40.3
+Brasil,Solar,2016,21.7,44.1
+Brasil,Solar,2017,23.8,47.0
+Brasil,Solar,2018,26.9,47.8
+Brasil,Solar,2019,31.7,65.0
+Brasil,Solar,2020,35.7,67.3
+Brasil,Solar,2021,43.2,81.2
+Brasil,Solar,2022,51.8,98.2
+Brasil,Solar,2023,57.4,107.5
+Brasil,Solar,2024,60.3,111.0
+Brasil,Eólica,2015,14.2,40.1
+Brasil,Eólica,2016,15.9,40.3
+Brasil,Eólica,2017,17.0,51.6
+Brasil,Eólica,2018,18.1,49.3
+Brasil,Eólica,2019,21.9,56.6
+Brasil,Eólica,2020,24.4,72.4
+Brasil,Eólica,2021,25.4,65.1
+Brasil,Eólica,2022,30.7,89.2
+Brasil,Eólica,2023,33.4,93.1
+Brasil,Eólica,2024,36.2,109.4
+Brasil,Hidroeléctrica,2015,35.3,139.8
+Brasil,Hidroeléctrica,2016,35.7,138.0
+Brasil,Hidroeléctrica,2017,37.3,153.2
+Brasil,Hidroeléctrica,2018,37.7,143.6
+Brasil,Hidroeléctrica,2019,38.7,148.9
+Brasil,Hidroeléctrica,2020,40.2,167.8
+Brasil,Hidroeléctrica,2021,41.1,159.9
+Brasil,Hidroeléctrica,2022,41.2,158.2
+Brasil,Hidroeléctrica,2023,43.6,171.8
+Brasil,Hidroeléctrica,2024,45.0,181.2
+Brasil,Geotérmica,2015,3.8,23.8
+Brasil,Geotérmica,2016,3.9,27.5
+Brasil,Geotérmica,2017,4.0,28.7
+Brasil,Geotérmica,2018,4.0,28.0
+Brasil,Geotérmica,2019,4.1,27.1
+Brasil,Geotérmica,2020,4.4,26.5
+Brasil,Geotérmica,2021,4.5,28.1
+Brasil,Geotérmica,2022,4.6,32.1
+Brasil,Geotérmica,2023,4.7,32.6
+Brasil,Geotérmica,2024,4.7,34.0
+Brasil,Biomasa,2015,7.3,36.2
+Brasil,Biomasa,2016,7.6,37.6
+Brasil,Biomasa,2017,7.8,37.2
+Brasil,Biomasa,2018,7.8,38.3
+Brasil,Biomasa,2019,7.9,44.4
+Brasil,Biomasa,2020,8.0,45.0
+Brasil,Biomasa,2021,8.0,38.5
+Brasil,Biomasa,2022,8.1,46.1
+Brasil,Biomasa,2023,8.5,40.2
+Brasil,Biomasa,2024,8.9,44.4
+España,Solar,2015,9.5,20.0
+España,Solar,2016,10.5,20.5
+España,Solar,2017,12.0,22.0
+España,Solar,2018,14.0,29.7
+España,Solar,2019,16.1,28.4
+España,Solar,2020,19.1,38.0
+España,Solar,2021,21.5,42.7
+España,Solar,2022,23.4,43.3
+España,Solar,2023,26.5,46.7
+España,Solar,2024,30.4,54.8
+España,Eólica,2015,9.9,28.3
+España,Eólica,2016,10.8,31.4
+España,Eólica,2017,13.1,39.7
+España,Eólica,2018,15.5,42.1
+España,Eólica,2019,17.8,50.7
+España,Eólica,2020,18.8,54.7
+España,Eólica,2021,21.3,60.0
+España,Eólica,2022,25.0,64.1
+España,Eólica,2023,26.9,82.9
+España,Eólica,2024,29.5,78.6
+España,Hidroeléctrica,2015,10.3,41.2
+España,Hidroeléctrica,2016,10.4,39.1
+España,Hidroeléctrica,2017,10.5,38.6
+España,Hidroeléctrica,2018,11.0,47.5
+España,Hidroeléctrica,2019,11.6,45.3
+España,Hidroeléctrica,2020,11.7,44.6
+España,Hidroeléctrica,2021,12.0,46.3
+España,Hidroeléctrica,2022,12.6,52.0
+España,Hidroeléctrica,2023,13.2,51.9
+España,Hidroeléctrica,2024,13.4,57.3
+España,Geotérmica,2015,2.7,16.8
+España,Geotérmica,2016,2.8,19.7
+España,Geotérmica,2017,3.0,17.7
+España,Geotérmica,2018,3.0,19.5
+España,Geotérmica,2019,3.1,21.6
+España,Geotérmica,2020,3.2,21.2
+España,Geotérmica,2021,3.3,22.1
+España,Geotérmica,2022,3.4,24.2
+España,Geotérmica,2023,3.4,20.8
+España,Geotérmica,2024,3.5,22.1
+España,Biomasa,2015,3.0,16.4
+España,Biomasa,2016,3.1,14.9
+España,Biomasa,2017,3.3,16.0
+España,Biomasa,2018,3.4,17.7
+España,Biomasa,2019,3.5,17.2
+España,Biomasa,2020,3.6,20.3
+España,Biomasa,2021,3.7,18.0
+España,Biomasa,2022,3.8,18.5
+España,Biomasa,2023,4.0,22.5
+España,Biomasa,2024,4.2,21.7
+Alemania,Solar,2015,17.0,30.2
+Alemania,Solar,2016,17.8,35.5
+Alemania,Solar,2017,19.1,40.2
+Alemania,Solar,2018,21.8,42.7
+Alemania,Solar,2019,26.2,48.5
+Alemania,Solar,2020,27.3,49.7
+Alemania,Solar,2021,30.7,55.0
+Alemania,Solar,2022,33.5,67.5
+Alemania,Solar,2023,37.1,69.2
+Alemania,Solar,2024,40.1,77.8
+Alemania,Eólica,2015,31.0,92.9
+Alemania,Eólica,2016,36.6,104.5
+Alemania,Eólica,2017,41.6,117.1
+Alemania,Eólica,2018,44.0,125.1
+Alemania,Eólica,2019,53.6,157.2
+Alemania,Eólica,2020,60.3,167.0
+Alemania,Eólica,2021,72.1,182.2
+Alemania,Eólica,2022,77.6,237.4
+Alemania,Eólica,2023,89.8,268.3
+Alemania,Eólica,2024,102.1,259.8
+Alemania,Hidroeléctrica,2015,33.2,120.2
+Alemania,Hidroeléctrica,2016,34.2,146.6
+Alemania,Hidroeléctrica,2017,34.3,122.9
+Alemania,Hidroeléctrica,2018,34.5,141.0
+Alemania,Hidroeléctrica,2019,36.4,133.5
+Alemania,Hidroeléctrica,2020,38.2,142.2
+Alemania,Hidroeléctrica,2021,39.4,163.7
+Alemania,Hidroeléctrica,2022,39.7,155.9
+Alemania,Hidroeléctrica,2023,41.8,159.9
+Alemania,Hidroeléctrica,2024,43.8,171.0
+Alemania,Geotérmica,2015,5.8,40.2
+Alemania,Geotérmica,2016,5.8,36.7
+Alemania,Geotérmica,2017,5.8,37.6
+Alemania,Geotérmica,2018,6.0,37.2
+Alemania,Geotérmica,2019,6.1,41.7
+Alemania,Geotérmica,2020,6.3,39.5
+Alemania,Geotérmica,2021,6.6,45.2
+Alemania,Geotérmica,2022,6.8,44.1
+Alemania,Geotérmica,2023,6.8,48.0
+Alemania,Geotérmica,2024,7.0,44.0
+Alemania,Biomasa,2015,8.5,42.0
+Alemania,Biomasa,2016,8.7,45.9
+Alemania,Biomasa,2017,9.0,46.5
+Alemania,Biomasa,2018,9.4,44.7
+Alemania,Biomasa,2019,9.9,51.7
+Alemania,Biomasa,2020,10.2,53.0
+Alemania,Biomasa,2021,10.4,57.8
+Alemania,Biomasa,2022,10.6,51.4
+Alemania,Biomasa,2023,10.9,56.9
+Alemania,Biomasa,2024,11.1,53.7
+China,Solar,2015,15.4,29.2
+China,Solar,2016,17.4,34.7
+China,Solar,2017,18.1,34.8
+China,Solar,2018,20.3,38.6
+China,Solar,2019,21.2,36.8
+China,Solar,2020,23.9,45.6
+China,Solar,2021,26.3,46.7
+China,Solar,2022,29.0,57.9
+China,Solar,2023,34.5,70.0
+China,Solar,2024,35.9,66.9
+China,Eólica,2015,26.8,76.1
+China,Eólica,2016,31.7,92.3
+China,Eólica,2017,33.4,102.7
+China,Eólica,2018,38.1,109.0
+China,Eólica,2019,41.4,125.4
+China,Eólica,2020,50.5,137.1
+China,Eólica,2021,57.0,145.7
+China,Eólica,2022,67.1,193.4
+China,Eólica,2023,72.6,216.9
+China,Eólica,2024,82.6,251.5
+China,Hidroeléctrica,2015,43.2,161.3
+China,Hidroeléctrica,2016,45.4,162.1
+China,Hidroeléctrica,2017,45.7,195.4
+China,Hidroeléctrica,2018,48.0,179.8
+China,Hidroeléctrica,2019,48.9,175.1
+China,Hidroeléctrica,2020,49.3,175.3
+China,Hidroeléctrica,2021,51.0,205.6
+China,Hidroeléctrica,2022,51.5,216.5
+China,Hidroeléctrica,2023,53.0,213.0
+China,Hidroeléctrica,2024,55.1,204.4
+China,Geotérmica,2015,5.8,38.1
+China,Geotérmica,2016,5.8,36.5
+China,Geotérmica,2017,6.0,41.2
+China,Geotérmica,2018,6.2,41.0
+China,Geotérmica,2019,6.5,41.6
+China,Geotérmica,2020,6.5,42.9
+China,Geotérmica,2021,6.8,40.7
+China,Geotérmica,2022,7.0,47.5
+China,Geotérmica,2023,7.2,43.7
+China,Geotérmica,2024,7.4,44.8
+China,Biomasa,2015,4.6,22.5
+China,Biomasa,2016,4.7,27.0
+China,Biomasa,2017,4.8,27.5
+China,Biomasa,2018,4.9,27.3
+China,Biomasa,2019,5.0,27.9
+China,Biomasa,2020,5.3,29.7
+China,Biomasa,2021,5.3,30.2
+China,Biomasa,2022,5.4,29.6
+China,Biomasa,2023,5.4,27.2
+China,Biomasa,2024,5.4,29.2
+India,Solar,2015,10.3,19.4
+India,Solar,2016,12.4,24.3
+India,Solar,2017,13.9,28.1
+India,Solar,2018,17.0,31.6
+India,Solar,2019,18.0,32.9
+India,Solar,2020,19.2,36.3
+India,Solar,2021,22.5,45.8
+India,Solar,2022,23.9,42.9
+India,Solar,2023,26.4,54.4
+India,Solar,2024,29.7,57.8
+India,Eólica,2015,10.7,30.7
+India,Eólica,2016,11.8,33.7
+India,Eólica,2017,13.9,37.7
+India,Eólica,2018,15.6,40.4
+India,Eólica,2019,16.9,43.0
+India,Eólica,2020,17.8,45.6
+India,Eólica,2021,21.3,62.6
+India,Eólica,2022,24.4,72.6
+India,Eólica,2023,26.2,71.2
+India,Eólica,2024,30.0,90.0
+India,Hidroeléctrica,2015,17.6,63.2
+India,Hidroeléctrica,2016,17.7,73.2
+India,Hidroeléctrica,2017,18.6,68.2
+India,Hidroeléctrica,2018,19.5,69.9
+India,Hidroeléctrica,2019,20.5,84.1
+India,Hidroeléctrica,2020,21.1,82.7
+India,Hidroeléctrica,2021,21.4,91.4
+India,Hidroeléctrica,2022,21.7,81.5
+India,Hidroeléctrica,2023,22.7,90.9
+India,Hidroeléctrica,2024,23.4,93.6
+India,Geotérmica,2015,1.6,11.3
+India,Geotérmica,2016,1.6,11.0
+India,Geotérmica,2017,1.7,10.5
+India,Geotérmica,2018,1.7,11.4
+India,Geotérmica,2019,1.7,10.1
+India,Geotérmica,2020,1.7,11.6
+India,Geotérmica,2021,1.8,11.9
+India,Geotérmica,2022,1.9,13.4
+India,Geotérmica,2023,1.9,12.5
+India,Geotérmica,2024,2.0,11.7
+India,Biomasa,2015,2.3,12.9
+India,Biomasa,2016,2.4,12.9
+India,Biomasa,2017,2.4,12.8
+India,Biomasa,2018,2.6,13.2
+India,Biomasa,2019,2.6,14.0
+India,Biomasa,2020,2.6,13.6
+India,Biomasa,2021,2.6,13.7
+India,Biomasa,2022,2.8,15.5
+India,Biomasa,2023,2.9,16.2
+India,Biomasa,2024,3.1,17.5
+Chile,Solar,2015,9.3,17.7
+Chile,Solar,2016,9.7,17.7
+Chile,Solar,2017,10.9,20.6
+Chile,Solar,2018,12.8,24.5
+Chile,Solar,2019,14.9,26.0
+Chile,Solar,2020,17.5,35.4
+Chile,Solar,2021,18.2,34.0
+Chile,Solar,2022,21.0,37.6
+Chile,Solar,2023,24.9,52.5
+Chile,Solar,2024,29.4,58.0
+Chile,Eólica,2015,18.8,57.6
+Chile,Eólica,2016,20.7,59.8
+Chile,Eólica,2017,21.9,66.5
+Chile,Eólica,2018,23.0,61.7
+Chile,Eólica,2019,26.3,69.6
+Chile,Eólica,2020,29.3,79.8
+Chile,Eólica,2021,34.0,95.7
+Chile,Eólica,2022,40.5,116.2
+Chile,Eólica,2023,47.3,119.9
+Chile,Eólica,2024,55.0,166.8
+Chile,Hidroeléctrica,2015,14.1,58.9
+Chile,Hidroeléctrica,2016,14.2,57.3
+Chile,Hidroeléctrica,2017,14.5,55.5
+Chile,Hidroeléctrica,2018,15.3,61.3
+Chile,Hidroeléctrica,2019,15.8,65.9
+Chile,Hidroeléctrica,2020,16.1,58.9
+Chile,Hidroeléctrica,2021,17.1,62.8
+Chile,Hidroeléctrica,2022,18.0,77.8
+Chile,Hidroeléctrica,2023,18.5,67.5
+Chile,Hidroeléctrica,2024,19.0,75.7
+Chile,Geotérmica,2015,3.3,20.6
+Chile,Geotérmica,2016,3.3,23.9
+Chile,Geotérmica,2017,3.3,23.8
+Chile,Geotérmica,2018,3.5,24.8
+Chile,Geotérmica,2019,3.6,22.1
+Chile,Geotérmica,2020,3.7,24.0
+Chile,Geotérmica,2021,3.9,23.8
+Chile,Geotérmica,2022,4.0,28.3
+Chile,Geotérmica,2023,4.1,29.3
+Chile,Geotérmica,2024,4.3,26.2
+Chile,Biomasa,2015,4.3,20.7
+Chile,Biomasa,2016,4.5,21.1
+Chile,Biomasa,2017,4.5,23.0
+Chile,Biomasa,2018,4.5,24.5
+Chile,Biomasa,2019,4.6,22.9
+Chile,Biomasa,2020,4.7,25.1
+Chile,Biomasa,2021,5.0,27.9
+Chile,Biomasa,2022,5.3,25.5
+Chile,Biomasa,2023,5.3,29.2
+Chile,Biomasa,2024,5.4,25.9
