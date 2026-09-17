@@ -1,0 +1,501 @@
+fecha,producto,categoria,cantidad,precio_unitario,venta_total,region,canal_venta
+2024-01-02,Cuerda para saltar,Deportes,8,180.5,1444.0,Centro,Tienda física
+2024-01-04,Lámpara LED,Hogar,9,314.76,2832.84,Norte,Tienda física
+2024-01-05,Termo acero,Hogar,7,257.27,1800.89,Sur,Tienda física
+2024-01-05,Cuerda para saltar,Deportes,1,246.05,246.05,Sur,Tienda física
+2024-01-05,Cargador USB-C,Electrónica,3,569.73,1709.19,Centro,Tienda física
+2024-01-06,Termo acero,Hogar,11,310.13,3411.43,Norte,En línea
+2024-01-06,Cuaderno profesional,Papelería,11,78.95,868.45,Centro,Tienda física
+2024-01-06,Tapete yoga,Deportes,2,183.29,366.58,Sur,En línea
+2024-01-08,Mochila,Papelería,1,94.21,94.21,Occidente,Tienda física
+2024-01-09,Cuaderno profesional,Papelería,2,95.35,190.7,Norte,Tienda física
+2024-01-09,Bocina Bluetooth,Electrónica,3,551.15,1653.45,Sur,Tienda física
+2024-01-11,Tapete yoga,Deportes,9,267.75,2409.75,Norte,En línea
+2024-01-14,Set de plumas,Papelería,8,81.83,654.64,Centro,Tienda física
+2024-01-14,Cargador USB-C,Electrónica,3,506.53,1519.59,Centro,En línea
+2024-01-14,Termo acero,Hogar,1,300.67,300.67,Norte,Tienda física
+2024-01-15,Tapete yoga,Deportes,1,202.21,202.21,Centro,En línea
+2024-01-16,Botella deportiva,Deportes,6,274.42,1646.52,Centro,En línea
+2024-01-18,Mouse inalámbrico,Electrónica,8,533.56,4268.48,Norte,Tienda física
+2024-01-18,Bocina Bluetooth,Electrónica,5,443.4,2217.0,Norte,En línea
+2024-01-18,Mouse inalámbrico,Electrónica,9,541.36,4872.24,Centro,En línea
+2024-01-19,Mouse inalámbrico,Electrónica,11,398.02,4378.22,Centro,En línea
+2024-01-20,Mouse inalámbrico,Electrónica,8,449.24,3593.92,Norte,Tienda física
+2024-01-20,Set de plumas,Papelería,6,96.54,579.24,Centro,Tienda física
+2024-01-21,Set de sartenes,Hogar,3,315.61,946.83,Centro,Tienda física
+2024-01-21,Tapete yoga,Deportes,6,202.13,1212.78,Centro,Tienda física
+2024-01-22,Agenda 2024,Papelería,11,113.65,1250.15,Sur,Tienda física
+2024-01-22,Termo acero,Hogar,7,280.37,1962.59,Norte,En línea
+2024-01-23,Cargador USB-C,Electrónica,8,446.4,3571.2,Occidente,Tienda física
+2024-01-23,Guantes gimnasio,Deportes,2,178.6,357.2,Centro,Tienda física
+2024-01-23,Bocina Bluetooth,Electrónica,4,469.17,1876.68,Occidente,En línea
+2024-01-24,Cargador USB-C,Electrónica,7,499.58,3497.06,Centro,Tienda física
+2024-01-24,Set de plumas,Papelería,10,72.69,726.9,Centro,En línea
+2024-01-25,Cargador USB-C,Electrónica,4,446.75,1787.0,Norte,Tienda física
+2024-01-26,Lámpara LED,Hogar,8,230.51,1844.08,Norte,Tienda física
+2024-01-26,Cojín decorativo,Hogar,11,226.63,2492.93,Occidente,En línea
+2024-01-27,Cuerda para saltar,Deportes,3,236.03,708.09,Occidente,En línea
+2024-01-28,Termo acero,Hogar,2,247.92,495.84,Sur,En línea
+2024-01-28,Set de sartenes,Hogar,8,356.44,2851.52,Sur,Tienda física
+2024-01-29,Cojín decorativo,Hogar,11,256.68,2823.48,Centro,Tienda física
+2024-01-29,Tapete yoga,Deportes,3,213.0,639.0,Centro,Tienda física
+2024-01-29,Botella deportiva,Deportes,1,265.85,265.85,Centro,Tienda física
+2024-01-31,Cargador USB-C,Electrónica,1,485.32,485.32,Centro,En línea
+2024-02-01,Cuaderno profesional,Papelería,9,81.95,737.55,Centro,Tienda física
+2024-02-01,Lámpara LED,Hogar,2,240.88,481.76,Sur,Tienda física
+2024-02-02,Mouse inalámbrico,Electrónica,7,424.71,2972.97,Sur,Tienda física
+2024-02-02,Cuaderno profesional,Papelería,6,81.58,489.48,Norte,Tienda física
+2024-02-02,Set de plumas,Papelería,9,93.0,837.0,Norte,Tienda física
+2024-02-02,Cuerda para saltar,Deportes,4,259.07,1036.28,Norte,Tienda física
+2024-02-03,Set de plumas,Papelería,8,74.85,598.8,Centro,En línea
+2024-02-03,Set de sartenes,Hogar,5,265.67,1328.35,Centro,Tienda física
+2024-02-04,Cojín decorativo,Hogar,3,268.15,804.45,Centro,Tienda física
+2024-02-04,Termo acero,Hogar,4,330.05,1320.2,Norte,En línea
+2024-02-05,Lámpara LED,Hogar,8,333.95,2671.6,Norte,En línea
+2024-02-05,Bocina Bluetooth,Electrónica,5,392.86,1964.3,Norte,En línea
+2024-02-06,Cargador USB-C,Electrónica,10,531.66,5316.6,Centro,En línea
+2024-02-08,Audífonos,Electrónica,4,378.62,1514.48,Centro,Tienda física
+2024-02-09,Cuerda para saltar,Deportes,1,226.59,226.59,Sur,En línea
+2024-02-09,Cargador USB-C,Electrónica,9,405.53,3649.77,Norte,Tienda física
+2024-02-10,Bocina Bluetooth,Electrónica,5,416.62,2083.1,Norte,Tienda física
+2024-02-10,Lámpara LED,Hogar,11,357.24,3929.64,Centro,Tienda física
+2024-02-10,Audífonos,Electrónica,11,395.38,4349.18,Sur,Tienda física
+2024-02-10,Audífonos,Electrónica,4,440.16,1760.64,Sur,En línea
+2024-02-11,Bocina Bluetooth,Electrónica,4,485.37,1941.48,Centro,Tienda física
+2024-02-11,Cargador USB-C,Electrónica,8,572.43,4579.44,Sur,En línea
+2024-02-13,Tapete yoga,Deportes,3,216.06,648.18,Norte,Tienda física
+2024-02-13,Cojín decorativo,Hogar,4,353.81,1415.24,Occidente,Tienda física
+2024-02-13,Audífonos,Electrónica,7,482.42,3376.94,Sur,Tienda física
+2024-02-14,Termo acero,Hogar,10,301.65,3016.5,Sur,En línea
+2024-02-16,Set de plumas,Papelería,2,111.3,222.6,Centro,Tienda física
+2024-02-16,Agenda 2024,Papelería,11,115.6,1271.6,Centro,En línea
+2024-02-16,Bocina Bluetooth,Electrónica,9,458.84,4129.56,Norte,Tienda física
+2024-02-16,Cuerda para saltar,Deportes,5,269.83,1349.15,Norte,Tienda física
+2024-02-17,Botella deportiva,Deportes,5,222.3,1111.5,Sur,Tienda física
+2024-02-17,Bocina Bluetooth,Electrónica,11,396.28,4359.08,Occidente,Tienda física
+2024-02-18,Cargador USB-C,Electrónica,7,472.24,3305.68,Centro,En línea
+2024-02-18,Botella deportiva,Deportes,5,225.31,1126.55,Sur,Tienda física
+2024-02-19,Botella deportiva,Deportes,5,213.31,1066.55,Occidente,Tienda física
+2024-02-20,Set de sartenes,Hogar,1,235.46,235.46,Norte,Tienda física
+2024-02-20,Tapete yoga,Deportes,10,278.45,2784.5,Norte,Tienda física
+2024-02-21,Mouse inalámbrico,Electrónica,5,538.12,2690.6,Centro,En línea
+2024-02-22,Set de plumas,Papelería,5,114.34,571.7,Norte,En línea
+2024-02-23,Cuerda para saltar,Deportes,6,266.39,1598.34,Centro,En línea
+2024-02-23,Set de plumas,Papelería,2,81.15,162.3,Norte,Tienda física
+2024-02-23,Cojín decorativo,Hogar,7,313.62,2195.34,Centro,En línea
+2024-02-25,Bocina Bluetooth,Electrónica,7,581.26,4068.82,Centro,En línea
+2024-02-26,Botella deportiva,Deportes,1,271.53,271.53,Centro,Tienda física
+2024-02-26,Mochila,Papelería,10,95.17,951.7,Centro,En línea
+2024-02-27,Mouse inalámbrico,Electrónica,5,415.91,2079.55,Centro,En línea
+2024-02-27,Tapete yoga,Deportes,6,282.12,1692.72,Sur,Tienda física
+2024-02-27,Termo acero,Hogar,5,293.61,1468.05,Norte,En línea
+2024-02-27,Bocina Bluetooth,Electrónica,3,563.41,1690.23,Norte,En línea
+2024-02-28,Mochila,Papelería,5,111.03,555.15,Centro,En línea
+2024-02-28,Lámpara LED,Hogar,9,308.82,2779.38,Norte,En línea
+2024-02-29,Tapete yoga,Deportes,5,217.26,1086.3,Occidente,En línea
+2024-02-29,Tapete yoga,Deportes,10,275.53,2755.3,Norte,Tienda física
+2024-02-29,Botella deportiva,Deportes,7,197.64,1383.48,Norte,Tienda física
+2024-03-01,Set de plumas,Papelería,2,84.45,168.9,Norte,Tienda física
+2024-03-02,Cuaderno profesional,Papelería,1,95.47,95.47,Sur,Tienda física
+2024-03-03,Tapete yoga,Deportes,11,272.82,3001.02,Occidente,Tienda física
+2024-03-05,Cojín decorativo,Hogar,3,272.68,818.04,Centro,En línea
+2024-03-05,Termo acero,Hogar,1,242.44,242.44,Centro,En línea
+2024-03-05,Botella deportiva,Deportes,8,201.48,1611.84,Occidente,Tienda física
+2024-03-06,Agenda 2024,Papelería,3,78.13,234.39,Sur,En línea
+2024-03-06,Agenda 2024,Papelería,4,97.5,390.0,Sur,En línea
+2024-03-08,Set de sartenes,Hogar,4,265.34,1061.36,Occidente,Tienda física
+2024-03-08,Botella deportiva,Deportes,10,252.97,2529.7,Centro,En línea
+2024-03-08,Botella deportiva,Deportes,3,182.38,547.14,Occidente,Tienda física
+2024-03-09,Bocina Bluetooth,Electrónica,4,434.8,1739.2,Centro,En línea
+2024-03-09,Set de sartenes,Hogar,10,243.33,2433.3,Centro,Tienda física
+2024-03-11,Termo acero,Hogar,5,287.03,1435.15,Occidente,Tienda física
+2024-03-12,Cojín decorativo,Hogar,2,227.74,455.48,Centro,Tienda física
+2024-03-12,Cojín decorativo,Hogar,3,341.23,1023.69,Sur,Tienda física
+2024-03-13,Botella deportiva,Deportes,3,212.24,636.72,Norte,Tienda física
+2024-03-14,Set de sartenes,Hogar,8,231.65,1853.2,Occidente,En línea
+2024-03-15,Mochila,Papelería,9,80.6,725.4,Sur,En línea
+2024-03-15,Termo acero,Hogar,3,260.71,782.13,Norte,En línea
+2024-03-17,Guantes gimnasio,Deportes,11,256.91,2826.01,Sur,Tienda física
+2024-03-17,Termo acero,Hogar,2,312.44,624.88,Norte,Tienda física
+2024-03-17,Cojín decorativo,Hogar,1,341.24,341.24,Occidente,En línea
+2024-03-21,Lámpara LED,Hogar,10,344.58,3445.8,Occidente,Tienda física
+2024-03-24,Cuerda para saltar,Deportes,2,210.03,420.06,Occidente,En línea
+2024-03-26,Botella deportiva,Deportes,7,184.48,1291.36,Norte,En línea
+2024-03-27,Cuaderno profesional,Papelería,2,110.41,220.82,Centro,En línea
+2024-03-28,Set de sartenes,Hogar,6,259.13,1554.78,Occidente,Tienda física
+2024-03-29,Cuaderno profesional,Papelería,3,74.93,224.79,Centro,En línea
+2024-03-29,Guantes gimnasio,Deportes,9,195.83,1762.47,Norte,Tienda física
+2024-03-30,Mochila,Papelería,5,84.95,424.75,Occidente,Tienda física
+2024-03-30,Set de sartenes,Hogar,4,325.88,1303.52,Sur,Tienda física
+2024-03-30,Tapete yoga,Deportes,3,186.38,559.14,Sur,Tienda física
+2024-03-30,Cargador USB-C,Electrónica,8,407.02,3256.16,Centro,Tienda física
+2024-03-31,Set de plumas,Papelería,4,80.57,322.28,Occidente,En línea
+2024-04-02,Bocina Bluetooth,Electrónica,9,537.24,4835.16,Sur,Tienda física
+2024-04-03,Mouse inalámbrico,Electrónica,1,451.56,451.56,Sur,En línea
+2024-04-03,Cargador USB-C,Electrónica,4,501.86,2007.44,Centro,En línea
+2024-04-03,Mochila,Papelería,8,73.26,586.08,Occidente,Tienda física
+2024-04-04,Botella deportiva,Deportes,10,242.05,2420.5,Norte,Tienda física
+2024-04-04,Lámpara LED,Hogar,10,257.17,2571.7,Sur,En línea
+2024-04-05,Set de sartenes,Hogar,1,239.45,239.45,Norte,Tienda física
+2024-04-06,Set de sartenes,Hogar,4,305.55,1222.2,Sur,Tienda física
+2024-04-06,Guantes gimnasio,Deportes,10,246.79,2467.9,Sur,En línea
+2024-04-08,Mouse inalámbrico,Electrónica,3,532.92,1598.76,Norte,En línea
+2024-04-09,Tapete yoga,Deportes,10,221.01,2210.1,Centro,Tienda física
+2024-04-10,Botella deportiva,Deportes,2,281.95,563.9,Sur,Tienda física
+2024-04-10,Cojín decorativo,Hogar,8,319.4,2555.2,Centro,En línea
+2024-04-12,Set de sartenes,Hogar,3,256.89,770.67,Occidente,Tienda física
+2024-04-14,Botella deportiva,Deportes,7,238.95,1672.65,Centro,Tienda física
+2024-04-14,Set de plumas,Papelería,7,81.84,572.88,Occidente,Tienda física
+2024-04-17,Cojín decorativo,Hogar,2,311.29,622.58,Sur,En línea
+2024-04-17,Mouse inalámbrico,Electrónica,6,422.3,2533.8,Norte,En línea
+2024-04-18,Agenda 2024,Papelería,1,79.42,79.42,Centro,Tienda física
+2024-04-19,Tapete yoga,Deportes,11,265.37,2919.07,Occidente,Tienda física
+2024-04-22,Botella deportiva,Deportes,3,218.59,655.77,Occidente,Tienda física
+2024-04-23,Cargador USB-C,Electrónica,1,418.01,418.01,Sur,En línea
+2024-04-23,Cojín decorativo,Hogar,7,340.75,2385.25,Occidente,Tienda física
+2024-04-24,Mouse inalámbrico,Electrónica,5,512.44,2562.2,Centro,Tienda física
+2024-04-26,Tapete yoga,Deportes,6,211.72,1270.32,Sur,Tienda física
+2024-04-27,Agenda 2024,Papelería,11,116.66,1283.26,Norte,En línea
+2024-04-28,Cojín decorativo,Hogar,6,299.76,1798.56,Norte,En línea
+2024-05-04,Agenda 2024,Papelería,3,100.2,300.6,Sur,En línea
+2024-05-05,Cuaderno profesional,Papelería,5,102.23,511.15,Centro,Tienda física
+2024-05-05,Cargador USB-C,Electrónica,6,383.89,2303.34,Centro,Tienda física
+2024-05-05,Audífonos,Electrónica,10,572.45,5724.5,Norte,En línea
+2024-05-06,Bocina Bluetooth,Electrónica,8,550.13,4401.04,Occidente,Tienda física
+2024-05-08,Cargador USB-C,Electrónica,10,490.49,4904.9,Centro,Tienda física
+2024-05-09,Audífonos,Electrónica,6,582.1,3492.6,Centro,En línea
+2024-05-10,Mochila,Papelería,6,80.21,481.26,Norte,En línea
+2024-05-12,Termo acero,Hogar,9,241.75,2175.75,Sur,En línea
+2024-05-15,Botella deportiva,Deportes,11,181.08,1991.88,Norte,Tienda física
+2024-05-16,Cargador USB-C,Electrónica,8,533.4,4267.2,Norte,En línea
+2024-05-16,Cargador USB-C,Electrónica,8,494.95,3959.6,Centro,Tienda física
+2024-05-16,Mochila,Papelería,11,103.72,1140.92,Centro,Tienda física
+2024-05-17,Termo acero,Hogar,5,224.52,1122.6,Norte,En línea
+2024-05-18,Bocina Bluetooth,Electrónica,2,541.97,1083.94,Norte,Tienda física
+2024-05-19,Cargador USB-C,Electrónica,10,462.27,4622.7,Centro,Tienda física
+2024-05-19,Tapete yoga,Deportes,6,211.34,1268.04,Norte,Tienda física
+2024-05-20,Lámpara LED,Hogar,7,336.59,2356.13,Sur,En línea
+2024-05-23,Cuaderno profesional,Papelería,8,78.59,628.72,Norte,En línea
+2024-05-24,Guantes gimnasio,Deportes,6,191.82,1150.92,Centro,En línea
+2024-05-24,Agenda 2024,Papelería,8,95.37,762.96,Norte,En línea
+2024-05-28,Lámpara LED,Hogar,4,314.58,1258.32,Centro,En línea
+2024-05-29,Set de sartenes,Hogar,5,269.19,1345.95,Occidente,Tienda física
+2024-05-29,Tapete yoga,Deportes,3,249.56,748.68,Norte,En línea
+2024-05-29,Mochila,Papelería,4,81.64,326.56,Norte,Tienda física
+2024-05-30,Mouse inalámbrico,Electrónica,4,581.11,2324.44,Centro,En línea
+2024-05-30,Botella deportiva,Deportes,2,183.81,367.62,Centro,En línea
+2024-05-31,Cojín decorativo,Hogar,11,304.76,3352.36,Sur,En línea
+2024-05-31,Set de plumas,Papelería,10,81.34,813.4,Centro,En línea
+2024-06-01,Set de sartenes,Hogar,11,322.05,3542.55,Norte,En línea
+2024-06-01,Botella deportiva,Deportes,1,262.11,262.11,Sur,Tienda física
+2024-06-02,Cuerda para saltar,Deportes,8,227.15,1817.2,Centro,En línea
+2024-06-02,Tapete yoga,Deportes,4,195.39,781.56,Norte,En línea
+2024-06-03,Agenda 2024,Papelería,10,80.83,808.3,Occidente,En línea
+2024-06-03,Bocina Bluetooth,Electrónica,1,439.19,439.19,Centro,Tienda física
+2024-06-03,Mouse inalámbrico,Electrónica,6,381.39,2288.34,Centro,Tienda física
+2024-06-03,Set de plumas,Papelería,7,113.67,795.69,Norte,Tienda física
+2024-06-05,Cuerda para saltar,Deportes,1,234.14,234.14,Centro,Tienda física
+2024-06-06,Agenda 2024,Papelería,10,76.39,763.9,Centro,Tienda física
+2024-06-07,Cuaderno profesional,Papelería,8,99.12,792.96,Sur,En línea
+2024-06-07,Mouse inalámbrico,Electrónica,3,538.34,1615.02,Centro,En línea
+2024-06-07,Cojín decorativo,Hogar,11,249.5,2744.5,Norte,En línea
+2024-06-08,Guantes gimnasio,Deportes,9,231.21,2080.89,Norte,Tienda física
+2024-06-09,Cargador USB-C,Electrónica,6,368.18,2209.08,Norte,Tienda física
+2024-06-09,Mochila,Papelería,7,105.28,736.96,Occidente,Tienda física
+2024-06-09,Tapete yoga,Deportes,11,204.84,2253.24,Sur,En línea
+2024-06-10,Audífonos,Electrónica,2,382.01,764.02,Centro,Tienda física
+2024-06-11,Lámpara LED,Hogar,6,224.31,1345.86,Sur,En línea
+2024-06-11,Cuaderno profesional,Papelería,4,96.89,387.56,Centro,En línea
+2024-06-11,Cargador USB-C,Electrónica,8,538.38,4307.04,Norte,Tienda física
+2024-06-12,Tapete yoga,Deportes,7,237.31,1661.17,Centro,Tienda física
+2024-06-12,Mouse inalámbrico,Electrónica,2,459.43,918.86,Centro,En línea
+2024-06-13,Tapete yoga,Deportes,7,234.77,1643.39,Norte,En línea
+2024-06-14,Tapete yoga,Deportes,8,198.43,1587.44,Centro,Tienda física
+2024-06-15,Mouse inalámbrico,Electrónica,10,523.46,5234.6,Centro,Tienda física
+2024-06-16,Mouse inalámbrico,Electrónica,1,456.63,456.63,Sur,Tienda física
+2024-06-17,Cuerda para saltar,Deportes,8,241.51,1932.08,Occidente,En línea
+2024-06-17,Cargador USB-C,Electrónica,5,467.34,2336.7,Norte,Tienda física
+2024-06-18,Guantes gimnasio,Deportes,11,226.39,2490.29,Sur,Tienda física
+2024-06-19,Set de sartenes,Hogar,5,332.15,1660.75,Sur,Tienda física
+2024-06-19,Cuerda para saltar,Deportes,8,240.35,1922.8,Norte,Tienda física
+2024-06-20,Bocina Bluetooth,Electrónica,6,370.84,2225.04,Norte,En línea
+2024-06-21,Tapete yoga,Deportes,3,246.33,738.99,Sur,En línea
+2024-06-21,Audífonos,Electrónica,2,368.73,737.46,Sur,En línea
+2024-06-24,Botella deportiva,Deportes,8,194.18,1553.44,Norte,En línea
+2024-06-24,Bocina Bluetooth,Electrónica,11,467.03,5137.33,Norte,En línea
+2024-06-25,Tapete yoga,Deportes,4,269.48,1077.92,Norte,Tienda física
+2024-06-25,Guantes gimnasio,Deportes,11,249.8,2747.8,Centro,En línea
+2024-06-26,Mochila,Papelería,7,105.2,736.4,Centro,Tienda física
+2024-06-28,Botella deportiva,Deportes,8,277.1,2216.8,Sur,En línea
+2024-06-28,Cojín decorativo,Hogar,3,278.8,836.4,Centro,Tienda física
+2024-06-28,Bocina Bluetooth,Electrónica,5,426.43,2132.15,Sur,Tienda física
+2024-06-29,Botella deportiva,Deportes,5,223.42,1117.1,Occidente,En línea
+2024-06-29,Lámpara LED,Hogar,5,344.96,1724.8,Centro,Tienda física
+2024-06-30,Cojín decorativo,Hogar,5,282.3,1411.5,Sur,Tienda física
+2024-07-02,Cuerda para saltar,Deportes,4,257.23,1028.92,Centro,Tienda física
+2024-07-02,Tapete yoga,Deportes,10,202.7,2027.0,Centro,Tienda física
+2024-07-03,Cojín decorativo,Hogar,5,294.75,1473.75,Sur,Tienda física
+2024-07-03,Agenda 2024,Papelería,4,82.32,329.28,Sur,En línea
+2024-07-04,Cargador USB-C,Electrónica,2,376.88,753.76,Occidente,En línea
+2024-07-04,Botella deportiva,Deportes,10,281.71,2817.1,Sur,Tienda física
+2024-07-06,Cuaderno profesional,Papelería,6,73.19,439.14,Norte,Tienda física
+2024-07-09,Cojín decorativo,Hogar,10,344.62,3446.2,Occidente,En línea
+2024-07-10,Cuaderno profesional,Papelería,11,108.32,1191.52,Centro,En línea
+2024-07-10,Set de sartenes,Hogar,7,259.77,1818.39,Sur,Tienda física
+2024-07-11,Lámpara LED,Hogar,6,299.97,1799.82,Centro,Tienda física
+2024-07-11,Bocina Bluetooth,Electrónica,6,518.05,3108.3,Occidente,Tienda física
+2024-07-12,Lámpara LED,Hogar,7,311.99,2183.93,Occidente,En línea
+2024-07-13,Bocina Bluetooth,Electrónica,8,411.44,3291.52,Centro,Tienda física
+2024-07-14,Botella deportiva,Deportes,4,269.4,1077.6,Centro,Tienda física
+2024-07-15,Cuerda para saltar,Deportes,5,179.76,898.8,Norte,Tienda física
+2024-07-15,Lámpara LED,Hogar,10,268.21,2682.1,Sur,En línea
+2024-07-16,Mouse inalámbrico,Electrónica,11,439.78,4837.58,Centro,Tienda física
+2024-07-16,Audífonos,Electrónica,8,507.38,4059.04,Norte,Tienda física
+2024-07-16,Guantes gimnasio,Deportes,2,191.07,382.14,Norte,Tienda física
+2024-07-18,Set de plumas,Papelería,3,87.53,262.59,Norte,En línea
+2024-07-19,Botella deportiva,Deportes,3,207.41,622.23,Centro,En línea
+2024-07-20,Cargador USB-C,Electrónica,10,561.69,5616.9,Norte,Tienda física
+2024-07-21,Mochila,Papelería,10,95.23,952.3,Centro,En línea
+2024-07-21,Mouse inalámbrico,Electrónica,6,368.46,2210.76,Norte,Tienda física
+2024-07-22,Cuerda para saltar,Deportes,1,210.67,210.67,Sur,Tienda física
+2024-07-22,Guantes gimnasio,Deportes,1,196.55,196.55,Sur,En línea
+2024-07-23,Audífonos,Electrónica,5,461.82,2309.1,Centro,Tienda física
+2024-07-23,Mochila,Papelería,5,110.98,554.9,Occidente,En línea
+2024-07-24,Mochila,Papelería,11,83.09,913.99,Centro,En línea
+2024-07-25,Cuerda para saltar,Deportes,4,233.32,933.28,Sur,En línea
+2024-07-25,Cuerda para saltar,Deportes,9,195.5,1759.5,Sur,Tienda física
+2024-07-27,Set de sartenes,Hogar,9,298.6,2687.4,Occidente,En línea
+2024-07-27,Lámpara LED,Hogar,1,236.59,236.59,Sur,Tienda física
+2024-07-28,Agenda 2024,Papelería,1,109.24,109.24,Sur,En línea
+2024-07-28,Set de plumas,Papelería,2,105.08,210.16,Centro,Tienda física
+2024-07-29,Audífonos,Electrónica,8,371.99,2975.92,Centro,En línea
+2024-07-30,Cargador USB-C,Electrónica,8,432.6,3460.8,Norte,En línea
+2024-08-02,Cuerda para saltar,Deportes,5,206.07,1030.35,Centro,En línea
+2024-08-03,Cuerda para saltar,Deportes,9,198.05,1782.45,Norte,En línea
+2024-08-04,Set de sartenes,Hogar,11,296.78,3264.58,Occidente,En línea
+2024-08-04,Cargador USB-C,Electrónica,10,446.34,4463.4,Centro,En línea
+2024-08-04,Cuerda para saltar,Deportes,9,267.08,2403.72,Norte,Tienda física
+2024-08-05,Mochila,Papelería,9,103.76,933.84,Occidente,En línea
+2024-08-06,Cargador USB-C,Electrónica,7,441.75,3092.25,Norte,Tienda física
+2024-08-06,Cojín decorativo,Hogar,11,309.91,3409.01,Norte,En línea
+2024-08-08,Cojín decorativo,Hogar,1,317.6,317.6,Centro,En línea
+2024-08-09,Cojín decorativo,Hogar,11,255.75,2813.25,Centro,Tienda física
+2024-08-10,Mouse inalámbrico,Electrónica,10,421.15,4211.5,Sur,En línea
+2024-08-10,Set de plumas,Papelería,6,114.86,689.16,Centro,En línea
+2024-08-11,Agenda 2024,Papelería,11,113.48,1248.28,Centro,En línea
+2024-08-11,Set de plumas,Papelería,2,100.49,200.98,Centro,En línea
+2024-08-12,Tapete yoga,Deportes,4,183.59,734.36,Norte,En línea
+2024-08-12,Tapete yoga,Deportes,6,275.15,1650.9,Centro,Tienda física
+2024-08-14,Cargador USB-C,Electrónica,7,523.93,3667.51,Norte,Tienda física
+2024-08-14,Termo acero,Hogar,11,331.96,3651.56,Norte,En línea
+2024-08-15,Set de plumas,Papelería,8,90.57,724.56,Norte,En línea
+2024-08-17,Cuaderno profesional,Papelería,6,92.3,553.8,Occidente,En línea
+2024-08-17,Set de sartenes,Hogar,5,234.13,1170.65,Sur,En línea
+2024-08-17,Cuerda para saltar,Deportes,7,275.01,1925.07,Occidente,En línea
+2024-08-20,Audífonos,Electrónica,11,565.48,6220.28,Norte,En línea
+2024-08-20,Set de sartenes,Hogar,5,343.3,1716.5,Centro,En línea
+2024-08-20,Guantes gimnasio,Deportes,9,274.15,2467.35,Centro,Tienda física
+2024-08-20,Termo acero,Hogar,4,358.34,1433.36,Norte,Tienda física
+2024-08-20,Termo acero,Hogar,7,333.01,2331.07,Centro,Tienda física
+2024-08-22,Cojín decorativo,Hogar,5,252.57,1262.85,Centro,Tienda física
+2024-08-23,Mouse inalámbrico,Electrónica,5,566.43,2832.15,Occidente,Tienda física
+2024-08-23,Mochila,Papelería,10,102.39,1023.9,Norte,En línea
+2024-08-23,Set de plumas,Papelería,6,113.43,680.58,Centro,Tienda física
+2024-08-24,Termo acero,Hogar,9,340.26,3062.34,Occidente,Tienda física
+2024-08-24,Audífonos,Electrónica,4,381.06,1524.24,Centro,Tienda física
+2024-08-24,Mochila,Papelería,1,106.8,106.8,Sur,Tienda física
+2024-08-24,Agenda 2024,Papelería,2,81.02,162.04,Centro,Tienda física
+2024-08-25,Mouse inalámbrico,Electrónica,1,499.88,499.88,Sur,Tienda física
+2024-08-25,Mochila,Papelería,10,111.17,1111.7,Centro,Tienda física
+2024-08-26,Cargador USB-C,Electrónica,10,508.59,5085.9,Centro,En línea
+2024-08-26,Cuerda para saltar,Deportes,9,282.84,2545.56,Norte,Tienda física
+2024-08-26,Lámpara LED,Hogar,6,352.92,2117.52,Norte,Tienda física
+2024-08-26,Lámpara LED,Hogar,1,228.26,228.26,Norte,Tienda física
+2024-08-27,Audífonos,Electrónica,10,540.2,5402.0,Centro,Tienda física
+2024-08-27,Cuaderno profesional,Papelería,5,106.65,533.25,Occidente,Tienda física
+2024-08-28,Tapete yoga,Deportes,9,261.92,2357.28,Norte,Tienda física
+2024-08-31,Set de sartenes,Hogar,2,229.18,458.36,Sur,Tienda física
+2024-08-31,Cojín decorativo,Hogar,3,301.97,905.91,Sur,Tienda física
+2024-09-02,Cargador USB-C,Electrónica,9,529.97,4769.73,Sur,Tienda física
+2024-09-03,Mochila,Papelería,6,105.89,635.34,Norte,En línea
+2024-09-05,Cojín decorativo,Hogar,1,248.1,248.1,Centro,En línea
+2024-09-05,Botella deportiva,Deportes,8,200.39,1603.12,Norte,Tienda física
+2024-09-05,Guantes gimnasio,Deportes,1,280.41,280.41,Centro,Tienda física
+2024-09-07,Mochila,Papelería,2,98.41,196.82,Occidente,En línea
+2024-09-07,Cuaderno profesional,Papelería,11,108.96,1198.56,Sur,En línea
+2024-09-08,Bocina Bluetooth,Electrónica,2,519.46,1038.92,Norte,En línea
+2024-09-09,Audífonos,Electrónica,5,450.85,2254.25,Centro,Tienda física
+2024-09-09,Botella deportiva,Deportes,4,225.26,901.04,Occidente,Tienda física
+2024-09-12,Guantes gimnasio,Deportes,3,219.17,657.51,Norte,En línea
+2024-09-13,Botella deportiva,Deportes,8,212.37,1698.96,Norte,En línea
+2024-09-14,Cuerda para saltar,Deportes,3,230.7,692.1,Norte,Tienda física
+2024-09-14,Set de plumas,Papelería,9,92.82,835.38,Sur,Tienda física
+2024-09-14,Bocina Bluetooth,Electrónica,10,390.49,3904.9,Sur,En línea
+2024-09-15,Set de sartenes,Hogar,7,312.85,2189.95,Norte,En línea
+2024-09-15,Mochila,Papelería,4,110.0,440.0,Occidente,Tienda física
+2024-09-15,Agenda 2024,Papelería,10,104.67,1046.7,Occidente,Tienda física
+2024-09-16,Cuerda para saltar,Deportes,9,237.31,2135.79,Norte,Tienda física
+2024-09-16,Bocina Bluetooth,Electrónica,11,505.4,5559.4,Norte,En línea
+2024-09-17,Agenda 2024,Papelería,7,113.3,793.1,Sur,Tienda física
+2024-09-17,Guantes gimnasio,Deportes,5,234.3,1171.5,Norte,Tienda física
+2024-09-18,Mouse inalámbrico,Electrónica,5,514.24,2571.2,Centro,Tienda física
+2024-09-19,Bocina Bluetooth,Electrónica,7,441.61,3091.27,Sur,Tienda física
+2024-09-19,Guantes gimnasio,Deportes,11,259.9,2858.9,Sur,En línea
+2024-09-21,Set de sartenes,Hogar,5,311.23,1556.15,Centro,Tienda física
+2024-09-21,Audífonos,Electrónica,1,448.98,448.98,Norte,Tienda física
+2024-09-22,Mochila,Papelería,1,101.18,101.18,Norte,En línea
+2024-09-22,Cuerda para saltar,Deportes,11,225.05,2475.55,Sur,Tienda física
+2024-09-23,Tapete yoga,Deportes,11,248.26,2730.86,Centro,Tienda física
+2024-09-23,Cuaderno profesional,Papelería,6,98.51,591.06,Occidente,Tienda física
+2024-09-23,Mouse inalámbrico,Electrónica,8,502.23,4017.84,Occidente,En línea
+2024-09-23,Agenda 2024,Papelería,10,95.95,959.5,Norte,En línea
+2024-09-23,Agenda 2024,Papelería,1,78.22,78.22,Sur,En línea
+2024-09-25,Mouse inalámbrico,Electrónica,9,492.19,4429.71,Norte,Tienda física
+2024-09-25,Cuaderno profesional,Papelería,11,90.53,995.83,Centro,En línea
+2024-09-25,Guantes gimnasio,Deportes,2,199.2,398.4,Occidente,En línea
+2024-09-26,Set de plumas,Papelería,5,99.63,498.15,Norte,Tienda física
+2024-09-26,Guantes gimnasio,Deportes,7,202.85,1419.95,Occidente,Tienda física
+2024-09-26,Cojín decorativo,Hogar,6,289.84,1739.04,Occidente,Tienda física
+2024-09-26,Cuaderno profesional,Papelería,7,111.85,782.95,Occidente,Tienda física
+2024-09-26,Lámpara LED,Hogar,1,258.91,258.91,Centro,Tienda física
+2024-09-28,Set de sartenes,Hogar,8,242.61,1940.88,Centro,Tienda física
+2024-09-29,Mouse inalámbrico,Electrónica,2,449.16,898.32,Norte,Tienda física
+2024-09-29,Lámpara LED,Hogar,7,319.57,2236.99,Sur,Tienda física
+2024-09-30,Set de plumas,Papelería,3,92.39,277.17,Norte,Tienda física
+2024-10-02,Termo acero,Hogar,5,329.57,1647.85,Centro,En línea
+2024-10-02,Bocina Bluetooth,Electrónica,6,577.59,3465.54,Sur,Tienda física
+2024-10-03,Cojín decorativo,Hogar,11,244.18,2685.98,Occidente,Tienda física
+2024-10-04,Set de sartenes,Hogar,10,246.26,2462.6,Norte,Tienda física
+2024-10-04,Mouse inalámbrico,Electrónica,9,403.11,3627.99,Sur,Tienda física
+2024-10-05,Guantes gimnasio,Deportes,10,197.3,1973.0,Occidente,En línea
+2024-10-05,Set de sartenes,Hogar,6,264.46,1586.76,Norte,Tienda física
+2024-10-05,Lámpara LED,Hogar,3,307.82,923.46,Centro,En línea
+2024-10-06,Set de plumas,Papelería,8,82.55,660.4,Sur,Tienda física
+2024-10-06,Set de plumas,Papelería,4,76.4,305.6,Sur,En línea
+2024-10-07,Set de plumas,Papelería,4,114.28,457.12,Centro,En línea
+2024-10-07,Mouse inalámbrico,Electrónica,8,491.12,3928.96,Occidente,Tienda física
+2024-10-07,Mochila,Papelería,10,112.4,1124.0,Occidente,Tienda física
+2024-10-08,Cojín decorativo,Hogar,10,307.01,3070.1,Norte,En línea
+2024-10-09,Lámpara LED,Hogar,10,247.03,2470.3,Centro,Tienda física
+2024-10-09,Cojín decorativo,Hogar,7,320.03,2240.21,Centro,Tienda física
+2024-10-10,Cargador USB-C,Electrónica,3,467.61,1402.83,Sur,En línea
+2024-10-11,Bocina Bluetooth,Electrónica,2,546.8,1093.6,Sur,En línea
+2024-10-11,Botella deportiva,Deportes,11,255.91,2815.01,Occidente,Tienda física
+2024-10-11,Termo acero,Hogar,5,283.78,1418.9,Norte,Tienda física
+2024-10-11,Cargador USB-C,Electrónica,3,577.35,1732.05,Centro,Tienda física
+2024-10-12,Cargador USB-C,Electrónica,3,542.25,1626.75,Norte,Tienda física
+2024-10-12,Botella deportiva,Deportes,1,183.21,183.21,Occidente,En línea
+2024-10-12,Cuaderno profesional,Papelería,3,90.38,271.14,Centro,Tienda física
+2024-10-13,Tapete yoga,Deportes,11,191.84,2110.24,Centro,En línea
+2024-10-15,Cuaderno profesional,Papelería,9,74.6,671.4,Centro,En línea
+2024-10-15,Tapete yoga,Deportes,6,223.58,1341.48,Sur,Tienda física
+2024-10-16,Botella deportiva,Deportes,6,217.57,1305.42,Norte,Tienda física
+2024-10-16,Set de sartenes,Hogar,5,227.67,1138.35,Norte,Tienda física
+2024-10-17,Agenda 2024,Papelería,6,79.84,479.04,Norte,Tienda física
+2024-10-18,Set de plumas,Papelería,2,95.7,191.4,Sur,En línea
+2024-10-19,Mouse inalámbrico,Electrónica,10,404.4,4044.0,Norte,Tienda física
+2024-10-20,Mouse inalámbrico,Electrónica,11,493.04,5423.44,Centro,Tienda física
+2024-10-20,Termo acero,Hogar,1,343.94,343.94,Centro,Tienda física
+2024-10-22,Bocina Bluetooth,Electrónica,4,384.0,1536.0,Sur,En línea
+2024-10-22,Tapete yoga,Deportes,2,179.73,359.46,Norte,Tienda física
+2024-10-23,Botella deportiva,Deportes,11,179.34,1972.74,Norte,Tienda física
+2024-10-24,Agenda 2024,Papelería,4,100.87,403.48,Centro,Tienda física
+2024-10-26,Mochila,Papelería,2,74.73,149.46,Centro,Tienda física
+2024-10-26,Audífonos,Electrónica,8,545.85,4366.8,Centro,En línea
+2024-10-26,Cargador USB-C,Electrónica,7,378.94,2652.58,Centro,En línea
+2024-10-27,Cargador USB-C,Electrónica,9,486.54,4378.86,Centro,Tienda física
+2024-10-27,Set de plumas,Papelería,2,95.6,191.2,Sur,En línea
+2024-10-28,Audífonos,Electrónica,7,482.45,3377.15,Centro,En línea
+2024-10-29,Guantes gimnasio,Deportes,9,185.11,1665.99,Occidente,En línea
+2024-10-29,Guantes gimnasio,Deportes,2,176.56,353.12,Sur,En línea
+2024-10-29,Audífonos,Electrónica,5,384.7,1923.5,Centro,En línea
+2024-10-30,Tapete yoga,Deportes,6,284.08,1704.48,Centro,En línea
+2024-10-30,Cuaderno profesional,Papelería,8,93.77,750.16,Sur,Tienda física
+2024-10-30,Guantes gimnasio,Deportes,4,270.84,1083.36,Centro,Tienda física
+2024-10-30,Set de sartenes,Hogar,5,307.64,1538.2,Occidente,Tienda física
+2024-10-31,Set de sartenes,Hogar,7,336.76,2357.32,Norte,Tienda física
+2024-10-31,Termo acero,Hogar,7,310.86,2176.02,Occidente,Tienda física
+2024-10-31,Tapete yoga,Deportes,7,214.3,1500.1,Sur,Tienda física
+2024-10-31,Tapete yoga,Deportes,8,270.89,2167.12,Centro,En línea
+2024-11-02,Cuerda para saltar,Deportes,6,212.27,1273.62,Sur,Tienda física
+2024-11-03,Guantes gimnasio,Deportes,4,247.81,991.24,Sur,En línea
+2024-11-03,Lámpara LED,Hogar,7,304.31,2130.17,Norte,En línea
+2024-11-05,Set de plumas,Papelería,1,82.95,82.95,Norte,Tienda física
+2024-11-05,Cuerda para saltar,Deportes,10,254.64,2546.4,Sur,En línea
+2024-11-05,Cuerda para saltar,Deportes,1,180.29,180.29,Centro,En línea
+2024-11-06,Audífonos,Electrónica,3,501.72,1505.16,Norte,Tienda física
+2024-11-06,Bocina Bluetooth,Electrónica,3,579.36,1738.08,Centro,En línea
+2024-11-11,Set de sartenes,Hogar,4,324.38,1297.52,Centro,En línea
+2024-11-11,Botella deportiva,Deportes,9,202.4,1821.6,Centro,En línea
+2024-11-12,Set de plumas,Papelería,3,94.3,282.9,Occidente,En línea
+2024-11-14,Cuaderno profesional,Papelería,7,104.52,731.64,Sur,Tienda física
+2024-11-15,Lámpara LED,Hogar,2,281.47,562.94,Centro,Tienda física
+2024-11-16,Lámpara LED,Hogar,10,310.29,3102.9,Centro,Tienda física
+2024-11-16,Cuaderno profesional,Papelería,11,79.13,870.43,Sur,En línea
+2024-11-17,Termo acero,Hogar,11,234.84,2583.24,Norte,Tienda física
+2024-11-18,Set de sartenes,Hogar,11,310.72,3417.92,Centro,Tienda física
+2024-11-19,Guantes gimnasio,Deportes,10,278.62,2786.2,Norte,En línea
+2024-11-19,Cuerda para saltar,Deportes,3,208.4,625.2,Occidente,Tienda física
+2024-11-19,Mochila,Papelería,5,81.42,407.1,Occidente,Tienda física
+2024-11-21,Cuaderno profesional,Papelería,11,96.3,1059.3,Sur,Tienda física
+2024-11-22,Bocina Bluetooth,Electrónica,6,583.25,3499.5,Sur,En línea
+2024-11-22,Tapete yoga,Deportes,6,199.64,1197.84,Norte,Tienda física
+2024-11-22,Cuaderno profesional,Papelería,11,100.0,1100.0,Norte,Tienda física
+2024-11-23,Audífonos,Electrónica,7,479.24,3354.68,Centro,En línea
+2024-11-23,Cargador USB-C,Electrónica,8,476.36,3810.88,Occidente,Tienda física
+2024-11-23,Guantes gimnasio,Deportes,1,265.2,265.2,Centro,Tienda física
+2024-11-24,Tapete yoga,Deportes,1,194.48,194.48,Sur,Tienda física
+2024-11-25,Agenda 2024,Papelería,9,113.19,1018.71,Sur,En línea
+2024-11-27,Cargador USB-C,Electrónica,4,368.04,1472.16,Occidente,En línea
+2024-11-28,Cuaderno profesional,Papelería,7,113.19,792.33,Centro,En línea
+2024-11-28,Lámpara LED,Hogar,2,271.15,542.3,Norte,En línea
+2024-11-28,Mochila,Papelería,6,97.42,584.52,Norte,Tienda física
+2024-11-28,Cargador USB-C,Electrónica,10,431.25,4312.5,Norte,En línea
+2024-11-29,Cuerda para saltar,Deportes,8,262.61,2100.88,Norte,Tienda física
+2024-11-29,Cuaderno profesional,Papelería,9,103.73,933.57,Occidente,Tienda física
+2024-11-30,Botella deportiva,Deportes,2,284.21,568.42,Norte,Tienda física
+2024-12-02,Set de plumas,Papelería,7,115.73,810.11,Sur,En línea
+2024-12-02,Set de plumas,Papelería,1,101.06,101.06,Sur,En línea
+2024-12-03,Termo acero,Hogar,10,253.55,2535.5,Centro,En línea
+2024-12-05,Guantes gimnasio,Deportes,4,238.33,953.32,Sur,Tienda física
+2024-12-06,Tapete yoga,Deportes,3,258.07,774.21,Centro,Tienda física
+2024-12-07,Guantes gimnasio,Deportes,10,270.82,2708.2,Centro,En línea
+2024-12-09,Set de sartenes,Hogar,10,251.54,2515.4,Centro,Tienda física
+2024-12-11,Cuerda para saltar,Deportes,4,227.54,910.16,Centro,En línea
+2024-12-13,Tapete yoga,Deportes,11,232.67,2559.37,Centro,Tienda física
+2024-12-14,Botella deportiva,Deportes,1,241.3,241.3,Norte,En línea
+2024-12-15,Set de sartenes,Hogar,3,251.94,755.82,Centro,Tienda física
+2024-12-16,Set de sartenes,Hogar,11,346.97,3816.67,Centro,Tienda física
+2024-12-16,Cojín decorativo,Hogar,10,326.67,3266.7,Centro,Tienda física
+2024-12-16,Lámpara LED,Hogar,3,266.68,800.04,Norte,Tienda física
+2024-12-16,Termo acero,Hogar,4,331.63,1326.52,Centro,Tienda física
+2024-12-16,Tapete yoga,Deportes,2,245.49,490.98,Centro,Tienda física
+2024-12-17,Set de plumas,Papelería,4,79.06,316.24,Centro,Tienda física
+2024-12-17,Termo acero,Hogar,5,251.34,1256.7,Norte,En línea
+2024-12-19,Termo acero,Hogar,5,261.09,1305.45,Norte,Tienda física
+2024-12-19,Lámpara LED,Hogar,7,255.47,1788.29,Norte,Tienda física
+2024-12-19,Agenda 2024,Papelería,10,116.96,1169.6,Occidente,En línea
+2024-12-19,Set de sartenes,Hogar,6,251.48,1508.88,Occidente,Tienda física
+2024-12-20,Agenda 2024,Papelería,2,99.62,199.24,Norte,Tienda física
+2024-12-20,Set de plumas,Papelería,7,99.91,699.37,Norte,Tienda física
+2024-12-20,Lámpara LED,Hogar,5,226.24,1131.2,Centro,Tienda física
+2024-12-21,Termo acero,Hogar,6,229.26,1375.56,Centro,Tienda física
+2024-12-21,Cargador USB-C,Electrónica,5,466.37,2331.85,Sur,En línea
+2024-12-21,Cojín decorativo,Hogar,1,306.02,306.02,Norte,Tienda física
+2024-12-21,Tapete yoga,Deportes,3,183.55,550.65,Sur,En línea
+2024-12-21,Lámpara LED,Hogar,1,331.83,331.83,Occidente,Tienda física
+2024-12-22,Mochila,Papelería,6,80.26,481.56,Norte,En línea
+2024-12-22,Cargador USB-C,Electrónica,2,577.31,1154.62,Sur,En línea
+2024-12-23,Cargador USB-C,Electrónica,2,450.7,901.4,Norte,Tienda física
+2024-12-23,Set de plumas,Papelería,11,100.14,1101.54,Sur,Tienda física
+2024-12-25,Set de sartenes,Hogar,11,334.79,3682.69,Centro,En línea
+2024-12-25,Cuerda para saltar,Deportes,4,257.55,1030.2,Occidente,En línea
+2024-12-26,Cuaderno profesional,Papelería,4,96.38,385.52,Centro,Tienda física
+2024-12-26,Set de plumas,Papelería,1,93.5,93.5,Norte,Tienda física
+2024-12-26,Guantes gimnasio,Deportes,1,268.95,268.95,Centro,Tienda física
+2024-12-28,Mouse inalámbrico,Electrónica,2,530.25,1060.5,Centro,Tienda física
+2024-12-28,Mouse inalámbrico,Electrónica,2,566.22,1132.44,Occidente,En línea
+2024-12-30,Guantes gimnasio,Deportes,1,241.92,241.92,Centro,Tienda física
+2024-12-31,Mochila,Papelería,4,78.04,312.16,Norte,Tienda física
+2024-12-31,Set de plumas,Papelería,8,85.4,683.2,Centro,En línea
+2024-12-31,Agenda 2024,Papelería,11,109.11,1200.21,Centro,En línea
