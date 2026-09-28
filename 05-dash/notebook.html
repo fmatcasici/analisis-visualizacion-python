@@ -444,9 +444,24 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido">Contenido</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">Práctica guiada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">🎯 Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido-teorico">🧠 Contenido teórico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-una-figura-a-una-aplicacion">1. De una figura a una aplicación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#los-dos-bloques-de-toda-app-dash">2. Los dos bloques de toda app Dash</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecutar-dash-en-google-colab">3. Ejecutar Dash en Google Colab</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-del-entorno">⚙️ Configuración del entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">🧭 Práctica guiada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-la-app-mas-simple-posible-layout-estatico">Paso 1 · La app más simple posible (layout estático)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-agregar-un-grafico-dcc-graph-con-datos-fijos">Paso 2 · Agregar un gráfico (<code class="docutils literal notranslate"><span class="pre">dcc.Graph</span></code>) con datos fijos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-interactividad-un-dropdown-que-controla-el-grafico">Paso 3 · Interactividad — un <code class="docutils literal notranslate"><span class="pre">Dropdown</span></code> que controla el gráfico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-dos-controles-y-dos-graficos-mini-dashboard">Paso 4 · Dos controles y dos gráficos (mini-dashboard)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-independiente">✍️ Práctica independiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-y-puente-al-siguiente-tema">🔎 Cierre y puente al siguiente tema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">📚 Recursos adicionales</a></li>
 </ul>
             </nav>
         </div>
@@ -463,36 +478,289 @@
 <h1>Tema 05 · Dash<a class="headerlink" href="#tema-05-dash" title="Link to this heading">#</a></h1>
 <p><strong>Duración:</strong> 60 min — <strong>Luis Basto Díaz</strong></p>
 <hr class="docutils" />
-<section id="objetivos">
-<h2>Objetivos<a class="headerlink" href="#objetivos" title="Link to this heading">#</a></h2>
+<section id="objetivos-de-aprendizaje">
+<h2>🎯 Objetivos de aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Link to this heading">#</a></h2>
+<p>Al finalizar este tema, el participante será capaz de:</p>
 <ul class="simple">
-<li><p>Objetivo 1</p></li>
-<li><p>Objetivo 2</p></li>
-<li><p>Objetivo 3</p></li>
+<li><p>Explicar el modelo de programación reactiva de Dash: <code class="docutils literal notranslate"><span class="pre">layout</span></code> (qué se ve) + <code class="docutils literal notranslate"><span class="pre">callbacks</span></code> (cómo reacciona).</p></li>
+<li><p>Construir el layout de una app con componentes de <code class="docutils literal notranslate"><span class="pre">dash.html</span></code> (estructura) y <code class="docutils literal notranslate"><span class="pre">dash.dcc</span></code> (controles interactivos y gráficos).</p></li>
+<li><p>Conectar controles (<code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code>, <code class="docutils literal notranslate"><span class="pre">dcc.Slider</span></code>) a gráficos de Plotly mediante <code class="docutils literal notranslate"><span class="pre">&#64;app.callback</span></code> con <code class="docutils literal notranslate"><span class="pre">Input</span></code>/<code class="docutils literal notranslate"><span class="pre">Output</span></code>.</p></li>
+<li><p>Ejecutar y visualizar una app Dash directamente dentro de Google Colab.</p></li>
+<li><p>Construir un mini-dashboard con dos gráficos que reaccionan a los mismos filtros.</p></li>
 </ul>
 </section>
-<section id="contenido">
-<h2>Contenido<a class="headerlink" href="#contenido" title="Link to this heading">#</a></h2>
-<p><em>Completa aquí la teoría y ejemplos de este tema.</em></p>
+<section id="contenido-teorico">
+<h2>🧠 Contenido teórico<a class="headerlink" href="#contenido-teorico" title="Link to this heading">#</a></h2>
+<section id="de-una-figura-a-una-aplicacion">
+<h3>1. De una figura a una aplicación<a class="headerlink" href="#de-una-figura-a-una-aplicacion" title="Link to this heading">#</a></h3>
+<p>Con Plotly (Tema 04) generamos <strong>una</strong> figura interactiva a la vez. <strong>Dash</strong> es un framework (también de Plotly) para construir <strong>aplicaciones web completas</strong> de análisis de datos usando solo Python — sin escribir HTML, CSS ni JavaScript. Es el equivalente en Python a herramientas como Shiny (R) o Streamlit.</p>
+<p>Un caso típico: quieres que la persona que usa tu análisis pueda <strong>elegir</strong> un país, un rango de fechas o una categoría con un menú desplegable, y que el gráfico se actualice automáticamente — sin volver a ejecutar código.</p>
+</section>
+<section id="los-dos-bloques-de-toda-app-dash">
+<h3>2. Los dos bloques de toda app Dash<a class="headerlink" href="#los-dos-bloques-de-toda-app-dash" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">app.layout</span></code></strong>: define <strong>qué se ve</strong> en la página — una jerarquía de componentes, igual que HTML pero escrito en Python:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dash.html</span></code> (<code class="docutils literal notranslate"><span class="pre">html.H1</span></code>, <code class="docutils literal notranslate"><span class="pre">html.Div</span></code>, <code class="docutils literal notranslate"><span class="pre">html.P</span></code>, …): estructura visual, equivalente a etiquetas HTML.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dash.dcc</span></code> (“Dash Core Components”): controles interactivos (<code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code>, <code class="docutils literal notranslate"><span class="pre">dcc.Slider</span></code>, <code class="docutils literal notranslate"><span class="pre">dcc.RangeSlider</span></code>, <code class="docutils literal notranslate"><span class="pre">dcc.DatePickerRange</span></code>) y el componente <code class="docutils literal notranslate"><span class="pre">dcc.Graph</span></code> para mostrar figuras de Plotly.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&#64;app.callback</span></code></strong>: define <strong>cómo reacciona</strong> la app — una función de Python que se ejecuta automáticamente cada vez que cambia un <code class="docutils literal notranslate"><span class="pre">Input</span></code>, y actualiza uno o más <code class="docutils literal notranslate"><span class="pre">Output</span></code>.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s2">"mi-grafico"</span><span class="p">,</span> <span class="s2">"figure"</span><span class="p">),</span>   <span class="c1"># QUÉ se actualiza (componente "mi-grafico", propiedad "figure")</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s2">"mi-dropdown"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">),</span>    <span class="c1"># QUÉ dispara la actualización (componente "mi-dropdown", propiedad "value")</span>
+<span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">actualizar_grafico</span><span class="p">(</span><span class="n">valor_seleccionado</span><span class="p">):</span>
+    <span class="c1"># ... construir y devolver una figura de Plotly según valor_seleccionado</span>
+    <span class="k">return</span> <span class="n">figura</span>
+</pre></div>
+</div>
+<p>Cada componente tiene un <code class="docutils literal notranslate"><span class="pre">id</span></code> único — así es como el callback sabe con qué componente conectarse. Este patrón (<code class="docutils literal notranslate"><span class="pre">Input</span></code> dispara → función procesa → <code class="docutils literal notranslate"><span class="pre">Output</span></code> actualiza) es la esencia de la <strong>programación reactiva</strong>.</p>
+</section>
+<section id="ejecutar-dash-en-google-colab">
+<h3>3. Ejecutar Dash en Google Colab<a class="headerlink" href="#ejecutar-dash-en-google-colab" title="Link to this heading">#</a></h3>
+<p>Desde la versión 2.11, Dash detecta automáticamente si se ejecuta dentro de un notebook (Jupyter/Colab) y permite mostrar la app <strong>dentro</strong> de la notebook con:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">jupyter_mode</span><span class="o">=</span><span class="s2">"inline"</span><span class="p">)</span>   <span class="c1"># la app aparece incrustada debajo de la celda</span>
+<span class="c1"># también: jupyter_mode="external" (abre en una pestaña/URL aparte)</span>
+</pre></div>
+</div>
+<p><strong>Importante para la sesión en vivo:</strong> solo se puede tener un servidor activo por puerto a la vez. Antes de ejecutar el siguiente ejemplo, detén la celda anterior (botón ■) o usa un puerto distinto (<code class="docutils literal notranslate"><span class="pre">port=8051</span></code>, <code class="docutils literal notranslate"><span class="pre">8052</span></code>, …), como haremos en esta notebook.</p>
+</section>
+</section>
+<section id="configuracion-del-entorno">
+<h2>⚙️ Configuración del entorno<a class="headerlink" href="#configuracion-del-entorno" title="Link to this heading">#</a></h2>
+<p>Cargaremos <code class="docutils literal notranslate"><span class="pre">tema05_energia_renovable.csv</span></code>: capacidad instalada y producción (sintéticas) de energías renovables por país, fuente de energía y año (2015-2024).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instala/importa librerías necesarias para este tema</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># === Carga del dataset ===</span>
+<span class="c1"># Opción 1 (recomendada una vez publicado el repositorio del taller):</span>
+<span class="c1"># reemplaza &lt;usuario&gt;/&lt;repositorio&gt; por la ruta real de tu repo de GitHub</span>
+<span class="c1"># y ejecuta esta celda. Usa el botón "Raw" de GitHub para obtener la URL.</span>
+<span class="n">GITHUB_RAW_URL</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"https://raw.githubusercontent.com/fmatcasici/analisis-visualizacion-python/main/05-dash/tema05_energia_renovable.csv"</span>
+<span class="p">)</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">GITHUB_RAW_URL</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Datos cargados desde GitHub ✅  -&gt;"</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No se pudo leer desde GitHub todavía (repo no configurado o sin internet)."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Sube manualmente el archivo 'tema05_energia_renovable.csv' cuando se te solicite."</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span>
+        <span class="n">subido</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>  <span class="c1"># selecciona tema05_energia_renovable.csv</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">subido</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="c1"># Fuera de Colab (por ejemplo, ejecución local de prueba):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"tema05_energia_renovable.csv"</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="practica-guiada">
-<h2>Práctica guiada<a class="headerlink" href="#practica-guiada" title="Link to this heading">#</a></h2>
-<p><em>Instrucciones de la actividad para los asistentes.</em></p>
+<h2>🧭 Práctica guiada<a class="headerlink" href="#practica-guiada" title="Link to this heading">#</a></h2>
+<p>Instala Dash si aún no está disponible en el entorno (en Colab normalmente ya viene preinstalado; si no, descomenta la siguiente línea).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tu código aquí</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install dash -q</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dash</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dash</span><span class="p">,</span> <span class="n">dcc</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
 </pre></div>
 </div>
 </div>
 </div>
+<section id="paso-1-la-app-mas-simple-posible-layout-estatico">
+<h3>Paso 1 · La app más simple posible (layout estático)<a class="headerlink" href="#paso-1-la-app-mas-simple-posible-layout-estatico" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app1</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">app1</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">H1</span><span class="p">(</span><span class="s2">"Mi primera app Dash"</span><span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">P</span><span class="p">(</span><span class="s2">"Este texto viene de un componente html.P — sin necesidad de escribir HTML."</span><span class="p">),</span>
+<span class="p">])</span>
+
+<span class="c1"># En Colab, ejecuta esta celda y la app aparecerá incrustada debajo.</span>
+<span class="n">app1</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">jupyter_mode</span><span class="o">=</span><span class="s2">"inline"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8050</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-2-agregar-un-grafico-dcc-graph-con-datos-fijos">
+<h3>Paso 2 · Agregar un gráfico (<code class="docutils literal notranslate"><span class="pre">dcc.Graph</span></code>) con datos fijos<a class="headerlink" href="#paso-2-agregar-un-grafico-dcc-graph-con-datos-fijos" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">produccion_2024</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"anio"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2024</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"fuente_energia"</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">"produccion_gwh"</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">figura_inicial</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">produccion_2024</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"fuente_energia"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"produccion_gwh"</span><span class="p">,</span>
+                         <span class="n">title</span><span class="o">=</span><span class="s2">"Producción de energía renovable 2024 (todos los países)"</span><span class="p">)</span>
+
+<span class="n">app2</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app2</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">H1</span><span class="p">(</span><span class="s2">"Producción de energía renovable"</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"grafico-produccion"</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">figura_inicial</span><span class="p">),</span>
+<span class="p">])</span>
+
+<span class="n">app2</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">jupyter_mode</span><span class="o">=</span><span class="s2">"inline"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8051</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-3-interactividad-un-dropdown-que-controla-el-grafico">
+<h3>Paso 3 · Interactividad — un <code class="docutils literal notranslate"><span class="pre">Dropdown</span></code> que controla el gráfico<a class="headerlink" href="#paso-3-interactividad-un-dropdown-que-controla-el-grafico" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">paises_disponibles</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"pais"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+
+<span class="n">app3</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">app3</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">H1</span><span class="p">(</span><span class="s2">"Producción de energía renovable por país"</span><span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="s2">"Selecciona un país:"</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+        <span class="nb">id</span><span class="o">=</span><span class="s2">"selector-pais"</span><span class="p">,</span>
+        <span class="n">options</span><span class="o">=</span><span class="p">[{</span><span class="s2">"label"</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="n">p</span><span class="p">}</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">paises_disponibles</span><span class="p">],</span>
+        <span class="n">value</span><span class="o">=</span><span class="s2">"México"</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"grafico-produccion-pais"</span><span class="p">),</span>
+<span class="p">])</span>
+
+<span class="nd">@app3</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s2">"grafico-produccion-pais"</span><span class="p">,</span> <span class="s2">"figure"</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s2">"selector-pais"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">actualizar_grafico_pais</span><span class="p">(</span><span class="n">pais_seleccionado</span><span class="p">):</span>
+    <span class="n">datos</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"pais"</span><span class="p">]</span> <span class="o">==</span> <span class="n">pais_seleccionado</span><span class="p">]</span>
+    <span class="n">resumen</span> <span class="o">=</span> <span class="n">datos</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"anio"</span><span class="p">,</span> <span class="s2">"fuente_energia"</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">"produccion_gwh"</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">resumen</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"anio"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"produccion_gwh"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"fuente_energia"</span><span class="p">,</span>
+                  <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Producción de energía renovable — </span><span class="si">{</span><span class="n">pais_seleccionado</span><span class="si">}</span><span class="s2"> (2015-2024)"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span>
+
+<span class="n">app3</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">jupyter_mode</span><span class="o">=</span><span class="s2">"inline"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8052</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-4-dos-controles-y-dos-graficos-mini-dashboard">
+<h3>Paso 4 · Dos controles y dos gráficos (mini-dashboard)<a class="headerlink" href="#paso-4-dos-controles-y-dos-graficos-mini-dashboard" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fuentes_disponibles</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"fuente_energia"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+
+<span class="n">app4</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">app4</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">H1</span><span class="p">(</span><span class="s2">"Panel de energía renovable"</span><span class="p">),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+        <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+            <span class="n">html</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="s2">"País:"</span><span class="p">),</span>
+            <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+                <span class="nb">id</span><span class="o">=</span><span class="s2">"dd-pais"</span><span class="p">,</span>
+                <span class="n">options</span><span class="o">=</span><span class="p">[{</span><span class="s2">"label"</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="n">p</span><span class="p">}</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">paises_disponibles</span><span class="p">],</span>
+                <span class="n">value</span><span class="o">=</span><span class="s2">"México"</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">],</span> <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s2">"width"</span><span class="p">:</span> <span class="s2">"45%"</span><span class="p">,</span> <span class="s2">"display"</span><span class="p">:</span> <span class="s2">"inline-block"</span><span class="p">}),</span>
+
+        <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+            <span class="n">html</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="s2">"Rango de años:"</span><span class="p">),</span>
+            <span class="n">dcc</span><span class="o">.</span><span class="n">RangeSlider</span><span class="p">(</span>
+                <span class="nb">id</span><span class="o">=</span><span class="s2">"slider-anios"</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">2015</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">2024</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">2024</span><span class="p">],</span>
+                <span class="n">marks</span><span class="o">=</span><span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2025</span><span class="p">,</span> <span class="mi">3</span><span class="p">)},</span>
+            <span class="p">),</span>
+        <span class="p">],</span> <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s2">"width"</span><span class="p">:</span> <span class="s2">"50%"</span><span class="p">,</span> <span class="s2">"display"</span><span class="p">:</span> <span class="s2">"inline-block"</span><span class="p">,</span> <span class="s2">"marginLeft"</span><span class="p">:</span> <span class="s2">"4%"</span><span class="p">}),</span>
+    <span class="p">]),</span>
+
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"grafico-linea"</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"grafico-pastel"</span><span class="p">),</span>
+<span class="p">])</span>
+
+<span class="nd">@app4</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s2">"grafico-linea"</span><span class="p">,</span> <span class="s2">"figure"</span><span class="p">),</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s2">"grafico-pastel"</span><span class="p">,</span> <span class="s2">"figure"</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s2">"dd-pais"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s2">"slider-anios"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">actualizar_dashboard</span><span class="p">(</span><span class="n">pais</span><span class="p">,</span> <span class="n">rango_anios</span><span class="p">):</span>
+    <span class="n">datos</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">"pais"</span><span class="p">]</span> <span class="o">==</span> <span class="n">pais</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"anio"</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">rango_anios</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rango_anios</span><span class="p">[</span><span class="mi">1</span><span class="p">]))]</span>
+
+    <span class="n">resumen_anual</span> <span class="o">=</span> <span class="n">datos</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"anio"</span><span class="p">,</span> <span class="s2">"fuente_energia"</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">"produccion_gwh"</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">fig_linea</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">resumen_anual</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"anio"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"produccion_gwh"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"fuente_energia"</span><span class="p">,</span>
+                         <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Producción por fuente — </span><span class="si">{</span><span class="n">pais</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="n">resumen_fuente</span> <span class="o">=</span> <span class="n">datos</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"fuente_energia"</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">"produccion_gwh"</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">fig_pastel</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">resumen_fuente</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">"fuente_energia"</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">"produccion_gwh"</span><span class="p">,</span>
+                         <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Participación por fuente — </span><span class="si">{</span><span class="n">pais</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">rango_anios</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">rango_anios</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig_linea</span><span class="p">,</span> <span class="n">fig_pastel</span>
+
+<span class="n">app4</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">jupyter_mode</span><span class="o">=</span><span class="s2">"inline"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8053</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="practica-independiente">
+<h2>✍️ Práctica independiente<a class="headerlink" href="#practica-independiente" title="Link to this heading">#</a></h2>
+<p>Parte del código del <strong>Paso 4</strong> (<code class="docutils literal notranslate"><span class="pre">app4</span></code>). Usa un puerto nuevo (por ejemplo <code class="docutils literal notranslate"><span class="pre">8060</span></code>) para cada ejercicio.</p>
+<p><strong>Ejercicio 1.</strong> Agrega un segundo <code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code> (<code class="docutils literal notranslate"><span class="pre">id='dd-fuente'</span></code>, con opción <code class="docutils literal notranslate"><span class="pre">'Todas'</span></code> + cada fuente de <code class="docutils literal notranslate"><span class="pre">fuentes_disponibles</span></code>) que filtre adicionalmente por <code class="docutils literal notranslate"><span class="pre">fuente_energia</span></code> cuando no sea <code class="docutils literal notranslate"><span class="pre">'Todas'</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí (crea una nueva app, p. ej. app_ej1, en el puerto 8060)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 2.</strong> Agrega una tercera salida: una tarjeta de texto (<code class="docutils literal notranslate"><span class="pre">html.Div</span></code> o <code class="docutils literal notranslate"><span class="pre">html.H3</span></code>) que muestre la <strong>capacidad instalada total</strong> (<code class="docutils literal notranslate"><span class="pre">capacidad_instalada_mw</span></code>) para el país y rango de años seleccionados. Pista: agrega un <code class="docutils literal notranslate"><span class="pre">Output</span></code> adicional y un componente con <code class="docutils literal notranslate"><span class="pre">id='texto-capacidad'</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí (usa el puerto 8061)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 3.</strong> Cambia el gráfico de línea para que sea un <code class="docutils literal notranslate"><span class="pre">px.area</span></code> (área apilada) en lugar de <code class="docutils literal notranslate"><span class="pre">px.line</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí (usa el puerto 8062)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 4 (reto).</strong> Agrega un <code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code> con <code class="docutils literal notranslate"><span class="pre">multi=True</span></code> para seleccionar <strong>varios países a la vez</strong>, y actualiza el gráfico de línea para comparar la producción total (suma de fuentes) entre los países seleccionados.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí (usa el puerto 8063)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cierre-y-puente-al-siguiente-tema">
+<h2>🔎 Cierre y puente al siguiente tema<a class="headerlink" href="#cierre-y-puente-al-siguiente-tema" title="Link to this heading">#</a></h2>
+<p>Con Dash construimos aplicaciones web completas, pero eso implica manejar un servidor, callbacks y más código. A veces solo necesitamos un gráfico interactivo <strong>de alto rendimiento</strong> (miles o millones de puntos) sin montar una aplicación completa — ahí es donde brilla <strong>Bokeh</strong> (Tema 06), especialmente para series de tiempo financieras o científicas.</p>
+</section>
+<section id="recursos-adicionales">
+<h2>📚 Recursos adicionales<a class="headerlink" href="#recursos-adicionales" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://dash.plotly.com/">Documentación oficial de Dash</a></p></li>
+<li><p><a class="reference external" href="https://dash.plotly.com/layout">Tutorial oficial: Layout</a></p></li>
+<li><p><a class="reference external" href="https://dash.plotly.com/basic-callbacks">Tutorial oficial: Callbacks básicos</a></p></li>
+<li><p><a class="reference external" href="https://dash.plotly.com/dash-in-jupyter">Dash en Jupyter/Colab (guía oficial)</a></p></li>
+<li><p><a class="reference external" href="https://dash.gallery/Portal/">Galería de apps Dash (Dash Gallery)</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -562,9 +830,24 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido">Contenido</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">Práctica guiada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">🎯 Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido-teorico">🧠 Contenido teórico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-una-figura-a-una-aplicacion">1. De una figura a una aplicación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#los-dos-bloques-de-toda-app-dash">2. Los dos bloques de toda app Dash</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecutar-dash-en-google-colab">3. Ejecutar Dash en Google Colab</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-del-entorno">⚙️ Configuración del entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">🧭 Práctica guiada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-la-app-mas-simple-posible-layout-estatico">Paso 1 · La app más simple posible (layout estático)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-agregar-un-grafico-dcc-graph-con-datos-fijos">Paso 2 · Agregar un gráfico (<code class="docutils literal notranslate"><span class="pre">dcc.Graph</span></code>) con datos fijos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-interactividad-un-dropdown-que-controla-el-grafico">Paso 3 · Interactividad — un <code class="docutils literal notranslate"><span class="pre">Dropdown</span></code> que controla el gráfico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-dos-controles-y-dos-graficos-mini-dashboard">Paso 4 · Dos controles y dos gráficos (mini-dashboard)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-independiente">✍️ Práctica independiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-y-puente-al-siguiente-tema">🔎 Cierre y puente al siguiente tema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">📚 Recursos adicionales</a></li>
 </ul>
   </nav></div>
 
