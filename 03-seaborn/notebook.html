@@ -445,8 +445,25 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido">Contenido</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">Práctica guiada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido">Contenido</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-seaborn">1. ¿Qué es Seaborn?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#familias-de-graficos-en-seaborn">2. Familias de gráficos en Seaborn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-parametro-hue-y-col-row">3. El parámetro <code class="docutils literal notranslate"><span class="pre">hue</span></code> (y <code class="docutils literal notranslate"><span class="pre">col</span></code>/<code class="docutils literal notranslate"><span class="pre">row</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estetica-y-temas">4. Estética y temas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-del-entorno">⚙️ Configuración del entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">Práctica guiada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-boxplot-distribucion-de-salario-por-puesto">Paso 1 · Boxplot — distribución de salario por puesto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-violinplot-con-hue-comparar-ademas-por-modalidad-de-trabajo">Paso 2 · Violinplot con <code class="docutils literal notranslate"><span class="pre">hue</span></code> — comparar además por modalidad de trabajo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-relacion-entre-variables-numericas-con-regresion">Paso 3 · Relación entre variables numéricas con regresión</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-mapa-de-calor-de-correlaciones">Paso 4 · Mapa de calor de correlaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-catplot-con-col-pequenos-multiplos-por-pais">Paso 5 · <code class="docutils literal notranslate"><span class="pre">catplot</span></code> con <code class="docutils literal notranslate"><span class="pre">col=</span></code> — pequeños múltiplos por país</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-independiente">✍️ Práctica independiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-y-puente-al-siguiente-tema">🔎 Cierre y puente al siguiente tema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">📚 Recursos adicionales</a></li>
 </ul>
             </nav>
         </div>
@@ -465,19 +482,100 @@
 <hr class="docutils" />
 <section id="objetivos">
 <h2>Objetivos<a class="headerlink" href="#objetivos" title="Link to this heading">#</a></h2>
+<p>Al finalizar este tema, el participante será capaz de:</p>
 <ul class="simple">
-<li><p>Objetivo 1</p></li>
-<li><p>Objetivo 2</p></li>
-<li><p>Objetivo 3</p></li>
+<li><p>Explicar la relación entre Seaborn y Matplotlib, y cuándo conviene usar cada uno.</p></li>
+<li><p>Construir gráficos estadísticos (boxplot, violinplot, histplot, scatterplot con regresión) directamente desde un DataFrame.</p></li>
+<li><p>Usar <code class="docutils literal notranslate"><span class="pre">hue</span></code>, <code class="docutils literal notranslate"><span class="pre">col</span></code>/<code class="docutils literal notranslate"><span class="pre">row</span></code> para comparar subgrupos sin escribir bucles manuales.</p></li>
+<li><p>Construir un mapa de calor de correlaciones y un <code class="docutils literal notranslate"><span class="pre">pairplot</span></code> para exploración multivariada.</p></li>
+<li><p>Aplicar temas y paletas de color consistentes a un conjunto de gráficos.</p></li>
 </ul>
 </section>
 <section id="contenido">
 <h2>Contenido<a class="headerlink" href="#contenido" title="Link to this heading">#</a></h2>
-<p><em>Completa aquí la teoría y ejemplos de este tema.</em></p>
+<section id="que-es-seaborn">
+<h3>1. ¿Qué es Seaborn?<a class="headerlink" href="#que-es-seaborn" title="Link to this heading">#</a></h3>
+<p><strong>Seaborn</strong> es una librería construida <strong>sobre Matplotlib</strong>, orientada a la visualización <strong>estadística</strong>. Su API está diseñada para trabajar directamente con DataFrames “ordenados” (<em>tidy data</em>: una fila por observación, una columna por variable), lo que reduce drásticamente la cantidad de código necesaria frente a Matplotlib puro.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Matplotlib</p></th>
+<th class="head"><p>Seaborn</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Nivel de abstracción</p></td>
+<td><p>Bajo (control total, más código)</p></td>
+<td><p>Alto (menos código, defaults estadísticos)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Entrada típica</p></td>
+<td><p>Arreglos <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code></p></td>
+<td><p>DataFrame + nombres de columnas</p></td>
+</tr>
+<tr class="row-even"><td><p>Fortaleza</p></td>
+<td><p>Personalización pixel a pixel</p></td>
+<td><p>Comparar grupos, distribuciones, correlaciones</p></td>
+</tr>
+<tr class="row-odd"><td><p>Relación</p></td>
+<td><p>Base</p></td>
+<td><p>Construida sobre Matplotlib (puedes seguir usando <code class="docutils literal notranslate"><span class="pre">ax.set_title()</span></code>, etc.)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Regla práctica para el taller:</strong> si la pregunta es <em>“¿cómo se compara la distribución de X entre grupos?”</em> o <em>“¿cómo se relacionan estas variables numéricas?”</em>, Seaborn casi siempre lo resuelve en una línea.</p>
+</section>
+<section id="familias-de-graficos-en-seaborn">
+<h3>2. Familias de gráficos en Seaborn<a class="headerlink" href="#familias-de-graficos-en-seaborn" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Relacionales</strong> (<code class="docutils literal notranslate"><span class="pre">scatterplot</span></code>, <code class="docutils literal notranslate"><span class="pre">lineplot</span></code>): relación entre dos variables numéricas, opcionalmente con líneas de tendencia (<code class="docutils literal notranslate"><span class="pre">regplot</span></code>, <code class="docutils literal notranslate"><span class="pre">lmplot</span></code>).</p></li>
+<li><p><strong>Distribución</strong> (<code class="docutils literal notranslate"><span class="pre">histplot</span></code>, <code class="docutils literal notranslate"><span class="pre">kdeplot</span></code>, <code class="docutils literal notranslate"><span class="pre">boxplot</span></code>, <code class="docutils literal notranslate"><span class="pre">violinplot</span></code>): cómo se distribuye una variable, y cómo cambia entre categorías (<code class="docutils literal notranslate"><span class="pre">hue</span></code>).</p></li>
+<li><p><strong>Categóricos</strong> (<code class="docutils literal notranslate"><span class="pre">barplot</span></code>, <code class="docutils literal notranslate"><span class="pre">countplot</span></code>, <code class="docutils literal notranslate"><span class="pre">stripplot</span></code>): comparaciones entre categorías con intervalos de confianza calculados automáticamente.</p></li>
+<li><p><strong>Matriciales</strong> (<code class="docutils literal notranslate"><span class="pre">heatmap</span></code>): matrices como correlaciones.</p></li>
+<li><p><strong>Multigráfico</strong> (<code class="docutils literal notranslate"><span class="pre">pairplot</span></code>, <code class="docutils literal notranslate"><span class="pre">FacetGrid</span></code>, <code class="docutils literal notranslate"><span class="pre">catplot</span></code> con <code class="docutils literal notranslate"><span class="pre">col=</span></code>): “pequeños múltiplos” — una cuadrícula de gráficos, uno por subgrupo, generada automáticamente.</p></li>
+</ul>
+</section>
+<section id="el-parametro-hue-y-col-row">
+<h3>3. El parámetro <code class="docutils literal notranslate"><span class="pre">hue</span></code> (y <code class="docutils literal notranslate"><span class="pre">col</span></code>/<code class="docutils literal notranslate"><span class="pre">row</span></code>)<a class="headerlink" href="#el-parametro-hue-y-col-row" title="Link to this heading">#</a></h3>
+<p>El superpoder de Seaborn es el parámetro <code class="docutils literal notranslate"><span class="pre">hue</span></code>: colorea automáticamente por una tercera variable categórica, calculando leyenda, paleta y (cuando aplica) estadísticos por grupo sin bucles manuales. <code class="docutils literal notranslate"><span class="pre">col=</span></code> / <code class="docutils literal notranslate"><span class="pre">row=</span></code> hacen lo mismo pero generando subgráficos separados en una cuadrícula (<em>faceting</em>).</p>
+</section>
+<section id="estetica-y-temas">
+<h3>4. Estética y temas<a class="headerlink" href="#estetica-y-temas" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">sns.set_theme(style=...,</span> <span class="pre">palette=...)</span></code> cambia la apariencia de <strong>todos</strong> los gráficos posteriores (incluso los de Matplotlib) de forma consistente — muy útil para mantener un estilo uniforme en un reporte o repositorio.</p>
+</section>
+</section>
+<section id="configuracion-del-entorno">
+<h2>⚙️ Configuración del entorno<a class="headerlink" href="#configuracion-del-entorno" title="Link to this heading">#</a></h2>
+<p>Cargaremos <code class="docutils literal notranslate"><span class="pre">tema03_salarios_tecnologia.csv</span></code>: salarios sintéticos del sector tecnológico por puesto, experiencia, país, género, nivel educativo y modalidad de trabajo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instala/importa librerías necesarias para este tema</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># === Carga del dataset ===</span>
+<span class="c1"># Opción 1 (recomendada una vez publicado el repositorio del taller):</span>
+<span class="c1"># reemplaza &lt;usuario&gt;/&lt;repositorio&gt; por la ruta real de tu repo de GitHub</span>
+<span class="c1"># y ejecuta esta celda. Usa el botón "Raw" de GitHub para obtener la URL.</span>
+<span class="n">GITHUB_RAW_URL</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"https://raw.githubusercontent.com/fmatcasici/analisis-visualizacion-python/main/"</span>
+    <span class="s2">"datasets/tema03_salarios_tecnologia.csv"</span>
+<span class="p">)</span>
+<span class="c1"># (https://colab.research.google.com/github/fmatcasici/analisis-visualizacion-python/blob/main/03-seaborn/notebook.ipynb)</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">GITHUB_RAW_URL</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Datos cargados desde GitHub ✅  -&gt;"</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No se pudo leer desde GitHub todavía (repo no configurado o sin internet)."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Sube manualmente el archivo 'tema03_salarios_tecnologia.csv' cuando se te solicite."</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span>
+        <span class="n">subido</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>  <span class="c1"># selecciona tema03_salarios_tecnologia.csv</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">subido</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="c1"># Fuera de Colab (por ejemplo, ejecución local de prueba):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"tema03_salarios_tecnologia.csv"</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -488,11 +586,158 @@
 <p><em>Instrucciones de la actividad para los asistentes.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tu código aquí</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"whitegrid"</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">"viridis"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<section id="paso-1-boxplot-distribucion-de-salario-por-puesto">
+<h3>Paso 1 · Boxplot — distribución de salario por puesto<a class="headerlink" href="#paso-1-boxplot-distribucion-de-salario-por-puesto" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">orden_puestos</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"puesto"</span><span class="p">)[</span><span class="s2">"salario_anual_mxn_equiv"</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"puesto"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"salario_anual_mxn_equiv"</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">orden_puestos</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Distribución de salario anual por puesto"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"right"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Salario anual (equivalente MXN)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-2-violinplot-con-hue-comparar-ademas-por-modalidad-de-trabajo">
+<h3>Paso 2 · Violinplot con <code class="docutils literal notranslate"><span class="pre">hue</span></code> — comparar además por modalidad de trabajo<a class="headerlink" href="#paso-2-violinplot-con-hue-comparar-ademas-por-modalidad-de-trabajo" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"puesto"</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">"Data Scientist"</span><span class="p">,</span> <span class="s2">"ML Engineer"</span><span class="p">,</span> <span class="s2">"Data Analyst"</span><span class="p">])],</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"puesto"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"salario_anual_mxn_equiv"</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">"modalidad_trabajo"</span><span class="p">,</span>
+    <span class="n">split</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Salario por puesto y modalidad de trabajo"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-3-relacion-entre-variables-numericas-con-regresion">
+<h3>Paso 3 · Relación entre variables numéricas con regresión<a class="headerlink" href="#paso-3-relacion-entre-variables-numericas-con-regresion" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"anos_experiencia"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"salario_anual_mxn_equiv"</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s2">"nivel_educativo"</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">"alpha"</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Salario vs. años de experiencia, por nivel educativo"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-4-mapa-de-calor-de-correlaciones">
+<h3>Paso 4 · Mapa de calor de correlaciones<a class="headerlink" href="#paso-4-mapa-de-calor-de-correlaciones" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numericas</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">"anos_experiencia"</span><span class="p">,</span> <span class="s2">"salario_anual_mxn_equiv"</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">numericas</span><span class="p">[</span><span class="s2">"nivel_educativo_cod"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"nivel_educativo"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">"Técnico"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Licenciatura"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"Maestría"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"Doctorado"</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">corr</span> <span class="o">=</span> <span class="n">numericas</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"coolwarm"</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">".2f"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Correlación entre variables numéricas"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-5-catplot-con-col-pequenos-multiplos-por-pais">
+<h3>Paso 5 · <code class="docutils literal notranslate"><span class="pre">catplot</span></code> con <code class="docutils literal notranslate"><span class="pre">col=</span></code> — pequeños múltiplos por país<a class="headerlink" href="#paso-5-catplot-con-col-pequenos-multiplos-por-pais" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">paises_top</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"México"</span><span class="p">,</span> <span class="s2">"España"</span><span class="p">,</span> <span class="s2">"Chile"</span><span class="p">]</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"pais"</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">paises_top</span><span class="p">)],</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"nivel_educativo"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"salario_anual_mxn_equiv"</span><span class="p">,</span>
+    <span class="n">col</span><span class="o">=</span><span class="s2">"pais"</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">"box"</span><span class="p">,</span>
+    <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s2">"Técnico"</span><span class="p">,</span> <span class="s2">"Licenciatura"</span><span class="p">,</span> <span class="s2">"Maestría"</span><span class="p">,</span> <span class="s2">"Doctorado"</span><span class="p">],</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">"Salario por nivel educativo, por país"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="practica-independiente">
+<h2>✍️ Práctica independiente<a class="headerlink" href="#practica-independiente" title="Link to this heading">#</a></h2>
+<p><strong>Ejercicio 1.</strong> Crea un <code class="docutils literal notranslate"><span class="pre">histplot</span></code> (o <code class="docutils literal notranslate"><span class="pre">kdeplot</span></code>) de <code class="docutils literal notranslate"><span class="pre">salario_anual_mxn_equiv</span></code> con <code class="docutils literal notranslate"><span class="pre">hue='genero'</span></code> para comparar la distribución salarial por género.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 2.</strong> Usa <code class="docutils literal notranslate"><span class="pre">sns.barplot</span></code> para mostrar el salario <strong>promedio</strong> por <code class="docutils literal notranslate"><span class="pre">tamano_empresa</span></code>, ordenado de mayor a menor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 3.</strong> Genera un <code class="docutils literal notranslate"><span class="pre">sns.scatterplot</span></code> de <code class="docutils literal notranslate"><span class="pre">anos_experiencia</span></code> vs. <code class="docutils literal notranslate"><span class="pre">salario_anual_mxn_equiv</span></code>, coloreado (<code class="docutils literal notranslate"><span class="pre">hue</span></code>) por <code class="docutils literal notranslate"><span class="pre">puesto</span></code>, y con el tamaño de punto (<code class="docutils literal notranslate"><span class="pre">size</span></code>) según <code class="docutils literal notranslate"><span class="pre">anos_experiencia</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 4 (reto).</strong> Construye un <code class="docutils literal notranslate"><span class="pre">sns.pairplot</span></code> con las columnas <code class="docutils literal notranslate"><span class="pre">anos_experiencia</span></code> y <code class="docutils literal notranslate"><span class="pre">salario_anual_mxn_equiv</span></code>, coloreado por <code class="docutils literal notranslate"><span class="pre">modalidad_trabajo</span></code>, solo para el puesto <code class="docutils literal notranslate"><span class="pre">'Data</span> <span class="pre">Scientist'</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cierre-y-puente-al-siguiente-tema">
+<h2>🔎 Cierre y puente al siguiente tema<a class="headerlink" href="#cierre-y-puente-al-siguiente-tema" title="Link to this heading">#</a></h2>
+<p>Seaborn es excelente para <strong>explorar y comunicar estadística</strong> rápidamente, pero sigue produciendo imágenes estáticas: el usuario no puede hacer zoom, filtrar en vivo ni pasar el mouse para ver detalles. En el <strong>Tema 04 (Plotly)</strong> daremos el salto a visualizaciones <strong>interactivas</strong>.</p>
+</section>
+<section id="recursos-adicionales">
+<h2>📚 Recursos adicionales<a class="headerlink" href="#recursos-adicionales" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://seaborn.pydata.org/">Documentación oficial de Seaborn</a></p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/examples/index.html">Galería de ejemplos oficiales</a></p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/tutorial/relational.html">Tutorial oficial: Visualizing statistical relationships</a></p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/tutorial/color_palettes.html">Guía de paletas de color de Seaborn</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -563,8 +808,25 @@
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido">Contenido</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">Práctica guiada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido">Contenido</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-seaborn">1. ¿Qué es Seaborn?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#familias-de-graficos-en-seaborn">2. Familias de gráficos en Seaborn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-parametro-hue-y-col-row">3. El parámetro <code class="docutils literal notranslate"><span class="pre">hue</span></code> (y <code class="docutils literal notranslate"><span class="pre">col</span></code>/<code class="docutils literal notranslate"><span class="pre">row</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estetica-y-temas">4. Estética y temas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-del-entorno">⚙️ Configuración del entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">Práctica guiada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-boxplot-distribucion-de-salario-por-puesto">Paso 1 · Boxplot — distribución de salario por puesto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-violinplot-con-hue-comparar-ademas-por-modalidad-de-trabajo">Paso 2 · Violinplot con <code class="docutils literal notranslate"><span class="pre">hue</span></code> — comparar además por modalidad de trabajo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-relacion-entre-variables-numericas-con-regresion">Paso 3 · Relación entre variables numéricas con regresión</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-mapa-de-calor-de-correlaciones">Paso 4 · Mapa de calor de correlaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-catplot-con-col-pequenos-multiplos-por-pais">Paso 5 · <code class="docutils literal notranslate"><span class="pre">catplot</span></code> con <code class="docutils literal notranslate"><span class="pre">col=</span></code> — pequeños múltiplos por país</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-independiente">✍️ Práctica independiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-y-puente-al-siguiente-tema">🔎 Cierre y puente al siguiente tema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">📚 Recursos adicionales</a></li>
 </ul>
   </nav></div>
 

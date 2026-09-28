@@ -444,10 +444,26 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido">Contenido</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">Práctica guiada</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">Recursos adicionales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido-teorico">🧠 Contenido teórico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-lo-estatico-a-lo-interactivo">1. De lo estático a lo interactivo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dos-formas-de-usar-plotly">2. Dos formas de usar Plotly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactividad-gratis">3. Interactividad “gratis”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#animaciones-y-mapas">4. Animaciones y mapas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compartir-sin-python">5. Compartir sin Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-del-entorno">⚙️ Configuración del entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">🧭 Práctica guiada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-linea-interactiva-evolucion-temporal">Paso 1 · Línea interactiva — evolución temporal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-barras-comparacion-entre-paises-con-animacion-temporal">Paso 2 · Barras — comparación entre países (con animación temporal)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-dispersion-con-tamano-y-animacion">Paso 3 · Dispersión con tamaño y animación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-mapa-coropletico-mundial">Paso 4 · Mapa coroplético mundial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-exportar-a-html-autocontenido">Paso 5 · Exportar a HTML autocontenido</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-independiente">✍️ Práctica independiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-y-puente-al-siguiente-tema">🔎 Cierre y puente al siguiente tema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">📚 Recursos adicionales</a></li>
 </ul>
             </nav>
         </div>
@@ -464,44 +480,249 @@
 <h1>Tema 04 · Plotly<a class="headerlink" href="#tema-04-plotly" title="Link to this heading">#</a></h1>
 <p><strong>Duración:</strong> 60 min — <strong>Luis Basto Díaz</strong></p>
 <hr class="docutils" />
-<section id="objetivos">
-<h2>Objetivos<a class="headerlink" href="#objetivos" title="Link to this heading">#</a></h2>
+<ul>
+<li><h2 class="rubric" id="objetivos-de-aprendizaje">🎯 Objetivos de aprendizaje</h2>
+</li>
+</ul>
+<p>Al finalizar este tema, el participante será capaz de:</p>
 <ul class="simple">
-<li><p>Objetivo 1</p></li>
-<li><p>Objetivo 2</p></li>
-<li><p>Objetivo 3</p></li>
+<li><p>Explicar la relación entre Seaborn y Matplotlib, y cuándo conviene usar cada uno.</p></li>
+<li><p>Construir gráficos estadísticos (boxplot, violinplot, histplot, scatterplot con regresión) directamente desde un DataFrame.</p></li>
+<li><p>Usar <code class="docutils literal notranslate"><span class="pre">hue</span></code>, <code class="docutils literal notranslate"><span class="pre">col</span></code>/<code class="docutils literal notranslate"><span class="pre">row</span></code> para comparar subgrupos sin escribir bucles manuales.</p></li>
+<li><p>Construir un mapa de calor de correlaciones y un <code class="docutils literal notranslate"><span class="pre">pairplot</span></code> para exploración multivariada.</p></li>
+<li><p>Aplicar temas y paletas de color consistentes a un conjunto de gráficos.</p></li>
+</ul>
+<section id="contenido-teorico">
+<h2>🧠 Contenido teórico<a class="headerlink" href="#contenido-teorico" title="Link to this heading">#</a></h2>
+<section id="de-lo-estatico-a-lo-interactivo">
+<h3>1. De lo estático a lo interactivo<a class="headerlink" href="#de-lo-estatico-a-lo-interactivo" title="Link to this heading">#</a></h3>
+<p>Hasta ahora, cada gráfico de Matplotlib/Seaborn es una <strong>imagen</strong>: una vez generada, no se puede hacer zoom, filtrar leyenda o pasar el cursor para ver el valor exacto. <strong>Plotly</strong> genera gráficos <strong>interactivos basados en JavaScript (biblioteca D3.js/WebGL por debajo)</strong>, que funcionan directamente en el navegador — perfectos para notebooks, dashboards y páginas web.</p>
+</section>
+<section id="dos-formas-de-usar-plotly">
+<h3>2. Dos formas de usar Plotly<a class="headerlink" href="#dos-formas-de-usar-plotly" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>API</p></th>
+<th class="head"><p>Cuándo usarla</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">plotly.express</span></code> (<code class="docutils literal notranslate"><span class="pre">px</span></code>)</strong></p></td>
+<td><p>La mayoría de los casos: una función por tipo de gráfico (<code class="docutils literal notranslate"><span class="pre">px.line</span></code>, <code class="docutils literal notranslate"><span class="pre">px.bar</span></code>, <code class="docutils literal notranslate"><span class="pre">px.scatter</span></code>, <code class="docutils literal notranslate"><span class="pre">px.choropleth</span></code>…), recibe un DataFrame directamente. Análoga a Seaborn pero interactiva.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code> (<code class="docutils literal notranslate"><span class="pre">go</span></code>)</strong></p></td>
+<td><p>Control fino: combinar múltiples trazas de tipos distintos, anotaciones complejas, dashboards personalizados. <code class="docutils literal notranslate"><span class="pre">px</span></code> internamente genera objetos <code class="docutils literal notranslate"><span class="pre">go.Figure</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En este taller usaremos principalmente <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code>, y tocaremos <code class="docutils literal notranslate"><span class="pre">graph_objects</span></code> para personalización puntual.</p>
+</section>
+<section id="interactividad-gratis">
+<h3>3. Interactividad “gratis”<a class="headerlink" href="#interactividad-gratis" title="Link to this heading">#</a></h3>
+<p>Cada figura de Plotly incluye, sin código adicional:</p>
+<ul class="simple">
+<li><p><strong>Zoom</strong> (arrastrar para acercar, doble clic para restablecer).</p></li>
+<li><p><strong>Hover</strong> con tooltips (puedes personalizar qué columnas mostrar con <code class="docutils literal notranslate"><span class="pre">hover_data</span></code>).</p></li>
+<li><p><strong>Leyenda interactiva</strong>: clic para ocultar/mostrar series, doble clic para aislar una.</p></li>
+<li><p><strong>Exportación</strong> a PNG desde la barra de herramientas de la figura.</p></li>
 </ul>
 </section>
-<section id="contenido">
-<h2>Contenido<a class="headerlink" href="#contenido" title="Link to this heading">#</a></h2>
-<p>Plotly es la biblioteca de referencia para crear gráficas interactivas en Python. Sus figuras son HTML/JavaScript por debajo, lo que las hace perfectas para notebooks y aplicaciones web.</p>
+<section id="animaciones-y-mapas">
+<h3>4. Animaciones y mapas<a class="headerlink" href="#animaciones-y-mapas" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">animation_frame=&quot;anio&quot;</span></code> convierte cualquier gráfico <code class="docutils literal notranslate"><span class="pre">px</span></code> en una animación con controles de reproducción — ideal para mostrar evolución temporal sin saturar un solo gráfico.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">px.choropleth(...,</span> <span class="pre">locations=&quot;pais&quot;,</span> <span class="pre">locationmode=&quot;country</span> <span class="pre">names&quot;,</span> <span class="pre">color=&quot;variable&quot;)</span></code> genera mapas donde el color de cada país representa una variable — muy usado en visualización de datos globales (turismo, economía, salud pública, etc.).</p></li>
+</ul>
+</section>
+<section id="compartir-sin-python">
+<h3>5. Compartir sin Python<a class="headerlink" href="#compartir-sin-python" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">fig.write_html(&quot;grafico.html&quot;)</span></code> genera un archivo HTML <strong>autocontenido</strong> (incluye la librería JS embebida) que cualquier persona puede abrir con un navegador, sin instalar nada — ideal para el repositorio de GitHub del taller.</p>
+</section>
+</section>
+<section id="configuracion-del-entorno">
+<h2>⚙️ Configuración del entorno<a class="headerlink" href="#configuracion-del-entorno" title="Link to this heading">#</a></h2>
+<p>Cargaremos <code class="docutils literal notranslate"><span class="pre">tema04_turismo_internacional.csv</span></code>: llegadas de turistas e ingresos por turismo (sintéticos) por país, mes y año (2022-2024).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instala/importa librerías necesarias para este tema</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># === Carga del dataset ===</span>
+<span class="c1"># Opción 1 (recomendada una vez publicado el repositorio del taller):</span>
+<span class="c1"># reemplaza &lt;usuario&gt;/&lt;repositorio&gt; por la ruta real de tu repo de GitHub</span>
+<span class="c1"># y ejecuta esta celda. Usa el botón "Raw" de GitHub para obtener la URL.</span>
+<span class="c1"># https://colab.research.google.com/github/fmatcasici/analisis-visualizacion-python/blob/main/04-plotly/notebook.ipynb</span>
+<span class="n">GITHUB_RAW_URL</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"https://raw.githubusercontent.com/fmatcasici/analisis-visualizacion-python/main/"</span>
+    <span class="s2">"datasets/tema04_turismo_internacional.csv"</span>
+<span class="p">)</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">GITHUB_RAW_URL</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Datos cargados desde GitHub ✅  -&gt;"</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No se pudo leer desde GitHub todavía (repo no configurado o sin internet)."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Sube manualmente el archivo 'tema04_turismo_internacional.csv' cuando se te solicite."</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span>
+        <span class="n">subido</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>  <span class="c1"># selecciona tema04_turismo_internacional.csv</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">subido</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="c1"># Fuera de Colab (por ejemplo, ejecución local de prueba):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"tema04_turismo_internacional.csv"</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="practica-guiada">
-<h2>Práctica guiada<a class="headerlink" href="#practica-guiada" title="Link to this heading">#</a></h2>
-<p><em>Instrucciones de la actividad para los asistentes.</em></p>
+<h2>🧭 Práctica guiada<a class="headerlink" href="#practica-guiada" title="Link to this heading">#</a></h2>
+<section id="paso-1-linea-interactiva-evolucion-temporal">
+<h3>Paso 1 · Línea interactiva — evolución temporal<a class="headerlink" href="#paso-1-linea-interactiva-evolucion-temporal" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tu código aquí</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">"fecha"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"anio"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">"mes"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"-01"</span><span class="p">)</span>
+
+<span class="n">paises_top</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"México"</span><span class="p">,</span> <span class="s2">"España"</span><span class="p">,</span> <span class="s2">"Francia"</span><span class="p">,</span> <span class="s2">"Japón"</span><span class="p">]</span>
+<span class="n">datos_linea</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"pais"</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">paises_top</span><span class="p">)]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"fecha"</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">datos_linea</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"fecha"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"llegadas_turistas_millones"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"pais"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Llegadas de turistas internacionales (millones/mes)"</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">"llegadas_turistas_millones"</span><span class="p">:</span> <span class="s2">"Turistas (millones)"</span><span class="p">,</span> <span class="s2">"fecha"</span><span class="p">:</span> <span class="s2">"Fecha"</span><span class="p">,</span> <span class="s2">"pais"</span><span class="p">:</span> <span class="s2">"País"</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">hovermode</span><span class="o">=</span><span class="s2">"x unified"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>En vivo:</strong> mostrar cómo hacer zoom sobre un rango de fechas, ocultar un país haciendo clic en la leyenda, y aislar uno con doble clic.</p>
+</section>
+<section id="paso-2-barras-comparacion-entre-paises-con-animacion-temporal">
+<h3>Paso 2 · Barras — comparación entre países (con animación temporal)<a class="headerlink" href="#paso-2-barras-comparacion-entre-paises-con-animacion-temporal" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resumen_anual</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"pais"</span><span class="p">,</span> <span class="s2">"continente"</span><span class="p">,</span> <span class="s2">"anio"</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">"ingresos_turismo_usd_millones"</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">resumen_anual</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">"anio"</span><span class="p">,</span> <span class="s2">"ingresos_turismo_usd_millones"</span><span class="p">]),</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"ingresos_turismo_usd_millones"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"pais"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"continente"</span><span class="p">,</span>
+    <span class="n">animation_frame</span><span class="o">=</span><span class="s2">"anio"</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">"h"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Ingresos por turismo por país (animado por año)"</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">"ingresos_turismo_usd_millones"</span><span class="p">:</span> <span class="s2">"Ingresos (millones USD)"</span><span class="p">,</span> <span class="s2">"pais"</span><span class="p">:</span> <span class="s2">"País"</span><span class="p">},</span>
+    <span class="n">range_x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">resumen_anual</span><span class="p">[</span><span class="s2">"ingresos_turismo_usd_millones"</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1.1</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+<section id="paso-3-dispersion-con-tamano-y-animacion">
+<h3>Paso 3 · Dispersión con tamaño y animación<a class="headerlink" href="#paso-3-dispersion-con-tamano-y-animacion" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">resumen_anual</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"ingresos_turismo_usd_millones"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"pais"</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s2">"ingresos_turismo_usd_millones"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"continente"</span><span class="p">,</span>
+    <span class="n">animation_frame</span><span class="o">=</span><span class="s2">"anio"</span><span class="p">,</span> <span class="n">size_max</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Ingresos por turismo (tamaño = magnitud), animado por año"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-4-mapa-coropletico-mundial">
+<h3>Paso 4 · Mapa coroplético mundial<a class="headerlink" href="#paso-4-mapa-coropletico-mundial" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mapa_datos</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"anio"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2024</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"pais"</span><span class="p">,</span> <span class="s2">"continente"</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span>
+    <span class="p">[</span><span class="s2">"llegadas_turistas_millones"</span><span class="p">,</span> <span class="s2">"ingresos_turismo_usd_millones"</span><span class="p">]</span>
+<span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span>
+    <span class="n">mapa_datos</span><span class="p">,</span> <span class="n">locations</span><span class="o">=</span><span class="s2">"pais"</span><span class="p">,</span> <span class="n">locationmode</span><span class="o">=</span><span class="s2">"country names"</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"llegadas_turistas_millones"</span><span class="p">,</span> <span class="n">hover_name</span><span class="o">=</span><span class="s2">"pais"</span><span class="p">,</span>
+    <span class="n">hover_data</span><span class="o">=</span><span class="p">{</span><span class="s2">"ingresos_turismo_usd_millones"</span><span class="p">:</span> <span class="s2">":.0f"</span><span class="p">},</span>
+    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s2">"Plasma"</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"Llegadas de turistas por país (2024, acumulado anual)"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-5-exportar-a-html-autocontenido">
+<h3>Paso 5 · Exportar a HTML autocontenido<a class="headerlink" href="#paso-5-exportar-a-html-autocontenido" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">"mapa_turismo_2024.html"</span><span class="p">,</span> <span class="n">include_plotlyjs</span><span class="o">=</span><span class="s2">"cdn"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Archivo 'mapa_turismo_2024.html' generado. Se puede abrir directamente en cualquier navegador."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="practica-independiente">
+<h2>✍️ Práctica independiente<a class="headerlink" href="#practica-independiente" title="Link to this heading">#</a></h2>
+<p><strong>Ejercicio 1.</strong> Crea un <code class="docutils literal notranslate"><span class="pre">px.line</span></code> mostrando <code class="docutils literal notranslate"><span class="pre">ingresos_turismo_usd_millones</span></code> a través del tiempo (<code class="docutils literal notranslate"><span class="pre">fecha</span></code>) para los países de <strong>Sudamérica</strong> presentes en el dataset (<code class="docutils literal notranslate"><span class="pre">Brasil</span></code>)  y algún país africano (<code class="docutils literal notranslate"><span class="pre">Egipto</span></code>, <code class="docutils literal notranslate"><span class="pre">Sudáfrica</span></code>), coloreado por país.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 2.</strong> Usando <code class="docutils literal notranslate"><span class="pre">resumen_anual</span></code>, construye un <code class="docutils literal notranslate"><span class="pre">px.bar</span></code> (sin animación) que muestre solamente el año <strong>2024</strong>, ordenado de mayor a menor ingreso.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 3.</strong> Construye un <code class="docutils literal notranslate"><span class="pre">px.sunburst</span></code> (o <code class="docutils literal notranslate"><span class="pre">px.treemap</span></code>) con jerarquía <code class="docutils literal notranslate"><span class="pre">continente</span> <span class="pre">→</span> <span class="pre">pais</span></code>, usando como valor <code class="docutils literal notranslate"><span class="pre">llegadas_turistas_millones</span></code> del año 2024.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 4 (reto).</strong> Construye un <code class="docutils literal notranslate"><span class="pre">px.choropleth</span></code> animado (<code class="docutils literal notranslate"><span class="pre">animation_frame='anio'</span></code>) mostrando <code class="docutils literal notranslate"><span class="pre">ingresos_turismo_usd_millones</span></code> por país a través de los 3 años disponibles.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cierre-y-puente-al-siguiente-tema">
+<h2>🔎 Cierre y puente al siguiente tema<a class="headerlink" href="#cierre-y-puente-al-siguiente-tema" title="Link to this heading">#</a></h2>
+<p>Plotly nos da gráficos interactivos individuales de gran calidad. Pero, ¿qué pasa si queremos que el usuario <strong>elija</strong> qué país o variable ver, con controles como menús desplegables, sin tener que regenerar el notebook? Eso es exactamente lo que resuelve <strong>Dash</strong> (Tema 05): aplicaciones web interactivas construidas sobre Plotly.</p>
+</section>
 <section id="recursos-adicionales">
-<h2>Recursos adicionales<a class="headerlink" href="#recursos-adicionales" title="Link to this heading">#</a></h2>
+<h2>📚 Recursos adicionales<a class="headerlink" href="#recursos-adicionales" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Documentación oficial de Plotly: <a class="reference external" href="https://plotly.com/python/">https://plotly.com/python/</a></p></li>
-<li><p>Galería de ejemplos de Plotly: <a class="reference external" href="https://plotly.com/python/plotly-express/">https://plotly.com/python/plotly-express/</a></p></li>
+<li><p><a class="reference external" href="https://plotly.com/python/">Documentación oficial de Plotly (Python)</a></p></li>
+<li><p><a class="reference external" href="https://plotly.com/python/plotly-express/">Plotly Express — referencia completa</a></p></li>
+<li><p><a class="reference external" href="https://plotly.com/python/basic-charts/">Galería de gráficos de Plotly</a></p></li>
+<li><p><a class="reference external" href="https://plotly.com/python/choropleth-maps/">Mapas coropléticos con Plotly</a></p></li>
+<li><p><a class="reference external" href="https://plotly.com/python/animations/">Animaciones con Plotly Express</a></p></li>
 </ul>
-<p><em>Instrucciones de la actividad para los asistentes.</em></p>
 </section>
 </section>
 
@@ -571,10 +792,26 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido">Contenido</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">Práctica guiada</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">Recursos adicionales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido-teorico">🧠 Contenido teórico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-lo-estatico-a-lo-interactivo">1. De lo estático a lo interactivo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dos-formas-de-usar-plotly">2. Dos formas de usar Plotly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactividad-gratis">3. Interactividad “gratis”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#animaciones-y-mapas">4. Animaciones y mapas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compartir-sin-python">5. Compartir sin Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-del-entorno">⚙️ Configuración del entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">🧭 Práctica guiada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-linea-interactiva-evolucion-temporal">Paso 1 · Línea interactiva — evolución temporal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-barras-comparacion-entre-paises-con-animacion-temporal">Paso 2 · Barras — comparación entre países (con animación temporal)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-dispersion-con-tamano-y-animacion">Paso 3 · Dispersión con tamaño y animación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-mapa-coropletico-mundial">Paso 4 · Mapa coroplético mundial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-exportar-a-html-autocontenido">Paso 5 · Exportar a HTML autocontenido</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-independiente">✍️ Práctica independiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-y-puente-al-siguiente-tema">🔎 Cierre y puente al siguiente tema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">📚 Recursos adicionales</a></li>
 </ul>
   </nav></div>
 
