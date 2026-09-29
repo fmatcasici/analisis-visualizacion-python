@@ -445,9 +445,28 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido">Contenido</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">Práctica guiada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">🎯 Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido-teorico">🧠 Contenido teórico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-bokeh-y-en-que-se-diferencia-de-plotly">1. ¿Qué es Bokeh y en qué se diferencia de Plotly?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#los-tres-bloques-de-bokeh">2. Los tres bloques de Bokeh</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-interactivas">3. Herramientas interactivas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-notebook">4. <code class="docutils literal notranslate"><span class="pre">output_notebook()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-del-entorno">⚙️ Configuración del entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">🧭 Práctica guiada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-0-preparar-el-entorno-de-bokeh-para-colab">Paso 0 · Preparar el entorno de Bokeh para Colab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-linea-simple-con-columndatasource">Paso 1 · Línea simple con <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-agregar-hovertool">Paso 2 · Agregar <code class="docutils literal notranslate"><span class="pre">HoverTool</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-grafico-de-velas-candlestick">Paso 3 · Gráfico de velas (candlestick)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-varias-lineas-con-leyenda-interactiva-click-policy">Paso 4 · Varias líneas con leyenda interactiva (<code class="docutils literal notranslate"><span class="pre">click_policy</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-graficos-vinculados-precio-volumen-con-x-range-compartido">Paso 5 · Gráficos vinculados (precio + volumen con <code class="docutils literal notranslate"><span class="pre">x_range</span></code> compartido)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-6-interactividad-sin-servidor-con-customjs-select-de-empresa">Paso 6 · Interactividad sin servidor con <code class="docutils literal notranslate"><span class="pre">CustomJS</span></code> (<code class="docutils literal notranslate"><span class="pre">Select</span></code> de empresa)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-independiente">✍️ Práctica independiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-y-puente-al-siguiente-tema">🔎 Cierre y puente al siguiente tema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">📚 Recursos adicionales</a></li>
 </ul>
             </nav>
         </div>
@@ -462,38 +481,309 @@
   <p><a class="reference external" href="https://colab.research.google.com/github/fmatcasici/analisis-visualizacion-python/blob/main/06-bokeh/notebook.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="tema-06-bokeh">
 <h1>Tema 06 · Bokeh<a class="headerlink" href="#tema-06-bokeh" title="Link to this heading">#</a></h1>
-<p><strong>Duración:</strong> 45 min — a cargo de <strong>Curi</strong></p>
+<p><strong>Duración:</strong> 60 min — <strong>Luis Fernando Curi Quintal</strong></p>
 <hr class="docutils" />
-<section id="objetivos">
-<h2>Objetivos<a class="headerlink" href="#objetivos" title="Link to this heading">#</a></h2>
+<section id="objetivos-de-aprendizaje">
+<h2>🎯 Objetivos de aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Link to this heading">#</a></h2>
+<p>Al finalizar este tema, el participante será capaz de:</p>
 <ul class="simple">
-<li><p>Objetivo 1</p></li>
-<li><p>Objetivo 2</p></li>
-<li><p>Objetivo 3</p></li>
+<li><p>Explicar el modelo de “gramática de gráficos” de Bokeh: <code class="docutils literal notranslate"><span class="pre">figure</span></code> + <code class="docutils literal notranslate"><span class="pre">glyphs</span></code> + <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code>.</p></li>
+<li><p>Construir gráficos interactivos de series de tiempo financieras (línea y velas/candlestick) con herramientas de zoom, pan y hover.</p></li>
+<li><p>Vincular (“linkear”) dos gráficos para que compartan zoom/desplazamiento (<code class="docutils literal notranslate"><span class="pre">x_range</span></code> compartido).</p></li>
+<li><p>Usar <code class="docutils literal notranslate"><span class="pre">CustomJS</span></code> para agregar interactividad en el navegador (sin servidor de Python) con un <code class="docutils literal notranslate"><span class="pre">Select</span></code>.</p></li>
+<li><p>Reconocer cuándo Bokeh es preferible frente a Plotly (grandes volúmenes de datos, control fino de herramientas).</p></li>
 </ul>
 </section>
-<section id="contenido">
-<h2>Contenido<a class="headerlink" href="#contenido" title="Link to this heading">#</a></h2>
-<p><em>Completa aquí la teoría y ejemplos de este tema.</em></p>
+<section id="contenido-teorico">
+<h2>🧠 Contenido teórico<a class="headerlink" href="#contenido-teorico" title="Link to this heading">#</a></h2>
+<section id="que-es-bokeh-y-en-que-se-diferencia-de-plotly">
+<h3>1. ¿Qué es Bokeh y en qué se diferencia de Plotly?<a class="headerlink" href="#que-es-bokeh-y-en-que-se-diferencia-de-plotly" title="Link to this heading">#</a></h3>
+<p><strong>Bokeh</strong> es otra librería de visualización interactiva para Python (independiente de Plotly), orientada a navegadores web. Conceptualmente es similar a Plotly (ambas generan JavaScript/HTML), pero su filosofía de diseño es distinta:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Plotly</p></th>
+<th class="head"><p>Bokeh</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Nivel de abstracción</p></td>
+<td><p>Alto (<code class="docutils literal notranslate"><span class="pre">px.line(df,</span> <span class="pre">x=,</span> <span class="pre">y=)</span></code>)</p></td>
+<td><p>Medio-bajo, estilo “gramática de gráficos” (<code class="docutils literal notranslate"><span class="pre">p.line(source=...)</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Modelo de datos</p></td>
+<td><p>DataFrame directo</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> (estructura columnar explícita)</p></td>
+</tr>
+<tr class="row-even"><td><p>Fortaleza</p></td>
+<td><p>Prototipado rápido, mapas, animaciones</p></td>
+<td><p>Rendimiento con grandes volúmenes de datos, control fino de herramientas, dashboards con <code class="docutils literal notranslate"><span class="pre">bokeh</span> <span class="pre">server</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Interactividad sin servidor</p></td>
+<td><p>Nativa (cliente)</p></td>
+<td><p>Con <code class="docutils literal notranslate"><span class="pre">CustomJS</span></code> (JavaScript embebido)</p></td>
+</tr>
+<tr class="row-even"><td><p>Interactividad con lógica Python en vivo</p></td>
+<td><p>Requiere Dash</p></td>
+<td><p>Nativa con <code class="docutils literal notranslate"><span class="pre">bokeh</span> <span class="pre">serve</span></code> (no lo usaremos hoy; Dash ya cubre ese caso de uso)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Regla práctica:</strong> si Plotly ya resuelve el caso de uso (la mayoría de las veces), úsalo por su curva de aprendizaje más suave. Bokeh vale la pena cuando necesitas <strong>control muy fino sobre las herramientas de interacción</strong> (por ejemplo paneles financieros tipo TradingView) o <strong>rendimiento</strong> con datasets grandes.</p>
+</section>
+<section id="los-tres-bloques-de-bokeh">
+<h3>2. Los tres bloques de Bokeh<a class="headerlink" href="#los-tres-bloques-de-bokeh" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">figure()</span></code></strong>: el lienzo — equivalente al <code class="docutils literal notranslate"><span class="pre">Figure</span></code>/<code class="docutils literal notranslate"><span class="pre">Axes</span></code> de Matplotlib.</p></li>
+<li><p><strong>Glyphs</strong>: las formas geométricas que dibujas sobre la figura: <code class="docutils literal notranslate"><span class="pre">p.line(...)</span></code>, <code class="docutils literal notranslate"><span class="pre">p.circle(...)</span></code>, <code class="docutils literal notranslate"><span class="pre">p.vbar(...)</span></code>, <code class="docutils literal notranslate"><span class="pre">p.segment(...)</span></code>. Un gráfico de velas, por ejemplo, se construye combinando <code class="docutils literal notranslate"><span class="pre">segment</span></code> (la mecha) y <code class="docutils literal notranslate"><span class="pre">vbar</span></code> (el cuerpo).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> (CDS)</strong>: la estructura de datos central de Bokeh — un diccionario de columnas (muy parecido a un DataFrame) que <strong>alimenta</strong> a los glyphs. Trabajar con un CDS explícito (en vez de pasar el DataFrame directo) es lo que permite después vincular gráficos, usar <code class="docutils literal notranslate"><span class="pre">CustomJS</span></code> y actualizar datos de forma eficiente.</p></li>
+</ol>
+</section>
+<section id="herramientas-interactivas">
+<h3>3. Herramientas interactivas<a class="headerlink" href="#herramientas-interactivas" title="Link to this heading">#</a></h3>
+<p>Por defecto Bokeh agrega una barra de herramientas con pan, zoom con rueda, zoom de caja y reset. <code class="docutils literal notranslate"><span class="pre">HoverTool</span></code> agrega tooltips personalizados al pasar el mouse; se configuran con una lista de tuplas <code class="docutils literal notranslate"><span class="pre">(etiqueta,</span> <span class="pre">&quot;&#64;columna&quot;)</span></code>.</p>
+</section>
+<section id="output-notebook">
+<h3>4. <code class="docutils literal notranslate"><span class="pre">output_notebook()</span></code><a class="headerlink" href="#output-notebook" title="Link to this heading">#</a></h3>
+<p>Así como Plotly se muestra automáticamente en la notebook, Bokeh requiere llamar <strong>una vez por sesión</strong> a <code class="docutils literal notranslate"><span class="pre">output_notebook()</span></code> para que las figuras se rendericen dentro de Colab en lugar de intentar abrir un archivo HTML aparte.</p>
+</section>
+</section>
+<section id="configuracion-del-entorno">
+<h2>⚙️ Configuración del entorno<a class="headerlink" href="#configuracion-del-entorno" title="Link to this heading">#</a></h2>
+<p>Cargaremos <code class="docutils literal notranslate"><span class="pre">tema06_acciones_bolsa.csv</span></code>: precios diarios sintéticos (apertura, máximo, mínimo, cierre, volumen) de 4 empresas ficticias (2023-2024).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instala/importa librerías necesarias para este tema</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># === Carga del dataset ===</span>
+<span class="c1"># Opción 1 (recomendada una vez publicado el repositorio del taller):</span>
+<span class="c1"># reemplaza &lt;usuario&gt;/&lt;repositorio&gt; por la ruta real de tu repo de GitHub</span>
+<span class="c1"># y ejecuta esta celda. Usa el botón "Raw" de GitHub para obtener la URL.</span>
+<span class="n">GITHUB_RAW_URL</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"https://raw.githubusercontent.com/fmatcasici/analisis-visualizacion-python/main/06-bokeh/tema06_acciones_bolsa.csv"</span>
+<span class="p">)</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">GITHUB_RAW_URL</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Datos cargados desde GitHub ✅  -&gt;"</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No se pudo leer desde GitHub todavía (repo no configurado o sin internet)."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Sube manualmente el archivo 'tema06_acciones_bolsa.csv' cuando se te solicite."</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span>
+        <span class="n">subido</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>  <span class="c1"># selecciona tema06_acciones_bolsa.csv</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">subido</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="c1"># Fuera de Colab (por ejemplo, ejecución local de prueba):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"tema06_acciones_bolsa.csv"</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="practica-guiada">
-<h2>Práctica guiada<a class="headerlink" href="#practica-guiada" title="Link to this heading">#</a></h2>
-<p><em>Instrucciones de la actividad para los asistentes.</em></p>
+<h2>🧭 Práctica guiada<a class="headerlink" href="#practica-guiada" title="Link to this heading">#</a></h2>
+<section id="paso-0-preparar-el-entorno-de-bokeh-para-colab">
+<h3>Paso 0 · Preparar el entorno de Bokeh para Colab<a class="headerlink" href="#paso-0-preparar-el-entorno-de-bokeh-para-colab" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tu código aquí</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">output_notebook</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColumnDataSource</span><span class="p">,</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">Select</span><span class="p">,</span> <span class="n">CustomJS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span><span class="p">,</span> <span class="n">row</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.palettes</span><span class="w"> </span><span class="kn">import</span> <span class="n">Category10</span>
+
+<span class="n">output_notebook</span><span class="p">()</span>  <span class="c1"># necesario una vez por sesión para que los gráficos se vean en Colab</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">"fecha"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"fecha"</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="paso-1-linea-simple-con-columndatasource">
+<h3>Paso 1 · Línea simple con <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code><a class="headerlink" href="#paso-1-linea-simple-con-columndatasource" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tech</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"empresa"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"TECH"</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"fecha"</span><span class="p">)</span>
+<span class="n">source_tech</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">tech</span><span class="p">)</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">x_axis_type</span><span class="o">=</span><span class="s2">"datetime"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">350</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">"Precio de cierre — TECH (2023-2024)"</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="s2">"fecha"</span><span class="p">,</span> <span class="s2">"precio_cierre"</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source_tech</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#1f77b4"</span><span class="p">)</span>
+
+<span class="n">p1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s2">"Fecha"</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s2">"Precio de cierre"</span>
+<span class="n">show</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-2-agregar-hovertool">
+<h3>Paso 2 · Agregar <code class="docutils literal notranslate"><span class="pre">HoverTool</span></code><a class="headerlink" href="#paso-2-agregar-hovertool" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hover</span> <span class="o">=</span> <span class="n">HoverTool</span><span class="p">(</span>
+    <span class="n">tooltips</span><span class="o">=</span><span class="p">[(</span><span class="s2">"Fecha"</span><span class="p">,</span> <span class="s2">"@fecha{</span><span class="si">%F</span><span class="s2">}"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Cierre"</span><span class="p">,</span> <span class="s2">"@precio_cierre</span><span class="si">{0.2f}</span><span class="s2">"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Volumen"</span><span class="p">,</span> <span class="s2">"@volumen{0,0}"</span><span class="p">)],</span>
+    <span class="n">formatters</span><span class="o">=</span><span class="p">{</span><span class="s2">"@fecha"</span><span class="p">:</span> <span class="s2">"datetime"</span><span class="p">},</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">"vline"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">add_tools</span><span class="p">(</span><span class="n">hover</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-3-grafico-de-velas-candlestick">
+<h3>Paso 3 · Gráfico de velas (candlestick)<a class="headerlink" href="#paso-3-grafico-de-velas-candlestick" title="Link to this heading">#</a></h3>
+<p>Un clásico de Bokeh: combina <code class="docutils literal notranslate"><span class="pre">segment</span></code> (mecha) + <code class="docutils literal notranslate"><span class="pre">vbar</span></code> (cuerpo), coloreando en verde las sesiones alcistas y en rojo las bajistas. Filtramos a un periodo corto para que se aprecien las velas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">periodo</span> <span class="o">=</span> <span class="n">tech</span><span class="p">[(</span><span class="n">tech</span><span class="p">[</span><span class="s2">"fecha"</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s2">"2024-06-01"</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">tech</span><span class="p">[</span><span class="s2">"fecha"</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s2">"2024-08-31"</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">alcista</span> <span class="o">=</span> <span class="n">periodo</span><span class="p">[</span><span class="s2">"precio_cierre"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">periodo</span><span class="p">[</span><span class="s2">"precio_apertura"</span><span class="p">]</span>
+<span class="n">bajista</span> <span class="o">=</span> <span class="o">~</span><span class="n">alcista</span>
+<span class="n">ancho_barra</span> <span class="o">=</span> <span class="mi">18</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span>  <span class="c1"># 18 horas en milisegundos (ancho visual de la vela)</span>
+
+<span class="n">p2</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">x_axis_type</span><span class="o">=</span><span class="s2">"datetime"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">"Velas (candlestick) — TECH, jun-ago 2024"</span><span class="p">)</span>
+
+<span class="n">p2</span><span class="o">.</span><span class="n">segment</span><span class="p">(</span><span class="n">periodo</span><span class="p">[</span><span class="s2">"fecha"</span><span class="p">],</span> <span class="n">periodo</span><span class="p">[</span><span class="s2">"precio_max"</span><span class="p">],</span> <span class="n">periodo</span><span class="p">[</span><span class="s2">"fecha"</span><span class="p">],</span> <span class="n">periodo</span><span class="p">[</span><span class="s2">"precio_min"</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">)</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">vbar</span><span class="p">(</span><span class="n">periodo</span><span class="p">[</span><span class="s2">"fecha"</span><span class="p">][</span><span class="n">alcista</span><span class="p">],</span> <span class="n">ancho_barra</span><span class="p">,</span> <span class="n">periodo</span><span class="p">[</span><span class="s2">"precio_apertura"</span><span class="p">][</span><span class="n">alcista</span><span class="p">],</span>
+        <span class="n">periodo</span><span class="p">[</span><span class="s2">"precio_cierre"</span><span class="p">][</span><span class="n">alcista</span><span class="p">],</span> <span class="n">fill_color</span><span class="o">=</span><span class="s2">"#26a65b"</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">)</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">vbar</span><span class="p">(</span><span class="n">periodo</span><span class="p">[</span><span class="s2">"fecha"</span><span class="p">][</span><span class="n">bajista</span><span class="p">],</span> <span class="n">ancho_barra</span><span class="p">,</span> <span class="n">periodo</span><span class="p">[</span><span class="s2">"precio_apertura"</span><span class="p">][</span><span class="n">bajista</span><span class="p">],</span>
+        <span class="n">periodo</span><span class="p">[</span><span class="s2">"precio_cierre"</span><span class="p">][</span><span class="n">bajista</span><span class="p">],</span> <span class="n">fill_color</span><span class="o">=</span><span class="s2">"#e74c3c"</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">)</span>
+
+<span class="n">p2</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s2">"Fecha"</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s2">"Precio"</span>
+<span class="n">show</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-4-varias-lineas-con-leyenda-interactiva-click-policy">
+<h3>Paso 4 · Varias líneas con leyenda interactiva (<code class="docutils literal notranslate"><span class="pre">click_policy</span></code>)<a class="headerlink" href="#paso-4-varias-lineas-con-leyenda-interactiva-click-policy" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p3</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">x_axis_type</span><span class="o">=</span><span class="s2">"datetime"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">850</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">"Precio de cierre — todas las empresas"</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">empresa</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"empresa"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span> <span class="n">Category10</span><span class="p">[</span><span class="mi">4</span><span class="p">]):</span>
+    <span class="n">datos_empresa</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"empresa"</span><span class="p">]</span> <span class="o">==</span> <span class="n">empresa</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"fecha"</span><span class="p">)</span>
+    <span class="n">p3</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">datos_empresa</span><span class="p">[</span><span class="s2">"fecha"</span><span class="p">],</span> <span class="n">datos_empresa</span><span class="p">[</span><span class="s2">"precio_cierre"</span><span class="p">],</span>
+            <span class="n">legend_label</span><span class="o">=</span><span class="n">empresa</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">p3</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">click_policy</span> <span class="o">=</span> <span class="s2">"hide"</span>  <span class="c1"># clic en la leyenda oculta/muestra la serie</span>
+<span class="n">p3</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="s2">"top_left"</span>
+<span class="n">show</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-5-graficos-vinculados-precio-volumen-con-x-range-compartido">
+<h3>Paso 5 · Gráficos vinculados (precio + volumen con <code class="docutils literal notranslate"><span class="pre">x_range</span></code> compartido)<a class="headerlink" href="#paso-5-graficos-vinculados-precio-volumen-con-x-range-compartido" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p_precio</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">x_axis_type</span><span class="o">=</span><span class="s2">"datetime"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"TECH — Precio"</span><span class="p">)</span>
+<span class="n">p_precio</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="s2">"fecha"</span><span class="p">,</span> <span class="s2">"precio_cierre"</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source_tech</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#1f77b4"</span><span class="p">)</span>
+
+<span class="n">p_volumen</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">x_axis_type</span><span class="o">=</span><span class="s2">"datetime"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+                    <span class="n">x_range</span><span class="o">=</span><span class="n">p_precio</span><span class="o">.</span><span class="n">x_range</span><span class="p">,</span>  <span class="c1"># &lt;- comparte el eje X: hacer zoom en uno afecta al otro</span>
+                    <span class="n">title</span><span class="o">=</span><span class="s2">"TECH — Volumen"</span><span class="p">)</span>
+<span class="n">p_volumen</span><span class="o">.</span><span class="n">vbar</span><span class="p">(</span><span class="s2">"fecha"</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="s2">"volumen"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">20</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source_tech</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#7f7f7f"</span><span class="p">)</span>
+
+<span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">p_precio</span><span class="p">,</span> <span class="n">p_volumen</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-6-interactividad-sin-servidor-con-customjs-select-de-empresa">
+<h3>Paso 6 · Interactividad sin servidor con <code class="docutils literal notranslate"><span class="pre">CustomJS</span></code> (<code class="docutils literal notranslate"><span class="pre">Select</span></code> de empresa)<a class="headerlink" href="#paso-6-interactividad-sin-servidor-con-customjs-select-de-empresa" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">datos_por_empresa</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">empresa</span><span class="p">:</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"empresa"</span><span class="p">]</span> <span class="o">==</span> <span class="n">empresa</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"fecha"</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">empresa</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"empresa"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="p">}</span>
+
+<span class="n">fuente_activa</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">datos_por_empresa</span><span class="p">[</span><span class="s2">"TECH"</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">p4</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">x_axis_type</span><span class="o">=</span><span class="s2">"datetime"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">350</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Selecciona una empresa"</span><span class="p">)</span>
+<span class="n">p4</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="s2">"fecha"</span><span class="p">,</span> <span class="s2">"precio_cierre"</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">fuente_activa</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#d62728"</span><span class="p">)</span>
+
+<span class="n">selector</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Empresa:"</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">"TECH"</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"empresa"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))</span>
+
+<span class="n">callback_js</span> <span class="o">=</span> <span class="n">CustomJS</span><span class="p">(</span>
+    <span class="n">args</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">fuente_activa</span><span class="o">=</span><span class="n">fuente_activa</span><span class="p">,</span> <span class="n">fuentes</span><span class="o">=</span><span class="n">datos_por_empresa</span><span class="p">),</span>
+    <span class="n">code</span><span class="o">=</span><span class="s2">"""</span>
+<span class="s2">    fuente_activa.data = fuentes[cb_obj.value].data;</span>
+<span class="s2">    fuente_activa.change.emit();</span>
+<span class="s2">    """</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">selector</span><span class="o">.</span><span class="n">js_on_change</span><span class="p">(</span><span class="s2">"value"</span><span class="p">,</span> <span class="n">callback_js</span><span class="p">)</span>
+
+<span class="n">show</span><span class="p">(</span><span class="n">column</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="n">p4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="practica-independiente">
+<h2>✍️ Práctica independiente<a class="headerlink" href="#practica-independiente" title="Link to this heading">#</a></h2>
+<p><strong>Ejercicio 1.</strong> Agrega un <code class="docutils literal notranslate"><span class="pre">HoverTool</span></code> al gráfico de volumen del <strong>Paso 5</strong> mostrando fecha y volumen exacto.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 2.</strong> Construye un gráfico de velas (candlestick) igual al del <strong>Paso 3</strong>, pero para la empresa <code class="docutils literal notranslate"><span class="pre">'BANCO'</span></code> y el periodo enero-marzo 2024.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 3.</strong> Añade al gráfico de líneas del <strong>Paso 4</strong> una media móvil de 30 días (<code class="docutils literal notranslate"><span class="pre">.rolling(30).mean()</span></code>) de <code class="docutils literal notranslate"><span class="pre">precio_cierre</span></code> para la empresa <code class="docutils literal notranslate"><span class="pre">'TECH'</span></code>, como una línea punteada adicional (<code class="docutils literal notranslate"><span class="pre">line_dash='dashed'</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 4 (reto).</strong> Extiende el <code class="docutils literal notranslate"><span class="pre">Select</span></code> con <code class="docutils literal notranslate"><span class="pre">CustomJS</span></code> del <strong>Paso 6</strong> para que, además de la línea de precio, actualice también un título dinámico del gráfico (<code class="docutils literal notranslate"><span class="pre">p.title.text</span></code>) con el nombre de la empresa seleccionada.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cierre-y-puente-al-siguiente-tema">
+<h2>🔎 Cierre y puente al siguiente tema<a class="headerlink" href="#cierre-y-puente-al-siguiente-tema" title="Link to this heading">#</a></h2>
+<p>Con Bokeh dominamos series de tiempo interactivas de alto rendimiento. Pero ninguna de las herramientas anteriores está pensada específicamente para <strong>datos geoespaciales</strong> (coordenadas, mapas). En el <strong>Tema 07 (Folium)</strong>, cerraremos el taller construyendo mapas interactivos en Python sobre Leaflet.js.</p>
+</section>
+<section id="recursos-adicionales">
+<h2>📚 Recursos adicionales<a class="headerlink" href="#recursos-adicionales" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.bokeh.org/en/latest/">Documentación oficial de Bokeh</a></p></li>
+<li><p><a class="reference external" href="https://docs.bokeh.org/en/latest/docs/first_steps.html">Guía de primeros pasos (First steps)</a></p></li>
+<li><p><a class="reference external" href="https://docs.bokeh.org/en/latest/docs/gallery.html">Galería de ejemplos oficiales</a></p></li>
+<li><p><a class="reference external" href="https://docs.bokeh.org/en/latest/docs/user_guide/basic/data.html">Guía de <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.bokeh.org/en/latest/docs/user_guide/interaction/js_callbacks.html">Guía de <code class="docutils literal notranslate"><span class="pre">CustomJS</span></code> (interactividad sin servidor)</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -563,9 +853,28 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido">Contenido</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">Práctica guiada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">🎯 Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido-teorico">🧠 Contenido teórico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-bokeh-y-en-que-se-diferencia-de-plotly">1. ¿Qué es Bokeh y en qué se diferencia de Plotly?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#los-tres-bloques-de-bokeh">2. Los tres bloques de Bokeh</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-interactivas">3. Herramientas interactivas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-notebook">4. <code class="docutils literal notranslate"><span class="pre">output_notebook()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-del-entorno">⚙️ Configuración del entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">🧭 Práctica guiada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-0-preparar-el-entorno-de-bokeh-para-colab">Paso 0 · Preparar el entorno de Bokeh para Colab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-linea-simple-con-columndatasource">Paso 1 · Línea simple con <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-agregar-hovertool">Paso 2 · Agregar <code class="docutils literal notranslate"><span class="pre">HoverTool</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-grafico-de-velas-candlestick">Paso 3 · Gráfico de velas (candlestick)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-varias-lineas-con-leyenda-interactiva-click-policy">Paso 4 · Varias líneas con leyenda interactiva (<code class="docutils literal notranslate"><span class="pre">click_policy</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-graficos-vinculados-precio-volumen-con-x-range-compartido">Paso 5 · Gráficos vinculados (precio + volumen con <code class="docutils literal notranslate"><span class="pre">x_range</span></code> compartido)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-6-interactividad-sin-servidor-con-customjs-select-de-empresa">Paso 6 · Interactividad sin servidor con <code class="docutils literal notranslate"><span class="pre">CustomJS</span></code> (<code class="docutils literal notranslate"><span class="pre">Select</span></code> de empresa)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-independiente">✍️ Práctica independiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-y-puente-al-siguiente-tema">🔎 Cierre y puente al siguiente tema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">📚 Recursos adicionales</a></li>
 </ul>
   </nav></div>
 
