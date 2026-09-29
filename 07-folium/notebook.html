@@ -444,9 +444,30 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido">Contenido</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">Práctica guiada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">🎯 Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido-teorico">🧠 Contenido teórico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-folium">1. ¿Qué es Folium?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#los-bloques-de-un-mapa-en-folium">2. Los bloques de un mapa en Folium</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plugins-para-grandes-volumenes-de-datos">3. Plugins para grandes volúmenes de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-python-a-html">4. De Python a HTML</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-del-entorno">⚙️ Configuración del entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">🧭 Práctica guiada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-mapa-base-centrado-en-mexico">Paso 1 · Mapa base centrado en México</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-marcadores-individuales-con-popup-y-tooltip">Paso 2 · Marcadores individuales con popup y tooltip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-circlemarker-coloreado-por-magnitud-branca-colormap">Paso 3 · <code class="docutils literal notranslate"><span class="pre">CircleMarker</span></code> coloreado por magnitud (<code class="docutils literal notranslate"><span class="pre">branca.colormap</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-markercluster-para-todos-los-puntos">Paso 4 · <code class="docutils literal notranslate"><span class="pre">MarkerCluster</span></code> para todos los puntos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-heatmap-de-densidad">Paso 5 · <code class="docutils literal notranslate"><span class="pre">HeatMap</span></code> de densidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-6-combinar-capas-con-layercontrol-y-exportar-a-html">Paso 6 · Combinar capas con <code class="docutils literal notranslate"><span class="pre">LayerControl</span></code> y exportar a HTML</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-independiente">✍️ Práctica independiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-del-taller">🔎 Cierre del taller</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-pasos-sugeridos">Próximos pasos sugeridos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">📚 Recursos adicionales</a></li>
 </ul>
             </nav>
         </div>
@@ -461,38 +482,284 @@
   <p><a class="reference external" href="https://colab.research.google.com/github/fmatcasici/analisis-visualizacion-python/blob/main/07-folium/notebook.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="tema-07-folium">
 <h1>Tema 07 · Folium<a class="headerlink" href="#tema-07-folium" title="Link to this heading">#</a></h1>
-<p><strong>Duración:</strong> 45 min — a cargo de <strong>Curi</strong></p>
+<p><strong>Duración:</strong> 60 min — a cargo de <strong>Luis Fernando Curi Quintal</strong></p>
 <hr class="docutils" />
-<section id="objetivos">
-<h2>Objetivos<a class="headerlink" href="#objetivos" title="Link to this heading">#</a></h2>
+<section id="objetivos-de-aprendizaje">
+<h2>🎯 Objetivos de aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Link to this heading">#</a></h2>
+<p>Al finalizar este tema, el participante será capaz de:</p>
 <ul class="simple">
-<li><p>Objetivo 1</p></li>
-<li><p>Objetivo 2</p></li>
-<li><p>Objetivo 3</p></li>
+<li><p>Explicar qué es Folium y cómo se relaciona con la librería de JavaScript Leaflet.js.</p></li>
+<li><p>Construir un mapa interactivo con marcadores, popups y tooltips a partir de coordenadas en un DataFrame.</p></li>
+<li><p>Codificar variables numéricas mediante color y tamaño de marcador (<code class="docutils literal notranslate"><span class="pre">CircleMarker</span></code> + <code class="docutils literal notranslate"><span class="pre">branca.colormap</span></code>).</p></li>
+<li><p>Usar plugins (<code class="docutils literal notranslate"><span class="pre">MarkerCluster</span></code>, <code class="docutils literal notranslate"><span class="pre">HeatMap</span></code>) para representar grandes volúmenes de puntos geoespaciales.</p></li>
+<li><p>Combinar varias capas con <code class="docutils literal notranslate"><span class="pre">LayerControl</span></code> y exportar el mapa como archivo <code class="docutils literal notranslate"><span class="pre">.html</span></code> independiente.</p></li>
 </ul>
 </section>
-<section id="contenido">
-<h2>Contenido<a class="headerlink" href="#contenido" title="Link to this heading">#</a></h2>
-<p><em>Completa aquí la teoría y ejemplos de este tema.</em></p>
+<section id="contenido-teorico">
+<h2>🧠 Contenido teórico<a class="headerlink" href="#contenido-teorico" title="Link to this heading">#</a></h2>
+<section id="que-es-folium">
+<h3>1. ¿Qué es Folium?<a class="headerlink" href="#que-es-folium" title="Link to this heading">#</a></h3>
+<p><strong>Folium</strong> es una librería de Python que envuelve a <strong>Leaflet.js</strong>, una de las bibliotecas de mapas interactivos más usadas en la web (ligera, de código abierto, sin necesidad de una cuenta/API key para uso básico). Folium te permite construir mapas interactivos completos escribiendo solo Python, generando por debajo un archivo HTML con JavaScript.</p>
+<p>Cierra el taller de forma natural: es la única herramienta enfocada específicamente en datos <strong>geoespaciales</strong> (coordenadas de latitud/longitud), un tipo de dato muy común (ubicación de clientes, eventos, sensores, tiendas, sismos, etc.) que ninguna de las herramientas anteriores maneja de forma nativa.</p>
+</section>
+<section id="los-bloques-de-un-mapa-en-folium">
+<h3>2. Los bloques de un mapa en Folium<a class="headerlink" href="#los-bloques-de-un-mapa-en-folium" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">folium.Map(location=[lat,</span> <span class="pre">lon],</span> <span class="pre">zoom_start=...)</span></code></strong>: crea el mapa base, centrado en una coordenada.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">tiles=</span></code></strong>: el estilo visual del mapa base. Usaremos el valor por defecto (<strong>OpenStreetMap</strong>, gratuito y sin necesidad de API key). Folium admite otros proveedores (p. ej. CartoDB, Stadia Maps), pero varios de ellos ahora requieren una llave de API — para este taller nos quedamos con OpenStreetMap por simplicidad.</p></li>
+<li><p><strong>Marcadores:</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">folium.Marker</span></code>: pin clásico, con <code class="docutils literal notranslate"><span class="pre">popup</span></code> (aparece al hacer clic) y <code class="docutils literal notranslate"><span class="pre">tooltip</span></code> (aparece al pasar el mouse).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">folium.CircleMarker</span></code>: círculo cuyo <strong>radio</strong> y <strong>color</strong> puedes codificar según una variable numérica — ideal para representar magnitud, cantidad, etc.</p></li>
+</ul>
+</li>
+<li><p><strong>Capas (<code class="docutils literal notranslate"><span class="pre">folium.FeatureGroup</span></code>, <code class="docutils literal notranslate"><span class="pre">folium.TileLayer</span></code>)</strong> + <strong><code class="docutils literal notranslate"><span class="pre">folium.LayerControl()</span></code></strong>: permiten que el usuario active/desactive grupos de elementos o cambie el mapa base, igual que en Google Maps.</p></li>
+</ul>
+</section>
+<section id="plugins-para-grandes-volumenes-de-datos">
+<h3>3. Plugins para grandes volúmenes de datos<a class="headerlink" href="#plugins-para-grandes-volumenes-de-datos" title="Link to this heading">#</a></h3>
+<p>Cuando tienes cientos o miles de puntos, mostrarlos todos como marcadores individuales satura el mapa. <code class="docutils literal notranslate"><span class="pre">folium.plugins</span></code> ofrece:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">MarkerCluster</span></code></strong>: agrupa automáticamente los marcadores cercanos en un número (círculo) que se “abre” al hacer zoom.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">HeatMap</span></code></strong>: convierte los puntos en un mapa de calor de densidad — muy útil para detectar zonas de concentración sin mostrar cada punto individual.</p></li>
+</ul>
+</section>
+<section id="de-python-a-html">
+<h3>4. De Python a HTML<a class="headerlink" href="#de-python-a-html" title="Link to this heading">#</a></h3>
+<p>Un mapa de Folium (<code class="docutils literal notranslate"><span class="pre">m</span></code>) es un objeto que <strong>se muestra automáticamente</strong> en Colab/Jupyter (como una figura de Plotly). Para compartirlo fuera de la notebook (por ejemplo en el repositorio de GitHub del taller como página independiente), se exporta con <code class="docutils literal notranslate"><span class="pre">m.save(&quot;mapa.html&quot;)</span></code> — el resultado es un archivo interactivo que funciona en cualquier navegador, sin Python.</p>
+</section>
+</section>
+<section id="configuracion-del-entorno">
+<h2>⚙️ Configuración del entorno<a class="headerlink" href="#configuracion-del-entorno" title="Link to this heading">#</a></h2>
+<p>Cargaremos <code class="docutils literal notranslate"><span class="pre">tema07_sismos_simulados_mexico.csv</span></code>. <strong>Importante:</strong> este dataset es completamente <strong>simulado</strong> con fines educativos (coordenadas generadas aleatoriamente alrededor de zonas de referencia); las magnitudes, profundidades y fechas <strong>no corresponden a sismos reales</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instala/importa librerías necesarias para este tema</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># === Carga del dataset ===</span>
+<span class="c1"># Opción 1 (recomendada una vez publicado el repositorio del taller):</span>
+<span class="c1"># reemplaza &lt;usuario&gt;/&lt;repositorio&gt; por la ruta real de tu repo de GitHub</span>
+<span class="c1"># y ejecuta esta celda. Usa el botón "Raw" de GitHub para obtener la URL.</span>
+<span class="n">GITHUB_RAW_URL</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"https://raw.githubusercontent.com/fmatcasici/analisis-visualizacion-python/main/07-folium/tema07_sismos_simulados_mexico.csv"</span>
+<span class="p">)</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">GITHUB_RAW_URL</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Datos cargados desde GitHub ✅  -&gt;"</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No se pudo leer desde GitHub todavía (repo no configurado o sin internet)."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Sube manualmente el archivo 'tema07_sismos_simulados_mexico.csv' cuando se te solicite."</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span>
+        <span class="n">subido</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>  <span class="c1"># selecciona tema07_sismos_simulados_mexico.csv</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">subido</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="c1"># Fuera de Colab (por ejemplo, ejecución local de prueba):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"tema07_sismos_simulados_mexico.csv"</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="practica-guiada">
-<h2>Práctica guiada<a class="headerlink" href="#practica-guiada" title="Link to this heading">#</a></h2>
-<p><em>Instrucciones de la actividad para los asistentes.</em></p>
+<h2>🧭 Práctica guiada<a class="headerlink" href="#practica-guiada" title="Link to this heading">#</a></h2>
+<section id="paso-1-mapa-base-centrado-en-mexico">
+<h3>Paso 1 · Mapa base centrado en México<a class="headerlink" href="#paso-1-mapa-base-centrado-en-mexico" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tu código aquí</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">folium</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">folium.plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">MarkerCluster</span><span class="p">,</span> <span class="n">HeatMap</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">branca.colormap</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cm</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">"fecha"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"fecha"</span><span class="p">])</span>
+
+<span class="n">centro_mexico</span> <span class="o">=</span> <span class="p">[</span><span class="mf">23.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">102.5</span><span class="p">]</span>
+<span class="n">m1</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">m1</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="paso-2-marcadores-individuales-con-popup-y-tooltip">
+<h3>Paso 2 · Marcadores individuales con popup y tooltip<a class="headerlink" href="#paso-2-marcadores-individuales-con-popup-y-tooltip" title="Link to this heading">#</a></h3>
+<p>Para que el mapa sea legible, tomamos solo los 25 sismos de mayor magnitud.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top25</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"magnitud"</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="n">m2</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">sismo</span> <span class="ow">in</span> <span class="n">top25</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">popup_html</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"&lt;b&gt;Región:&lt;/b&gt; </span><span class="si">{</span><span class="n">sismo</span><span class="p">[</span><span class="s1">'region'</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;br&gt;"</span>
+        <span class="sa">f</span><span class="s2">"&lt;b&gt;Fecha:&lt;/b&gt; </span><span class="si">{</span><span class="n">sismo</span><span class="p">[</span><span class="s1">'fecha'</span><span class="p">]</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="si">}</span><span class="s2">&lt;br&gt;"</span>
+        <span class="sa">f</span><span class="s2">"&lt;b&gt;Magnitud:&lt;/b&gt; </span><span class="si">{</span><span class="n">sismo</span><span class="p">[</span><span class="s1">'magnitud'</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;br&gt;"</span>
+        <span class="sa">f</span><span class="s2">"&lt;b&gt;Profundidad:&lt;/b&gt; </span><span class="si">{</span><span class="n">sismo</span><span class="p">[</span><span class="s1">'profundidad_km'</span><span class="p">]</span><span class="si">}</span><span class="s2"> km"</span>
+    <span class="p">)</span>
+    <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+        <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">sismo</span><span class="p">[</span><span class="s2">"latitud"</span><span class="p">],</span> <span class="n">sismo</span><span class="p">[</span><span class="s2">"longitud"</span><span class="p">]],</span>
+        <span class="n">popup</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">Popup</span><span class="p">(</span><span class="n">popup_html</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=</span><span class="mi">250</span><span class="p">),</span>
+        <span class="n">tooltip</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Magnitud </span><span class="si">{</span><span class="n">sismo</span><span class="p">[</span><span class="s1">'magnitud'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">icon</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">Icon</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"red"</span> <span class="k">if</span> <span class="n">sismo</span><span class="p">[</span><span class="s2">"magnitud"</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">5.5</span> <span class="k">else</span> <span class="s2">"orange"</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s2">"info-sign"</span><span class="p">),</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m2</span><span class="p">)</span>
+
+<span class="n">m2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-3-circlemarker-coloreado-por-magnitud-branca-colormap">
+<h3>Paso 3 · <code class="docutils literal notranslate"><span class="pre">CircleMarker</span></code> coloreado por magnitud (<code class="docutils literal notranslate"><span class="pre">branca.colormap</span></code>)<a class="headerlink" href="#paso-3-circlemarker-coloreado-por-magnitud-branca-colormap" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colormap</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">LinearColormap</span><span class="p">(</span>
+    <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s2">"#ffffb2"</span><span class="p">,</span> <span class="s2">"#fd8d3c"</span><span class="p">,</span> <span class="s2">"#bd0026"</span><span class="p">],</span>
+    <span class="n">vmin</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">"magnitud"</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">vmax</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">"magnitud"</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+    <span class="n">caption</span><span class="o">=</span><span class="s2">"Magnitud simulada"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">m3</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">sismo</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">folium</span><span class="o">.</span><span class="n">CircleMarker</span><span class="p">(</span>
+        <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">sismo</span><span class="p">[</span><span class="s2">"latitud"</span><span class="p">],</span> <span class="n">sismo</span><span class="p">[</span><span class="s2">"longitud"</span><span class="p">]],</span>
+        <span class="n">radius</span><span class="o">=</span><span class="mi">3</span> <span class="o">+</span> <span class="n">sismo</span><span class="p">[</span><span class="s2">"magnitud"</span><span class="p">],</span>           <span class="c1"># tamaño según magnitud</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">colormap</span><span class="p">(</span><span class="n">sismo</span><span class="p">[</span><span class="s2">"magnitud"</span><span class="p">]),</span>        <span class="c1"># color según magnitud</span>
+        <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fill_opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">popup</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">sismo</span><span class="p">[</span><span class="s1">'region'</span><span class="p">]</span><span class="si">}</span><span class="s2"> — M</span><span class="si">{</span><span class="n">sismo</span><span class="p">[</span><span class="s1">'magnitud'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m3</span><span class="p">)</span>
+
+<span class="n">colormap</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m3</span><span class="p">)</span>
+<span class="n">m3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-4-markercluster-para-todos-los-puntos">
+<h3>Paso 4 · <code class="docutils literal notranslate"><span class="pre">MarkerCluster</span></code> para todos los puntos<a class="headerlink" href="#paso-4-markercluster-para-todos-los-puntos" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m4</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cluster</span> <span class="o">=</span> <span class="n">MarkerCluster</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Sismos simulados"</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m4</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">sismo</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+        <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">sismo</span><span class="p">[</span><span class="s2">"latitud"</span><span class="p">],</span> <span class="n">sismo</span><span class="p">[</span><span class="s2">"longitud"</span><span class="p">]],</span>
+        <span class="n">popup</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">sismo</span><span class="p">[</span><span class="s1">'region'</span><span class="p">]</span><span class="si">}</span><span class="s2"> — M</span><span class="si">{</span><span class="n">sismo</span><span class="p">[</span><span class="s1">'magnitud'</span><span class="p">]</span><span class="si">}</span><span class="s2"> — </span><span class="si">{</span><span class="n">sismo</span><span class="p">[</span><span class="s1">'fecha'</span><span class="p">]</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
+
+<span class="n">m4</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-5-heatmap-de-densidad">
+<h3>Paso 5 · <code class="docutils literal notranslate"><span class="pre">HeatMap</span></code> de densidad<a class="headerlink" href="#paso-5-heatmap-de-densidad" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m5</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">puntos_calor</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">"latitud"</span><span class="p">,</span> <span class="s2">"longitud"</span><span class="p">,</span> <span class="s2">"magnitud"</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">HeatMap</span><span class="p">(</span><span class="n">puntos_calor</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">blur</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">max_zoom</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m5</span><span class="p">)</span>
+
+<span class="n">m5</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-6-combinar-capas-con-layercontrol-y-exportar-a-html">
+<h3>Paso 6 · Combinar capas con <code class="docutils literal notranslate"><span class="pre">LayerControl</span></code> y exportar a HTML<a class="headerlink" href="#paso-6-combinar-capas-con-layercontrol-y-exportar-a-html" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m6</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">grupo_marcadores</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">FeatureGroup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Marcadores (top 25)"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">sismo</span> <span class="ow">in</span> <span class="n">top25</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">folium</span><span class="o">.</span><span class="n">CircleMarker</span><span class="p">(</span>
+        <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">sismo</span><span class="p">[</span><span class="s2">"latitud"</span><span class="p">],</span> <span class="n">sismo</span><span class="p">[</span><span class="s2">"longitud"</span><span class="p">]],</span>
+        <span class="n">radius</span><span class="o">=</span><span class="mi">3</span> <span class="o">+</span> <span class="n">sismo</span><span class="p">[</span><span class="s2">"magnitud"</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">"crimson"</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fill_opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+        <span class="n">popup</span><span class="o">=</span><span class="sa">f</span><span class="s2">"M</span><span class="si">{</span><span class="n">sismo</span><span class="p">[</span><span class="s1">'magnitud'</span><span class="p">]</span><span class="si">}</span><span class="s2"> — </span><span class="si">{</span><span class="n">sismo</span><span class="p">[</span><span class="s1">'region'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">grupo_marcadores</span><span class="p">)</span>
+<span class="n">grupo_marcadores</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m6</span><span class="p">)</span>
+
+<span class="n">grupo_calor</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">FeatureGroup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Mapa de calor"</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">HeatMap</span><span class="p">(</span><span class="n">puntos_calor</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">blur</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">grupo_calor</span><span class="p">)</span>
+<span class="n">grupo_calor</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m6</span><span class="p">)</span>
+
+<span class="n">folium</span><span class="o">.</span><span class="n">LayerControl</span><span class="p">(</span><span class="n">collapsed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m6</span><span class="p">)</span>
+
+<span class="n">m6</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">"mapa_sismos_simulados.html"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Mapa guardado como mapa_sismos_simulados.html (ábrelo en cualquier navegador)."</span><span class="p">)</span>
+<span class="n">m6</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="practica-independiente">
+<h2>✍️ Práctica independiente<a class="headerlink" href="#practica-independiente" title="Link to this heading">#</a></h2>
+<p><strong>Ejercicio 1.</strong> Filtra el DataFrame a sismos con <code class="docutils literal notranslate"><span class="pre">magnitud</span> <span class="pre">&gt;=</span> <span class="pre">5.0</span></code> y construye un mapa con un <code class="docutils literal notranslate"><span class="pre">CircleMarker</span></code> por cada uno (color fijo, por ejemplo <code class="docutils literal notranslate"><span class="pre">'darkred'</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 2.</strong> Construye un mapa donde el color de cada <code class="docutils literal notranslate"><span class="pre">CircleMarker</span></code> represente la <code class="docutils literal notranslate"><span class="pre">profundidad_km</span></code> en lugar de la magnitud (usa un <code class="docutils literal notranslate"><span class="pre">branca.colormap.LinearColormap</span></code> nuevo).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 3.</strong> Construye un <code class="docutils literal notranslate"><span class="pre">MarkerCluster</span></code>, pero coloca en el <code class="docutils literal notranslate"><span class="pre">popup</span></code> de cada marcador la <code class="docutils literal notranslate"><span class="pre">region</span></code> en negritas y usa <code class="docutils literal notranslate"><span class="pre">folium.Icon(icon='glyphicon-warning-sign')</span></code> (o cualquier ícono de tu elección).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 4 (reto).</strong> Crea un mapa con <strong>dos</strong> <code class="docutils literal notranslate"><span class="pre">FeatureGroup</span></code> — uno con <code class="docutils literal notranslate"><span class="pre">MarkerCluster</span></code> y otro con <code class="docutils literal notranslate"><span class="pre">HeatMap</span></code> — controlables con <code class="docutils literal notranslate"><span class="pre">LayerControl</span></code>, de forma que el usuario pueda alternar entre ambas vistas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cierre-del-taller">
+<h2>🔎 Cierre del taller<a class="headerlink" href="#cierre-del-taller" title="Link to this heading">#</a></h2>
+<p>Con Folium completamos el recorrido: partimos de <strong>Pandas</strong> para preparar los datos, pasamos por <strong>Matplotlib</strong> y <strong>Seaborn</strong> para visualización estática, dimos el salto a la interactividad con <strong>Plotly</strong>, construimos aplicaciones completas con <strong>Dash</strong>, exploramos series de tiempo de alto rendimiento con <strong>Bokeh</strong>, y cerramos con datos <strong>geoespaciales</strong> en Folium.</p>
+<section id="proximos-pasos-sugeridos">
+<h3>Próximos pasos sugeridos<a class="headerlink" href="#proximos-pasos-sugeridos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Combinar herramientas: por ejemplo, un dashboard de Dash (Tema 05) que incluya un mapa de Folium embebido con <code class="docutils literal notranslate"><span class="pre">folium.Figure()._repr_html_()</span></code> dentro de un <code class="docutils literal notranslate"><span class="pre">html.Iframe</span></code>.</p></li>
+<li><p>Explorar <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> para trabajar con polígonos (estados, municipios) además de puntos.</p></li>
+</ul>
+</section>
+</section>
+<section id="recursos-adicionales">
+<h2>📚 Recursos adicionales<a class="headerlink" href="#recursos-adicionales" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://python-visualization.github.io/folium/latest/">Documentación oficial de Folium</a></p></li>
+<li><p><a class="reference external" href="https://python-visualization.github.io/folium/latest/user_guide.html">Galería de ejemplos oficiales</a></p></li>
+<li><p><a class="reference external" href="https://python-visualization.github.io/folium/latest/user_guide/plugins.html">Plugins de Folium (MarkerCluster, HeatMap, etc.)</a></p></li>
+<li><p><a class="reference external" href="https://leafletjs.com/">Documentación de Leaflet.js (la base de Folium)</a></p></li>
+<li><p><a class="reference external" href="https://python-visualization.github.io/branca/colormap.html">branca.colormap — escalas de color para mapas</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -553,9 +820,30 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido">Contenido</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">Práctica guiada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">🎯 Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido-teorico">🧠 Contenido teórico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-folium">1. ¿Qué es Folium?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#los-bloques-de-un-mapa-en-folium">2. Los bloques de un mapa en Folium</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plugins-para-grandes-volumenes-de-datos">3. Plugins para grandes volúmenes de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-python-a-html">4. De Python a HTML</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-del-entorno">⚙️ Configuración del entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">🧭 Práctica guiada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-mapa-base-centrado-en-mexico">Paso 1 · Mapa base centrado en México</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-marcadores-individuales-con-popup-y-tooltip">Paso 2 · Marcadores individuales con popup y tooltip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-circlemarker-coloreado-por-magnitud-branca-colormap">Paso 3 · <code class="docutils literal notranslate"><span class="pre">CircleMarker</span></code> coloreado por magnitud (<code class="docutils literal notranslate"><span class="pre">branca.colormap</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-markercluster-para-todos-los-puntos">Paso 4 · <code class="docutils literal notranslate"><span class="pre">MarkerCluster</span></code> para todos los puntos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-heatmap-de-densidad">Paso 5 · <code class="docutils literal notranslate"><span class="pre">HeatMap</span></code> de densidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-6-combinar-capas-con-layercontrol-y-exportar-a-html">Paso 6 · Combinar capas con <code class="docutils literal notranslate"><span class="pre">LayerControl</span></code> y exportar a HTML</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-independiente">✍️ Práctica independiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-del-taller">🔎 Cierre del taller</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-pasos-sugeridos">Próximos pasos sugeridos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">📚 Recursos adicionales</a></li>
 </ul>
   </nav></div>
 
