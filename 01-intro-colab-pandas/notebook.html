@@ -499,7 +499,7 @@
 <li><p><strong>Entorno de ejecución (runtime):</strong> cada vez que abres una notebook y ejecutas una celda, Colab te asigna una máquina con Python y muchas librerías preinstaladas (Pandas, NumPy, Matplotlib, etc.). El estado (variables, DataFrames) se pierde si el entorno se reinicia o desconecta.</p></li>
 <li><p><strong>Orden de ejecución:</strong> las celdas <em>no</em> se ejecutan automáticamente en orden de arriba hacia abajo; se ejecutan en el orden en que tú las corres. El número entre corchetes <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> indica ese orden — una fuente común de errores para principiantes.</p></li>
 <li><p><strong>Integración con Drive y GitHub:</strong> puedes guardar copias en tu Google Drive (<code class="docutils literal notranslate"><span class="pre">Archivo</span> <span class="pre">→</span> <span class="pre">Guardar</span> <span class="pre">una</span> <span class="pre">copia</span> <span class="pre">en</span> <span class="pre">Drive</span></code>) o en un repositorio de GitHub (<code class="docutils literal notranslate"><span class="pre">Archivo</span> <span class="pre">→</span> <span class="pre">Guardar</span> <span class="pre">una</span> <span class="pre">copia</span> <span class="pre">en</span> <span class="pre">GitHub</span></code>), y cargar archivos desde ambos.</p></li>
-<li><p><strong>Aceleradores de hardware:</strong> <code class="docutils literal notranslate"><span class="pre">Entorno</span> <span class="pre">de</span> <span class="pre">ejecución</span> <span class="pre">→</span> <span class="pre">Cambiar</span> <span class="pre">tipo</span> <span class="pre">de</span> <span class="pre">entorno</span> <span class="pre">de</span> <span class="pre">ejecución</span></code> permite habilitar GPU/TPU (no se usan en este taller, pero es útil mencionarlo).</p></li>
+<li><p><strong>Aceleradores de hardware:</strong> <code class="docutils literal notranslate"><span class="pre">Entorno</span> <span class="pre">de</span> <span class="pre">ejecución</span> <span class="pre">→</span> <span class="pre">Cambiar</span> <span class="pre">tipo</span> <span class="pre">de</span> <span class="pre">entorno</span> <span class="pre">de</span> <span class="pre">ejecución</span></code> permite habilitar GPU/TPU</p></li>
 </ul>
 <p><strong>Atajos útiles:</strong></p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -555,9 +555,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># === Carga del dataset ===</span>
-<span class="c1"># Opción 1 (recomendada una vez publicado el repositorio del taller):</span>
-<span class="c1"># reemplaza &lt;usuario&gt;/&lt;repositorio&gt; por la ruta real de tu repo de GitHub</span>
-<span class="c1"># y ejecuta esta celda. Usa el botón "Raw" de GitHub para obtener la URL.</span>
 <span class="n">GITHUB_RAW_URL</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s2">"https://raw.githubusercontent.com/fmatcasici/analisis-visualizacion-python/main/01-intro-colab-pandas/tema01_ventas_tienda.csv"</span>
 <span class="p">)</span>
