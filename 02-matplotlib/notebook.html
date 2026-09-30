@@ -215,8 +215,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01-intro-colab-pandas/notebook.html">Tema 01 · Introducción a Colab y Pandas</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tema 02: Matplotlib</a></li>
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tema 02 · Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03-seaborn/notebook.html">Tema 03 · Seaborn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-plotly/notebook.html">Tema 04 · Plotly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-dash/notebook.html">Tema 05 · Dash</a></li>
@@ -445,13 +444,28 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tema 02: Matplotlib</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Tema 02: Matplotlib</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">Práctica guiada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">🎯 Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido-teorico">🧠 Contenido teórico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-matplotlib">1. ¿Por qué Matplotlib?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitectura-figure-y-axes">2. Arquitectura: <code class="docutils literal notranslate"><span class="pre">Figure</span></code> y <code class="docutils literal notranslate"><span class="pre">Axes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-grafico-que-practicaremos">3. Tipos de gráfico que practicaremos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-de-comunicacion-visual">4. Buenas prácticas de comunicación visual</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-del-entorno">⚙️ Configuración del entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">🧭 Práctica guiada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-grafico-de-linea-evolucion-de-la-temperatura-en-una-ciudad">Paso 1 · Gráfico de línea — evolución de la temperatura en una ciudad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-grafico-de-barras-comparacion-entre-ciudades">Paso 2 · Gráfico de barras — comparación entre ciudades</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-histograma-distribucion-de-una-variable">Paso 3 · Histograma — distribución de una variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-dispersion-relacion-entre-dos-variables">Paso 4 · Dispersión — relación entre dos variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-subplots-panel-comparativo-de-2x2">Paso 5 · Subplots — panel comparativo de 2x2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-6-exportar-una-figura-a-imagen">Paso 6 · Exportar una figura a imagen</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-independiente">✍️ Práctica independiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-y-puente-al-siguiente-tema">🔎 Cierre y puente al siguiente tema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">📚 Recursos adicionales</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -465,37 +479,289 @@
   <p><a class="reference external" href="https://colab.research.google.com/github/fmatcasici/analisis-visualizacion-python/blob/main/02-matplotlib/notebook.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="tema-02-matplotlib">
 <h1>Tema 02: Matplotlib<a class="headerlink" href="#tema-02-matplotlib" title="Link to this heading">#</a></h1>
-<p><strong>Duración:</strong> 50 min — <strong>Jorge Carlos Reyes Magaña</strong></p>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>Tema 02: Matplotlib<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p><strong>Taller:</strong> Análisis y Visualización Interactiva en Python
 <strong>Duración estimada de esta sesión:</strong> 60 minutos
 <strong>Herramienta principal:</strong> Matplotlib (pyplot + Programación Orientada a Objetos)
 <strong>Modalidad de práctica:</strong> Google Colab</p>
-<hr class="docutils" />
-<blockquote>
-<div><p>📌 <strong>Nota para el profesor:</strong> esta notebook está diseñada para proyectarse y ejecutarse en vivo. Las secciones marcadas como <strong>Práctica guiada</strong> se resuelven junto con el grupo; las marcadas como <strong>Práctica independiente</strong> las resuelven los participantes en sus propias copias de la notebook (<code class="docutils literal notranslate"><span class="pre">Archivo</span> <span class="pre">→</span> <span class="pre">Guardar</span> <span class="pre">una</span> <span class="pre">copia</span> <span class="pre">en</span> <span class="pre">Drive</span></code>).</p>
-</div></blockquote>
+<section id="objetivos-de-aprendizaje">
+<h2>🎯 Objetivos de aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Link to this heading">#</a></h2>
+<p>Al finalizar este tema, el participante será capaz de:</p>
+<ul class="simple">
+<li><p>Explicar la arquitectura de Matplotlib (Figure, Axes) y la diferencia entre la interfaz <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> y la interfaz orientada a objetos.</p></li>
+<li><p>Construir gráficos de línea, barra, histograma y dispersión a partir de un DataFrame de Pandas.</p></li>
+<li><p>Personalizar títulos, etiquetas, leyendas, colores y anotaciones.</p></li>
+<li><p>Combinar múltiples gráficos en una sola figura con <code class="docutils literal notranslate"><span class="pre">subplots</span></code>.</p></li>
+<li><p>Exportar una figura como imagen (<code class="docutils literal notranslate"><span class="pre">.png</span></code>) lista para un reporte o presentación.</p></li>
+</ul>
+</section>
+<section id="contenido-teorico">
+<h2>🧠 Contenido teórico<a class="headerlink" href="#contenido-teorico" title="Link to this heading">#</a></h2>
+<section id="por-que-matplotlib">
+<h3>1. ¿Por qué Matplotlib?<a class="headerlink" href="#por-que-matplotlib" title="Link to this heading">#</a></h3>
+<p>Matplotlib es la librería de visualización más antigua y fundamental del ecosistema científico de Python (2003). Casi todas las demás librerías de este taller (Seaborn, Pandas <code class="docutils literal notranslate"><span class="pre">.plot()</span></code>) están construidas <strong>sobre</strong> Matplotlib o se inspiran en su API. Entenderla bien es la base para personalizar cualquier gráfico, sin importar la herramienta.</p>
+<p>Sus gráficos son <strong>estáticos</strong> (una imagen), a diferencia de Plotly/Bokeh que veremos más adelante y que son <strong>interactivos</strong>. Aun así, sigue siendo la opción preferida para:</p>
+<ul class="simple">
+<li><p>Publicaciones científicas y reportes impresos (control total del resultado, alta resolución).</p></li>
+<li><p>Gráficos rápidos de exploración de datos.</p></li>
+<li><p>Cuando no se necesita interactividad (zoom, hover, filtros).</p></li>
+</ul>
+</section>
+<section id="arquitectura-figure-y-axes">
+<h3>2. Arquitectura: <code class="docutils literal notranslate"><span class="pre">Figure</span></code> y <code class="docutils literal notranslate"><span class="pre">Axes</span></code><a class="headerlink" href="#arquitectura-figure-y-axes" title="Link to this heading">#</a></h3>
+<p>Todo gráfico en Matplotlib tiene dos componentes principales:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Figure</span></code></strong>: el “lienzo” completo — puede contener uno o varios gráficos (subplots).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Axes</span></code></strong>: cada gráfico individual dentro de la figura (a pesar del nombre, <strong>no</strong> es lo mismo que “ejes” — un <code class="docutils literal notranslate"><span class="pre">Axes</span></code> incluye ejes X/Y, título, leyenda, etc.).</p></li>
+</ul>
+<p>Hay dos formas de trabajar:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Interfaz</p></th>
+<th class="head"><p>Uso típico</p></th>
+<th class="head"><p>Ejemplo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">pyplot</span></code> (estado implícito)</strong></p></td>
+<td><p>Gráficos rápidos, una sola figura</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y);</span> <span class="pre">plt.title(&quot;...&quot;)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Orientada a objetos (recomendada)</strong></p></td>
+<td><p>Múltiples subplots, personalización avanzada, código reutilizable</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span> <span class="pre">=</span> <span class="pre">plt.subplots();</span> <span class="pre">ax.plot(x,</span> <span class="pre">y)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En este taller usaremos principalmente la interfaz <strong>orientada a objetos</strong> (<code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span> <span class="pre">=</span> <span class="pre">plt.subplots()</span></code>) porque escala mejor y es la que recomienda la documentación oficial para código de producción.</p>
+</section>
+<section id="tipos-de-grafico-que-practicaremos">
+<h3>3. Tipos de gráfico que practicaremos<a class="headerlink" href="#tipos-de-grafico-que-practicaremos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Línea (<code class="docutils literal notranslate"><span class="pre">ax.plot</span></code>)</strong>: series temporales — ideal para nuestro dataset de clima mensual.</p></li>
+<li><p><strong>Barra (<code class="docutils literal notranslate"><span class="pre">ax.bar</span></code> / <code class="docutils literal notranslate"><span class="pre">ax.barh</span></code>)</strong>: comparar categorías (ciudades).</p></li>
+<li><p><strong>Histograma (<code class="docutils literal notranslate"><span class="pre">ax.hist</span></code>)</strong>: distribución de una variable numérica (precipitación).</p></li>
+<li><p><strong>Dispersión (<code class="docutils literal notranslate"><span class="pre">ax.scatter</span></code>)</strong>: relación entre dos variables numéricas (temperatura vs. humedad).</p></li>
+<li><p><strong>Subplots (<code class="docutils literal notranslate"><span class="pre">plt.subplots(nrows,</span> <span class="pre">ncols)</span></code>)</strong>: varios gráficos relacionados en una sola figura.</p></li>
+</ul>
+</section>
+<section id="buenas-practicas-de-comunicacion-visual">
+<h3>4. Buenas prácticas de comunicación visual<a class="headerlink" href="#buenas-practicas-de-comunicacion-visual" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Todo gráfico debe tener <strong>título, etiquetas de ejes y, si aplica, leyenda</strong> — un gráfico sin contexto no comunica nada.</p></li>
+<li><p>Cuidado con el “chartjunk”: colores y elementos decorativos que no aportan información.</p></li>
+<li><p>Elegir el tipo de gráfico según la pregunta: ¿evolución en el tiempo? (línea) ¿comparación entre categorías? (barra) ¿distribución? (histograma) ¿relación? (dispersión).</p></li>
+</ul>
+</section>
+</section>
+<section id="configuracion-del-entorno">
+<h2>⚙️ Configuración del entorno<a class="headerlink" href="#configuracion-del-entorno" title="Link to this heading">#</a></h2>
+<p>Cargaremos <code class="docutils literal notranslate"><span class="pre">tema02_clima_mensual.csv</span></code>: temperatura, precipitación y humedad promedio mensual (2023-2024) para 5 ciudades — dataset sintético con fines educativos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instala/importa librerías necesarias para este tema</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># === Carga del dataset ===</span>
+<span class="c1"># Opción 1 (recomendada una vez publicado el repositorio del taller):</span>
+<span class="c1"># reemplaza &lt;usuario&gt;/&lt;repositorio&gt; por la ruta real de tu repo de GitHub</span>
+<span class="c1"># y ejecuta esta celda. Usa el botón "Raw" de GitHub para obtener la URL.</span>
+<span class="n">GITHUB_RAW_URL</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"https://raw.githubusercontent.com/fmatcasici/analisis-visualizacion-python/main/01-intro-colab-pandas/datasets/tema02_clima_mensual.csv"</span>
+<span class="p">)</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">GITHUB_RAW_URL</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Datos cargados desde GitHub ✅  -&gt;"</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No se pudo leer desde GitHub todavía (repo no configurado o sin internet)."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Sube manualmente el archivo 'tema02_clima_mensual.csv' cuando se te solicite."</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span>
+        <span class="n">subido</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>  <span class="c1"># selecciona tema02_clima_mensual.csv</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">subido</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="c1"># Fuera de Colab (por ejemplo, ejecución local de prueba):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"tema02_clima_mensual.csv"</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 <section id="practica-guiada">
-<h2>Práctica guiada<a class="headerlink" href="#practica-guiada" title="Link to this heading">#</a></h2>
-<p><em>Instrucciones de la actividad para los asistentes.</em></p>
+<h2>🧭 Práctica guiada<a class="headerlink" href="#practica-guiada" title="Link to this heading">#</a></h2>
+<section id="paso-1-grafico-de-linea-evolucion-de-la-temperatura-en-una-ciudad">
+<h3>Paso 1 · Gráfico de línea — evolución de la temperatura en una ciudad<a class="headerlink" href="#paso-1-grafico-de-linea-evolucion-de-la-temperatura-en-una-ciudad" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tu código aquí</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">cdmx</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">"ciudad"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"CDMX"</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"anio"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2024</span><span class="p">)]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"mes"</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cdmx</span><span class="p">[</span><span class="s2">"mes"</span><span class="p">],</span> <span class="n">cdmx</span><span class="p">[</span><span class="s2">"temp_promedio_c"</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"o"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#d62728"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Temp. promedio"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">cdmx</span><span class="p">[</span><span class="s2">"mes"</span><span class="p">],</span> <span class="n">cdmx</span><span class="p">[</span><span class="s2">"temp_min_c"</span><span class="p">],</span> <span class="n">cdmx</span><span class="p">[</span><span class="s2">"temp_max_c"</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#d62728"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Rango min-max"</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Temperatura mensual en CDMX (2024)"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Mes"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Temperatura (°C)"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="paso-2-grafico-de-barras-comparacion-entre-ciudades">
+<h3>Paso 2 · Gráfico de barras — comparación entre ciudades<a class="headerlink" href="#paso-2-grafico-de-barras-comparacion-entre-ciudades" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">precip_2024</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"anio"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2024</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"ciudad"</span><span class="p">)[</span><span class="s2">"precipitacion_mm"</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">barras</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">precip_2024</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">precip_2024</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#1f77b4"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar_label</span><span class="p">(</span><span class="n">barras</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">"</span><span class="si">%.0f</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># etiqueta el valor encima de cada barra</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Precipitación acumulada por ciudad (2024)"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Ciudad"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Precipitación (mm)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-3-histograma-distribucion-de-una-variable">
+<h3>Paso 3 · Histograma — distribución de una variable<a class="headerlink" href="#paso-3-histograma-distribucion-de-una-variable" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"precipitacion_mm"</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#2ca02c"</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">"white"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Distribución de la precipitación mensual (todas las ciudades, 2023-2024)"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Precipitación (mm)"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Frecuencia (número de meses)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-4-dispersion-relacion-entre-dos-variables">
+<h3>Paso 4 · Dispersión — relación entre dos variables<a class="headerlink" href="#paso-4-dispersion-relacion-entre-dos-variables" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sc</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"temp_promedio_c"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">"humedad_promedio_pct"</span><span class="p">],</span>
+                 <span class="n">c</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">"mes"</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"twilight"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Temperatura vs. Humedad, coloreado por mes"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Temperatura promedio (°C)"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Humedad promedio (%)"</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">"Mes"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-5-subplots-panel-comparativo-de-2x2">
+<h3>Paso 5 · Subplots — panel comparativo de 2x2<a class="headerlink" href="#paso-5-subplots-panel-comparativo-de-2x2" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ciudades</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"CDMX"</span><span class="p">,</span> <span class="s2">"Monterrey"</span><span class="p">,</span> <span class="s2">"Guadalajara"</span><span class="p">,</span> <span class="s2">"Mérida"</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">ciudad</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">,</span> <span class="n">ciudades</span><span class="p">):</span>
+    <span class="n">datos</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">"ciudad"</span><span class="p">]</span> <span class="o">==</span> <span class="n">ciudad</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"anio"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2024</span><span class="p">)]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"mes"</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">datos</span><span class="p">[</span><span class="s2">"mes"</span><span class="p">],</span> <span class="n">datos</span><span class="p">[</span><span class="s2">"temp_promedio_c"</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#ff7f0e"</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">ciudad</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">"Temperatura promedio mensual 2024 por ciudad"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">supxlabel</span><span class="p">(</span><span class="s2">"Mes"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">supylabel</span><span class="p">(</span><span class="s2">"Temperatura (°C)"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="paso-6-exportar-una-figura-a-imagen">
+<h3>Paso 6 · Exportar una figura a imagen<a class="headerlink" href="#paso-6-exportar-una-figura-a-imagen" title="Link to this heading">#</a></h3>
+<p>Útil para insertar el gráfico en un reporte, presentación o el <code class="docutils literal notranslate"><span class="pre">README.md</span></code> del repositorio del taller.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">precip_2024</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">precip_2024</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#9467bd"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Precipitación acumulada por ciudad (2024)"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"precipitacion_por_ciudad.png"</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Figura guardada como precipitacion_por_ciudad.png"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="practica-independiente">
+<h2>✍️ Práctica independiente<a class="headerlink" href="#practica-independiente" title="Link to this heading">#</a></h2>
+<p>Trabaja siempre sobre el DataFrame <code class="docutils literal notranslate"><span class="pre">df</span></code> ya cargado.</p>
+<p><strong>Ejercicio 1.</strong> Grafica la evolución de <code class="docutils literal notranslate"><span class="pre">temp_promedio_c</span></code> de <strong>Tijuana</strong> durante 2023 y 2024 en la <strong>misma</strong> figura (dos líneas con colores distintos y leyenda).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 2.</strong> Crea un gráfico de barras horizontales (<code class="docutils literal notranslate"><span class="pre">ax.barh</span></code>) con la humedad promedio anual (2024) de cada ciudad, ordenado de mayor a menor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 3.</strong> Genera un panel de 1x2 subplots: a la izquierda un histograma de <code class="docutils literal notranslate"><span class="pre">temp_promedio_c</span></code>, a la derecha un histograma de <code class="docutils literal notranslate"><span class="pre">humedad_promedio_pct</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 4 (reto).</strong> Usando <code class="docutils literal notranslate"><span class="pre">ax.scatter</span></code>, grafica <code class="docutils literal notranslate"><span class="pre">precipitacion_mm</span></code> vs. <code class="docutils literal notranslate"><span class="pre">temp_promedio_c</span></code> diferenciando cada ciudad con un color distinto (pista: itera sobre <code class="docutils literal notranslate"><span class="pre">df['ciudad'].unique()</span></code> y llama <code class="docutils literal notranslate"><span class="pre">ax.scatter</span></code> una vez por ciudad para que la leyenda se genere automáticamente).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cierre-y-puente-al-siguiente-tema">
+<h2>🔎 Cierre y puente al siguiente tema<a class="headerlink" href="#cierre-y-puente-al-siguiente-tema" title="Link to this heading">#</a></h2>
+<p>Matplotlib nos da control total sobre cada elemento del gráfico, pero requiere bastante código para análisis <strong>estadístico</strong> (comparar distribuciones entre grupos, correlaciones, etc.). En el <strong>Tema 03 (Seaborn)</strong> veremos cómo lograr gráficos estadísticos más ricos con mucho menos código, trabajando directamente sobre DataFrames.</p>
+</section>
+<section id="recursos-adicionales">
+<h2>📚 Recursos adicionales<a class="headerlink" href="#recursos-adicionales" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://matplotlib.org/stable/index.html">Documentación oficial de Matplotlib</a></p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/tutorials/introductory/quick_start.html">Guía rápida oficial (Quick start)</a></p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/gallery/index.html">Galería de ejemplos oficiales</a></p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/cheatsheets/">Cheat sheets oficiales de Matplotlib</a></p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/gallery/color/named_colors.html">Colores nombrados en Matplotlib</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -565,13 +831,28 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tema 02: Matplotlib</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Tema 02: Matplotlib</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">Práctica guiada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">🎯 Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido-teorico">🧠 Contenido teórico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-matplotlib">1. ¿Por qué Matplotlib?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitectura-figure-y-axes">2. Arquitectura: <code class="docutils literal notranslate"><span class="pre">Figure</span></code> y <code class="docutils literal notranslate"><span class="pre">Axes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-grafico-que-practicaremos">3. Tipos de gráfico que practicaremos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-de-comunicacion-visual">4. Buenas prácticas de comunicación visual</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracion-del-entorno">⚙️ Configuración del entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-guiada">🧭 Práctica guiada</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-grafico-de-linea-evolucion-de-la-temperatura-en-una-ciudad">Paso 1 · Gráfico de línea — evolución de la temperatura en una ciudad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-grafico-de-barras-comparacion-entre-ciudades">Paso 2 · Gráfico de barras — comparación entre ciudades</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-histograma-distribucion-de-una-variable">Paso 3 · Histograma — distribución de una variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-dispersion-relacion-entre-dos-variables">Paso 4 · Dispersión — relación entre dos variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-subplots-panel-comparativo-de-2x2">Paso 5 · Subplots — panel comparativo de 2x2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-6-exportar-una-figura-a-imagen">Paso 6 · Exportar una figura a imagen</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-independiente">✍️ Práctica independiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre-y-puente-al-siguiente-tema">🔎 Cierre y puente al siguiente tema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">📚 Recursos adicionales</a></li>
+</ul>
   </nav></div>
 
 </div></div>
