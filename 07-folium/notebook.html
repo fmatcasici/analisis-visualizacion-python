@@ -499,7 +499,7 @@
 <section id="que-es-folium">
 <h3>1. ¿Qué es Folium?<a class="headerlink" href="#que-es-folium" title="Link to this heading">#</a></h3>
 <p><strong>Folium</strong> es una librería de Python que envuelve a <strong>Leaflet.js</strong>, una de las bibliotecas de mapas interactivos más usadas en la web (ligera, de código abierto, sin necesidad de una cuenta/API key para uso básico). Folium te permite construir mapas interactivos completos escribiendo solo Python, generando por debajo un archivo HTML con JavaScript.</p>
-<p>Cierra el taller de forma natural: es la única herramienta enfocada específicamente en datos <strong>geoespaciales</strong> (coordenadas de latitud/longitud), un tipo de dato muy común (ubicación de clientes, eventos, sensores, tiendas, sismos, etc.) que ninguna de las herramientas anteriores maneja de forma nativa.</p>
+<p><strong>Folium</strong> es la única herramienta enfocada específicamente en datos <strong>geoespaciales</strong> (coordenadas de latitud/longitud), un tipo de dato muy común (ubicación de clientes, eventos, sensores, tiendas, sismos, etc.) que ninguna de las herramientas anteriores maneja de forma nativa.</p>
 </section>
 <section id="los-bloques-de-un-mapa-en-folium">
 <h3>2. Los bloques de un mapa en Folium<a class="headerlink" href="#los-bloques-de-un-mapa-en-folium" title="Link to this heading">#</a></h3>
@@ -576,7 +576,15 @@
 <span class="n">df</span><span class="p">[</span><span class="s2">"fecha"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"fecha"</span><span class="p">])</span>
 
 <span class="n">centro_mexico</span> <span class="o">=</span> <span class="p">[</span><span class="mf">23.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">102.5</span><span class="p">]</span>
-<span class="n">m1</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">m1</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
+    <span class="n">tiles</span><span class="o">=</span><span class="s2">"https://</span><span class="si">{s}</span><span class="s2">.tile.openstreetmap.fr/hot/</span><span class="si">{z}</span><span class="s2">/</span><span class="si">{x}</span><span class="s2">/</span><span class="si">{y}</span><span class="s2">.png"</span><span class="p">,</span>
+    <span class="n">attr</span><span class="o">=</span><span class="s1">'&amp;copy; &lt;a href="https://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors, Tiles style by &lt;a href="https://www.hotosm.org/"&gt;HOT&lt;/a&gt;'</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"OpenStreetMap Humanitarian"</span><span class="p">,</span>
+    <span class="n">max_zoom</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span>
+    <span class="n">subdomains</span><span class="o">=</span><span class="s2">"abc"</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span>
+
 <span class="n">m1</span>
 </pre></div>
 </div>
@@ -590,7 +598,14 @@
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top25</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"magnitud"</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
 
-<span class="n">m2</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">m2</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
+    <span class="n">tiles</span><span class="o">=</span><span class="s2">"https://</span><span class="si">{s}</span><span class="s2">.tile.openstreetmap.fr/hot/</span><span class="si">{z}</span><span class="s2">/</span><span class="si">{x}</span><span class="s2">/</span><span class="si">{y}</span><span class="s2">.png"</span><span class="p">,</span>
+    <span class="n">attr</span><span class="o">=</span><span class="s1">'&amp;copy; &lt;a href="https://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors, Tiles style by &lt;a href="https://www.hotosm.org/"&gt;HOT&lt;/a&gt;'</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"OpenStreetMap Humanitarian"</span><span class="p">,</span>
+    <span class="n">max_zoom</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span>
+    <span class="n">subdomains</span><span class="o">=</span><span class="s2">"abc"</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m2</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">sismo</span> <span class="ow">in</span> <span class="n">top25</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
     <span class="n">popup_html</span> <span class="o">=</span> <span class="p">(</span>
@@ -622,7 +637,14 @@
     <span class="n">caption</span><span class="o">=</span><span class="s2">"Magnitud simulada"</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="n">m3</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">m3</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">tiles</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
+    <span class="n">tiles</span><span class="o">=</span><span class="s2">"https://</span><span class="si">{s}</span><span class="s2">.tile.openstreetmap.fr/hot/</span><span class="si">{z}</span><span class="s2">/</span><span class="si">{x}</span><span class="s2">/</span><span class="si">{y}</span><span class="s2">.png"</span><span class="p">,</span>
+    <span class="n">attr</span><span class="o">=</span><span class="s1">'&amp;copy; &lt;a href="https://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors, Tiles style by &lt;a href="https://www.hotosm.org/"&gt;HOT&lt;/a&gt;'</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"OpenStreetMap Humanitarian"</span><span class="p">,</span>
+    <span class="n">max_zoom</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span>
+    <span class="n">subdomains</span><span class="o">=</span><span class="s2">"abc"</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m3</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">sismo</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
     <span class="n">folium</span><span class="o">.</span><span class="n">CircleMarker</span><span class="p">(</span>
@@ -644,7 +666,15 @@
 <h3>Paso 4 · <code class="docutils literal notranslate"><span class="pre">MarkerCluster</span></code> para todos los puntos<a class="headerlink" href="#paso-4-markercluster-para-todos-los-puntos" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m4</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m4</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">tiles</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
+    <span class="n">tiles</span><span class="o">=</span><span class="s2">"https://</span><span class="si">{s}</span><span class="s2">.tile.openstreetmap.fr/hot/</span><span class="si">{z}</span><span class="s2">/</span><span class="si">{x}</span><span class="s2">/</span><span class="si">{y}</span><span class="s2">.png"</span><span class="p">,</span>
+    <span class="n">attr</span><span class="o">=</span><span class="s1">'&amp;copy; &lt;a href="https://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors, Tiles style by &lt;a href="https://www.hotosm.org/"&gt;HOT&lt;/a&gt;'</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"OpenStreetMap Humanitarian"</span><span class="p">,</span>
+    <span class="n">max_zoom</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span>
+    <span class="n">subdomains</span><span class="o">=</span><span class="s2">"abc"</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m4</span><span class="p">)</span>
+
 <span class="n">cluster</span> <span class="o">=</span> <span class="n">MarkerCluster</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Sismos simulados"</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m4</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">sismo</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
@@ -663,7 +693,14 @@
 <h3>Paso 5 · <code class="docutils literal notranslate"><span class="pre">HeatMap</span></code> de densidad<a class="headerlink" href="#paso-5-heatmap-de-densidad" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m5</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m5</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
+    <span class="n">tiles</span><span class="o">=</span><span class="s2">"https://</span><span class="si">{s}</span><span class="s2">.tile.openstreetmap.fr/hot/</span><span class="si">{z}</span><span class="s2">/</span><span class="si">{x}</span><span class="s2">/</span><span class="si">{y}</span><span class="s2">.png"</span><span class="p">,</span>
+    <span class="n">attr</span><span class="o">=</span><span class="s1">'&amp;copy; &lt;a href="https://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors, Tiles style by &lt;a href="https://www.hotosm.org/"&gt;HOT&lt;/a&gt;'</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"OpenStreetMap Humanitarian"</span><span class="p">,</span>
+    <span class="n">max_zoom</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span>
+    <span class="n">subdomains</span><span class="o">=</span><span class="s2">"abc"</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m5</span><span class="p">)</span>
 
 <span class="n">puntos_calor</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">"latitud"</span><span class="p">,</span> <span class="s2">"longitud"</span><span class="p">,</span> <span class="s2">"magnitud"</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">HeatMap</span><span class="p">(</span><span class="n">puntos_calor</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">blur</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">max_zoom</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m5</span><span class="p">)</span>
@@ -678,7 +715,14 @@
 <h3>Paso 6 · Combinar capas con <code class="docutils literal notranslate"><span class="pre">LayerControl</span></code> y exportar a HTML<a class="headerlink" href="#paso-6-combinar-capas-con-layercontrol-y-exportar-a-html" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m6</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m6</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">centro_mexico</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
+    <span class="n">tiles</span><span class="o">=</span><span class="s2">"https://</span><span class="si">{s}</span><span class="s2">.tile.openstreetmap.fr/hot/</span><span class="si">{z}</span><span class="s2">/</span><span class="si">{x}</span><span class="s2">/</span><span class="si">{y}</span><span class="s2">.png"</span><span class="p">,</span>
+    <span class="n">attr</span><span class="o">=</span><span class="s1">'&amp;copy; &lt;a href="https://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors, Tiles style by &lt;a href="https://www.hotosm.org/"&gt;HOT&lt;/a&gt;'</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"OpenStreetMap Humanitarian"</span><span class="p">,</span>
+    <span class="n">max_zoom</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span>
+    <span class="n">subdomains</span><span class="o">=</span><span class="s2">"abc"</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m6</span><span class="p">)</span>
 
 <span class="n">grupo_marcadores</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">FeatureGroup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Marcadores (top 25)"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">sismo</span> <span class="ow">in</span> <span class="n">top25</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
