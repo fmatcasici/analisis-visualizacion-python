@@ -447,7 +447,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido-teorico">🧠 Contenido teórico</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-lo-estatico-a-lo-interactivo">1. De lo estático a lo interactivo</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dos-formas-de-usar-plotly">2. Dos formas de usar Plotly</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactividad-gratis">3. Interactividad “gratis”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-interactividad">3. La interactividad</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#animaciones-y-mapas">4. Animaciones y mapas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compartir-sin-python">5. Compartir sin Python</a></li>
 </ul>
@@ -486,11 +486,11 @@
 </ul>
 <p>Al finalizar este tema, el participante será capaz de:</p>
 <ul class="simple">
-<li><p>Explicar la relación entre Seaborn y Matplotlib, y cuándo conviene usar cada uno.</p></li>
-<li><p>Construir gráficos estadísticos (boxplot, violinplot, histplot, scatterplot con regresión) directamente desde un DataFrame.</p></li>
-<li><p>Usar <code class="docutils literal notranslate"><span class="pre">hue</span></code>, <code class="docutils literal notranslate"><span class="pre">col</span></code>/<code class="docutils literal notranslate"><span class="pre">row</span></code> para comparar subgrupos sin escribir bucles manuales.</p></li>
-<li><p>Construir un mapa de calor de correlaciones y un <code class="docutils literal notranslate"><span class="pre">pairplot</span></code> para exploración multivariada.</p></li>
-<li><p>Aplicar temas y paletas de color consistentes a un conjunto de gráficos.</p></li>
+<li><p>Explicar la diferencia entre <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code> (alto nivel) y <code class="docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code> (bajo nivel).</p></li>
+<li><p>Construir gráficos interactivos (línea, barra, dispersión, mapa) con zoom, hover y leyenda interactiva.</p></li>
+<li><p>Añadir animación temporal (<code class="docutils literal notranslate"><span class="pre">animation_frame</span></code>) para explorar cómo cambian los datos a través del tiempo.</p></li>
+<li><p>Construir un mapa coroplético interactivo (<code class="docutils literal notranslate"><span class="pre">choropleth</span></code>) a nivel país.</p></li>
+<li><p>Exportar una figura interactiva como archivo <code class="docutils literal notranslate"><span class="pre">.html</span></code> autocontenido para compartir sin necesidad de Python.</p></li>
 </ul>
 <section id="contenido-teorico">
 <h2>🧠 Contenido teórico<a class="headerlink" href="#contenido-teorico" title="Link to this heading">#</a></h2>
@@ -518,8 +518,8 @@
 </div>
 <p>En este taller usaremos principalmente <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code>, y tocaremos <code class="docutils literal notranslate"><span class="pre">graph_objects</span></code> para personalización puntual.</p>
 </section>
-<section id="interactividad-gratis">
-<h3>3. Interactividad “gratis”<a class="headerlink" href="#interactividad-gratis" title="Link to this heading">#</a></h3>
+<section id="la-interactividad">
+<h3>3. La interactividad<a class="headerlink" href="#la-interactividad" title="Link to this heading">#</a></h3>
 <p>Cada figura de Plotly incluye, sin código adicional:</p>
 <ul class="simple">
 <li><p><strong>Zoom</strong> (arrastrar para acercar, doble clic para restablecer).</p></li>
@@ -545,11 +545,7 @@
 <p>Cargaremos <code class="docutils literal notranslate"><span class="pre">tema04_turismo_internacional.csv</span></code>: llegadas de turistas e ingresos por turismo (sintéticos) por país, mes y año (2022-2024).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># === Carga del dataset ===</span>
-<span class="c1"># Opción 1 (recomendada una vez publicado el repositorio del taller):</span>
-<span class="c1"># reemplaza &lt;usuario&gt;/&lt;repositorio&gt; por la ruta real de tu repo de GitHub</span>
-<span class="c1"># y ejecuta esta celda. Usa el botón "Raw" de GitHub para obtener la URL.</span>
-<span class="c1"># https://colab.research.google.com/github/fmatcasici/analisis-visualizacion-python/blob/main/04-plotly/notebook.ipynb</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># obtener el dataset de turismo internacional desde GitHub o subirlo manualmente si no hay internet</span>
 <span class="n">GITHUB_RAW_URL</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s2">"https://raw.githubusercontent.com/fmatcasici/analisis-visualizacion-python/main/04-plotly/tema04_turismo_internacional.csv"</span>
 <span class="p">)</span>
@@ -794,7 +790,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido-teorico">🧠 Contenido teórico</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-lo-estatico-a-lo-interactivo">1. De lo estático a lo interactivo</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dos-formas-de-usar-plotly">2. Dos formas de usar Plotly</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactividad-gratis">3. Interactividad “gratis”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-interactividad">3. La interactividad</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#animaciones-y-mapas">4. Animaciones y mapas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compartir-sin-python">5. Compartir sin Python</a></li>
 </ul>
