@@ -456,7 +456,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-la-app-mas-simple-posible-layout-estatico">Paso 1 · La app más simple posible (layout estático)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-agregar-un-grafico-dcc-graph-con-datos-fijos">Paso 2 · Agregar un gráfico (<code class="docutils literal notranslate"><span class="pre">dcc.Graph</span></code>) con datos fijos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-interactividad-un-dropdown-que-controla-el-grafico">Paso 3 · Interactividad — un <code class="docutils literal notranslate"><span class="pre">Dropdown</span></code> que controla el gráfico</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-dos-controles-y-dos-graficos-mini-dashboard">Paso 4 · Dos controles y dos gráficos (mini-dashboard)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-dos-controles-y-dos-graficos">Paso 4 · Dos controles y dos gráficos</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-independiente">✍️ Práctica independiente</a></li>
@@ -586,6 +586,9 @@
 
 <span class="c1"># En Colab, ejecuta esta celda y la app aparecerá incrustada debajo.</span>
 <span class="n">app1</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">jupyter_mode</span><span class="o">=</span><span class="s2">"inline"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8050</span><span class="p">)</span>
+
+<span class="c1"># Para ejecutar en el navegador se pusa el modo external </span>
+<span class="c1">#app1.run(jupyter_mode="external", port=8050)</span>
 </pre></div>
 </div>
 </div>
@@ -650,11 +653,11 @@
 </div>
 </div>
 </section>
-<section id="paso-4-dos-controles-y-dos-graficos-mini-dashboard">
-<h3>Paso 4 · Dos controles y dos gráficos (mini-dashboard)<a class="headerlink" href="#paso-4-dos-controles-y-dos-graficos-mini-dashboard" title="Link to this heading">#</a></h3>
+<section id="paso-4-dos-controles-y-dos-graficos">
+<h3>Paso 4 · Dos controles y dos gráficos<a class="headerlink" href="#paso-4-dos-controles-y-dos-graficos" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fuentes_disponibles</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"fuente_energia"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#fuentes_disponibles = sorted(df["fuente_energia"].unique())</span>
 
 <span class="n">app4</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
@@ -712,34 +715,87 @@
 <section id="practica-independiente">
 <h2>✍️ Práctica independiente<a class="headerlink" href="#practica-independiente" title="Link to this heading">#</a></h2>
 <p>Parte del código del <strong>Paso 4</strong> (<code class="docutils literal notranslate"><span class="pre">app4</span></code>). Usa un puerto nuevo (por ejemplo <code class="docutils literal notranslate"><span class="pre">8060</span></code>) para cada ejercicio.</p>
-<p><strong>Ejercicio 1.</strong> Agrega un segundo <code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code> (<code class="docutils literal notranslate"><span class="pre">id='dd-fuente'</span></code>, con opción <code class="docutils literal notranslate"><span class="pre">'Todas'</span></code> + cada fuente de <code class="docutils literal notranslate"><span class="pre">fuentes_disponibles</span></code>) que filtre adicionalmente por <code class="docutils literal notranslate"><span class="pre">fuente_energia</span></code> cuando no sea <code class="docutils literal notranslate"><span class="pre">'Todas'</span></code>.</p>
+<p><strong>Ejercicio 1.</strong> Analiza el siguiente ejercicio y ejecútalo. ¿qué hace el gráfico?
+Añade los divs a los <code class="docutils literal notranslate"><span class="pre">Dropdown</span></code> para que estén alineados, como en el <code class="docutils literal notranslate"><span class="pre">app4</span></code> (paso 4).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí (crea una nueva app, p. ej. app_ej1, en el puerto 8060)</span>
+
+<span class="n">app_ej1</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app_ej1</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">H1</span><span class="p">(</span><span class="s2">"Producción por país y fuente"</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"dd-pais"</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[{</span><span class="s2">"label"</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="n">p</span><span class="p">}</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">paises_disponibles</span><span class="p">],</span> <span class="n">value</span><span class="o">=</span><span class="s2">"México"</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"dd-fuente"</span><span class="p">,</span>
+                 <span class="n">options</span><span class="o">=</span><span class="p">[{</span><span class="s2">"label"</span><span class="p">:</span> <span class="s2">"Todas"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="s2">"Todas"</span><span class="p">}]</span> <span class="o">+</span> <span class="p">[{</span><span class="s2">"label"</span><span class="p">:</span> <span class="n">f</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="n">f</span><span class="p">}</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fuentes_disponibles</span><span class="p">],</span>
+                 <span class="n">value</span><span class="o">=</span><span class="s2">"Todas"</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"grafico-ej1"</span><span class="p">),</span>
+<span class="p">])</span>
+
+<span class="nd">@app_ej1</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">Output</span><span class="p">(</span><span class="s2">"grafico-ej1"</span><span class="p">,</span> <span class="s2">"figure"</span><span class="p">),</span> <span class="n">Input</span><span class="p">(</span><span class="s2">"dd-pais"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">),</span> <span class="n">Input</span><span class="p">(</span><span class="s2">"dd-fuente"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">actualizar_ej1</span><span class="p">(</span><span class="n">pais</span><span class="p">,</span> <span class="n">fuente</span><span class="p">):</span>
+    <span class="n">datos</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"pais"</span><span class="p">]</span> <span class="o">==</span> <span class="n">pais</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">fuente</span> <span class="o">!=</span> <span class="s2">"Todas"</span><span class="p">:</span>
+        <span class="n">datos</span> <span class="o">=</span> <span class="n">datos</span><span class="p">[</span><span class="n">datos</span><span class="p">[</span><span class="s2">"fuente_energia"</span><span class="p">]</span> <span class="o">==</span> <span class="n">fuente</span><span class="p">]</span>
+    <span class="n">resumen</span> <span class="o">=</span> <span class="n">datos</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"anio"</span><span class="p">,</span> <span class="s2">"fuente_energia"</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">"produccion_gwh"</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">resumen</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"anio"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"produccion_gwh"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"fuente_energia"</span><span class="p">,</span>
+                    <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">pais</span><span class="si">}</span><span class="s2"> — </span><span class="si">{</span><span class="n">fuente</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1">#tu codigo aquí (ejecuta tu app en el puerto 8060)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Ejercicio 2.</strong> Agrega una tercera salida: una tarjeta de texto (<code class="docutils literal notranslate"><span class="pre">html.Div</span></code> o <code class="docutils literal notranslate"><span class="pre">html.H3</span></code>) que muestre la <strong>capacidad instalada total</strong> (<code class="docutils literal notranslate"><span class="pre">capacidad_instalada_mw</span></code>) para el país y rango de años seleccionados. Pista: agrega un <code class="docutils literal notranslate"><span class="pre">Output</span></code> adicional y un componente con <code class="docutils literal notranslate"><span class="pre">id='texto-capacidad'</span></code>.</p>
+<p><strong>Ejercicio 2.</strong> En el siguiente código, se agrega una tercera salida: una tarjeta de texto (<code class="docutils literal notranslate"><span class="pre">html.Div</span></code> o <code class="docutils literal notranslate"><span class="pre">html.H3</span></code>) que muestra la <strong>capacidad instalada total</strong> (<code class="docutils literal notranslate"><span class="pre">capacidad_instalada_mw</span></code>) para el país y rango de años seleccionados. Observa que se agrega un <code class="docutils literal notranslate"><span class="pre">Output</span></code> adicional y un componente con <code class="docutils literal notranslate"><span class="pre">id='texto-capacidad'</span></code>. Ejecútalo en el puerto 8061 de modo external.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí (usa el puerto 8061)</span>
+
+<span class="n">app_ej2</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app_ej2</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">H1</span><span class="p">(</span><span class="s2">"Producción y capacidad instalada"</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"dd-pais2"</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[{</span><span class="s2">"label"</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="n">p</span><span class="p">}</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">paises_disponibles</span><span class="p">],</span> <span class="n">value</span><span class="o">=</span><span class="s2">"México"</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">RangeSlider</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"slider-anios2"</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">2015</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">2024</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">2024</span><span class="p">],</span>
+                     <span class="n">marks</span><span class="o">=</span><span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2025</span><span class="p">,</span> <span class="mi">3</span><span class="p">)}),</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">H3</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"texto-capacidad"</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"grafico-ej2"</span><span class="p">),</span>
+<span class="p">])</span>
+
+<span class="nd">@app_ej2</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s2">"grafico-ej2"</span><span class="p">,</span> <span class="s2">"figure"</span><span class="p">),</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s2">"texto-capacidad"</span><span class="p">,</span> <span class="s2">"children"</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s2">"dd-pais2"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">),</span>
+    <span class="n">Input</span><span class="p">(</span><span class="s2">"slider-anios2"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">actualizar_ej2</span><span class="p">(</span><span class="n">pais</span><span class="p">,</span> <span class="n">rango</span><span class="p">):</span>
+    <span class="n">datos</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">"pais"</span><span class="p">]</span> <span class="o">==</span> <span class="n">pais</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"anio"</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">rango</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rango</span><span class="p">[</span><span class="mi">1</span><span class="p">]))]</span>
+    <span class="n">resumen</span> <span class="o">=</span> <span class="n">datos</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"anio"</span><span class="p">,</span> <span class="s2">"fuente_energia"</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">"produccion_gwh"</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">resumen</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"anio"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"produccion_gwh"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"fuente_energia"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">pais</span><span class="p">)</span>
+    <span class="n">capacidad_total</span> <span class="o">=</span> <span class="n">datos</span><span class="p">[</span><span class="n">datos</span><span class="p">[</span><span class="s2">"anio"</span><span class="p">]</span> <span class="o">==</span> <span class="n">rango</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="s2">"capacidad_instalada_mw"</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">texto</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Capacidad instalada total en </span><span class="si">{</span><span class="n">rango</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">capacidad_total</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> MW"</span>
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">texto</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Ejercicio 3.</strong> Cambia el gráfico de línea para que sea un <code class="docutils literal notranslate"><span class="pre">px.area</span></code> (área apilada) en lugar de <code class="docutils literal notranslate"><span class="pre">px.line</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí (usa el puerto 8062)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Ejercicio 4 (reto).</strong> Agrega un <code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code> con <code class="docutils literal notranslate"><span class="pre">multi=True</span></code> para seleccionar <strong>varios países a la vez</strong>, y actualiza el gráfico de línea para comparar la producción total (suma de fuentes) entre los países seleccionados.</p>
+<p><strong>Ejercicio 3</strong> En el siguiente código se agrega un <code class="docutils literal notranslate"><span class="pre">dcc.Dropdown</span></code> con <code class="docutils literal notranslate"><span class="pre">multi=True</span></code> para seleccionar <strong>varios países a la vez</strong>, y se actualiza el gráfico de línea para comparar la producción total (suma de fuentes) entre los países seleccionados. Ejecútalo en el puerto 8063</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí (usa el puerto 8063)</span>
+
+<span class="n">app_ej4</span> <span class="o">=</span> <span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app_ej4</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="c1">#agrega código del dropdown para que acepte chile y méxico, y que sea multi-select (multi=True)</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"dd-paises4"</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[{</span><span class="s2">"label"</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="n">p</span><span class="p">}</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">paises_disponibles</span><span class="p">],</span>
+                 <span class="n">value</span><span class="o">=</span><span class="s2">"México"</span><span class="p">),</span>
+    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">"grafico-ej4"</span><span class="p">),</span>
+<span class="p">])</span>
+
+<span class="nd">@app_ej4</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="n">Output</span><span class="p">(</span><span class="s2">"grafico-ej4"</span><span class="p">,</span> <span class="s2">"figure"</span><span class="p">),</span> <span class="n">Input</span><span class="p">(</span><span class="s2">"dd-paises4"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">actualizar_ej4</span><span class="p">(</span><span class="n">paises_sel</span><span class="p">):</span>
+    <span class="n">datos</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"pais"</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">paises_sel</span><span class="p">)]</span>
+    <span class="n">resumen</span> <span class="o">=</span> <span class="n">datos</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"anio"</span><span class="p">,</span> <span class="s2">"pais"</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">"produccion_gwh"</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">resumen</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"anio"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"produccion_gwh"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"pais"</span><span class="p">,</span>
+                    <span class="n">title</span><span class="o">=</span><span class="s2">"Comparación de producción total por país"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -839,7 +895,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-la-app-mas-simple-posible-layout-estatico">Paso 1 · La app más simple posible (layout estático)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-agregar-un-grafico-dcc-graph-con-datos-fijos">Paso 2 · Agregar un gráfico (<code class="docutils literal notranslate"><span class="pre">dcc.Graph</span></code>) con datos fijos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-interactividad-un-dropdown-que-controla-el-grafico">Paso 3 · Interactividad — un <code class="docutils literal notranslate"><span class="pre">Dropdown</span></code> que controla el gráfico</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-dos-controles-y-dos-graficos-mini-dashboard">Paso 4 · Dos controles y dos gráficos (mini-dashboard)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-dos-controles-y-dos-graficos">Paso 4 · Dos controles y dos gráficos</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practica-independiente">✍️ Práctica independiente</a></li>
