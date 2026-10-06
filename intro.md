@@ -10,8 +10,8 @@ Aquí encontrarás, tema por tema, los notebooks de práctica. Cada capítulo in
 
 ## Temario
 
-| Tema | Duración | Ponente | Notebook |
-|---|---|---|---|
+| Tema | Duración | Ponente | Notebook | Descarga
+|---|---|---|---|---|
 | 01. Introducción a Colab y Pandas | 40 min | Jorge Carlos Reyes | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fmatcasici/analisis-visualizacion-python/blob/main/01-intro-colab-pandas/notebook.ipynb) | [Descargar](https://github.com/fmatcasici/analisis-visualizacion-python/blob/main/01-intro-colab-pandas/notebook.ipynb) |
 | 02. Matplotlib | 50 min | Jorge Carlos Reyes | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fmatcasici/analisis-visualizacion-python/blob/main/02-matplotlib/notebook.ipynb) | [Descargar](https://github.com/fmatcasici/analisis-visualizacion-python/blob/main/02-matplotlib/notebook.ipynb) |
 | 03. Seaborn | 50 min | Jorge Carlos Reyes | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fmatcasici/analisis-visualizacion-python/blob/main/03-seaborn/notebook.ipynb) | [Descargar](https://github.com/fmatcasici/analisis-visualizacion-python/blob/main/03-seaborn/notebook.ipynb) |
