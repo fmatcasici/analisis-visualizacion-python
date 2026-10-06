@@ -736,6 +736,21 @@ Sube manualmente el archivo 'tema04_turismo_internacional.csv' cuando se te soli
     <span class="p">[</span><span class="s2">"llegadas_turistas_millones"</span><span class="p">,</span> <span class="s2">"ingresos_turismo_usd_millones"</span><span class="p">]</span>
 <span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
+<span class="c1">#mapa_datos["pais"] = mapa_datos["pais"].replace({</span>
+<span class="c1">#    "México": "Mexico",</span>
+<span class="c1">#    "España": "Spain",</span>
+<span class="c1">#    "Alemania": "Germany",</span>
+<span class="c1">#    "Francia": "France",</span>
+<span class="c1">#    "Egipto":"Egypt",</span>
+<span class="c1">#    "Tailandia":"Tailand",</span>
+<span class="c1">#    "Japón":"Japan",</span>
+<span class="c1">#    "Italia":"Italy",</span>
+<span class="c1">#    "Canadá":"Canada",</span>
+<span class="c1">#    "Brasil":"Brazil",</span>
+<span class="c1">#    "Estados Unidos":"United States",</span>
+<span class="c1">#    "Sudáfrica":"South Africa"</span>
+<span class="c1">#})</span>
+
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span>
     <span class="n">mapa_datos</span><span class="p">,</span> <span class="n">locations</span><span class="o">=</span><span class="s2">"pais"</span><span class="p">,</span> <span class="n">locationmode</span><span class="o">=</span><span class="s2">"country names"</span><span class="p">,</span>
     <span class="n">color</span><span class="o">=</span><span class="s2">"llegadas_turistas_millones"</span><span class="p">,</span> <span class="n">hover_name</span><span class="o">=</span><span class="s2">"pais"</span><span class="p">,</span>
@@ -779,15 +794,7 @@ Sube manualmente el archivo 'tema04_turismo_internacional.csv' cuando se te soli
 </div>
 </div>
 </div>
-<p><strong>Ejercicio 3.</strong> Construye un <code class="docutils literal notranslate"><span class="pre">px.sunburst</span></code> (o <code class="docutils literal notranslate"><span class="pre">px.treemap</span></code>) con jerarquía <code class="docutils literal notranslate"><span class="pre">continente</span> <span class="pre">→</span> <span class="pre">pais</span></code>, usando como valor <code class="docutils literal notranslate"><span class="pre">llegadas_turistas_millones</span></code> del año 2024.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Ejercicio 4 (reto).</strong> Construye un <code class="docutils literal notranslate"><span class="pre">px.choropleth</span></code> animado (<code class="docutils literal notranslate"><span class="pre">animation_frame='anio'</span></code>) mostrando <code class="docutils literal notranslate"><span class="pre">ingresos_turismo_usd_millones</span></code> por país a través de los 3 años disponibles.</p>
+<p><strong>Ejercicio 3.</strong> Construye un <code class="docutils literal notranslate"><span class="pre">px.choropleth</span></code> animado (<code class="docutils literal notranslate"><span class="pre">animation_frame='anio'</span></code>) mostrando <code class="docutils literal notranslate"><span class="pre">ingresos_turismo_usd_millones</span></code> por país a través de los 3 años disponibles. Tip: usa el dataframe <code class="docutils literal notranslate"><span class="pre">resumen_anual</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: tu código aquí</span>
